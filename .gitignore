@@ -2,5 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-
 imgvideo
+*.mp3
+*.mp4
+*.png
