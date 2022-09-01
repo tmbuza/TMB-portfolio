@@ -14,6 +14,14 @@ def load_lottieurl(url):
     return None
   return r.json()
 
+# Use local css
+def local_css(file_name):
+  with open(file_name) as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style/style.css")
+
+
 #----Load Assets----
 lottie_coding = "https://iconscout.com/lottie/data-analysis-4876889"
 lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
@@ -113,6 +121,7 @@ with st.container():
       """
       )
 
+
 with st.container():
   video_column, text_column = st.columns((1, 2))
   with video_column:
@@ -124,4 +133,24 @@ with st.container():
       """)
 
 
-
+with st.container():
+  st.write("---")
+  st.header("Get In Touch")
+  st.write("##")
+  
+  # Contact Documentation: https://formsubmit.co/ Change the email address
+  contact_form = """
+  <form action="https://formsubmit.co/yndelly@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="Your message here" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  """
+  
+  left_column, right_column = st.columns(2)
+  with left_column:
+    st.markdown(contact_form, unsafe_allow_html=True)
+  with right_column:
+    st.empty()
