@@ -1,0 +1,7 @@
+python==3.9
+streamlit
+streamlit_lottie
+altair
+math
+matplotlib
+requests
