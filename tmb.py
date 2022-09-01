@@ -100,7 +100,7 @@ with st.container():
   with image_column:
    st.image(fig1)
    st.write("""
-   Inspired by Dr. Pat Scholl\'s tutorials at the [`code club`](https://riffomonas.org/code_club/). This image was generated using `R packages`.
+   Inspired by Dr. Pat Scholl\'s tutorials at the [`code club`](https://riffomonas.org/code_club/). This image was generated using `R script`.
    """)
   with text_column:
     st.subheader("Climate Data")
@@ -120,7 +120,7 @@ with st.container():
     st.video(vid1)
     st.write(
       """
-      This MP4 was generated using `R packages`.
+      This MP4 was generated using an `R script`.
       """)
 
 
