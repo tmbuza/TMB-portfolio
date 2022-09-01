@@ -4,8 +4,7 @@ import streamlit as st
 
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. Select an Object including the two :: eg :tada: or :trophy: 
-# st.set_page_config(page_title="My Portifolio", page_icon=":trophy:", layout = "wide")
-st.set_page_config(page_title="My Portifolio", page_icon=":trophy:")
+st.set_page_config(page_title="My Portifolio", page_icon=":trophy:", layout = "wide")
 
 # 
 # def load_lottieurl(url):
