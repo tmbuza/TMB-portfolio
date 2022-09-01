@@ -6,6 +6,25 @@ import streamlit as st
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. Select an Object including the two :: eg :tada: or :trophy: 
 st.set_page_config(page_title="My Portifolio", page_icon=":trophy:", layout = "wide")
 
+# 
+# def load_lottieurl(url):
+#   r = requests.get(url)
+#   if r.status_code != 200:
+#     return None
+#   return r.json()
+
+# Use local css
+def local_css(file_name):
+  with open(file_name) as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style/style.css")
+
+
+#----Load Assets----
+lottie_coding = "https://iconscout.com/lottie/data-analysis-4876889"
+lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
+lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
 from PIL import Image
 fig1 = Image.open("imgvideo/climate_nasa.png")
