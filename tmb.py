@@ -29,7 +29,8 @@ lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 from PIL import Image
 fig1 = Image.open("imgvideo/climate_nasa.png")
 vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
-
+# For NGS section
+fig2 = Image.open("img/dna_nucleotides.jpeg")
 
 # ---- Header section----
 with st.container():
@@ -132,6 +133,122 @@ with st.container():
       """)
 
 
+import pandas as pd
+import streamlit as st
+import altair as alt
+from PIL import Image
+
+with st.container():
+  st.write("---")
+  st.write("---")
+  st.header("NGS: Next Generation Sequence Analysis")
+  st.write("##")
+  image_column, text_column = st.columns((1, 2))
+  with image_column:
+   st.image(fig2)
+   st.caption("Image Source: https://www.biologydiscussion.com/")
+
+  with text_column:
+    st.title("Count Nucleotides APP")
+    st.markdown(
+      """
+      This web app quickly computes the number of nucleotide present in a given FASTA sequence. 
+      
+      `Give it a try!`
+      """
+    )
+    st.write("##")
+    st.subheader('Enter query sequence in the box below')
+    sequence_input = ">LC557153.1 Erwinia amylovora Eaap3-1 gene for 16S rRNA, partial sequence\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGG \
+  GTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACG \
+  GTAGCTAATACCGCATAACGTCTACGGACCAAAGTGGGGGACCTTCGGGCCTCACACCATCGGATGTGCC \
+  CAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT \
+  GACCAGCCACACTGGAACTGAGACACGGTCCAGACTCCTACGGGAGGCAGCAGTGGGGAATATTGCACAA \
+  TGGGCGCAAGCCTGATGCAGCCATGCCGCGTGTATGAAGAAGGCCTTCGGGTTGTAAAGTACTTTCAGCG \
+  GGGAGGAAGGGGGAGAGGTTAATAACCTCTTCCATTGACGTTACCCGCAGAAGAAGCACCGGCTAACTCC \
+  GTGCCAGCAGCCGCGGTAATACGGAGGGTGCAAGCGTTAATCGGAATTACTGGGCGTAAAGCGCACGCAG \
+  GCGGTCTGTCAAGTCGGATGTGAAATCCCCGGGCTTAACCTGGGAACTGCATTCGAAACTGGCAGGCTAG \
+  AGTCTCGTAGAGGGGGGTAGAATTCCAGGTGTAGCGGTGAAATGCGTAGAGATCTGGAGGAATACCGGTG \
+  GCGAAGGCGGCCCCCTGGACGAAGACTGACGCTCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATA \
+  CCCTGGTAGTCCACGCCGTAAACGATGTCGACTTGGAGGCTGTTCCCCTGAGGAGTGGCTTCCGGAGCTA \
+  ACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGGGGGCCCGC \
+  ACAAGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTGGCCTTGACATCCACGGA \
+  ATTCTGCAGAGATGCGGAAGTGCCTTCGGGAACCGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTG \
+  TTGTGAAATGTTGGGTTAAGTCCCGCAACGAGCGCAACCCTTATCCTTTGTTGCCAGCGATTCGGTCGGG \
+  AACTCAAAGGAGACTGCCGGTGATAAACCGGAGGAAGGTGGGGATGACGTCAAGTCATCATGGCCCTTAC \
+  GGCCAGGGCTACACACGTGCTACAATGGCGCATACAAAGAGAAGCGACCTCGCGAGAGCAAGCGGACCTC \
+  ATAAAGTGCGTCGTAGTCCGGATCGGAGTCTGCAACTCGACTCCGTGAAGTCGGAATCGCTAGTAATCGT \
+  AGATCAGAATGCTACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGTCACACCATGGGGAGTGGG \
+  TTGCAAAAGAAGTAGGTAGCTTAACCTTCGGGAGGGCGCTTA"
+
+    #sequence = st.sidebar.text_area("Sequence input", sequence_input, height=250)
+    sequence = st.text_area("Fasta sequence with header in line 1", sequence_input, height=250)
+    sequence = sequence.splitlines()
+    sequence = sequence[1:] # Skips the sequence name (first line)
+    sequence = ''.join(sequence) # Concatenates list to string
+    
+    
+    ## Prints the input DNA sequence
+    st.subheader('DNA Query')
+    sequence
+
+with st.container():
+  st.write("##")
+  text_column, figure_column = st.columns((1, 2))
+  
+  with text_column:
+    st.header("Nucleotides Count")
+    
+    # ### 1. Output
+    # st.subheader('1. Total nucleotide count')
+    def DNA_nucleotide_count(seq):
+      d = dict([
+                ('A',seq.count('A')),
+                ('T',seq.count('T')),
+                ('G',seq.count('G')),
+                ('C',seq.count('C'))
+                ])
+      return d
+    
+    X = DNA_nucleotide_count(sequence)
+    #X
+    
+    ### 1. Observation
+    st.subheader('1. Observation')
+    st.write('There are  ' + str(X['A']) + ' adenine (A)')
+    st.write('There are  ' + str(X['T']) + ' thymine (T)')
+    st.write('There are  ' + str(X['G']) + ' guanine (G)')
+    st.write('There are  ' + str(X['C']) + ' cytosine (C)')
+    
+
+    ### 2. DataFrame
+    st.subheader('2. DataFrame')
+    df = pd.DataFrame.from_dict(X, orient='index')
+    df = df.rename({0: 'nt_count'}, axis='columns')
+    df.reset_index(inplace=True)
+    df = df.rename(columns = {'index':'gene1'})
+    st.write(df)
+    
+  with figure_column:
+    st.header("Nucleotides Distribution")
+    ### 3. Bar chart
+    st.subheader('3. Bar chart')
+    p = alt.Chart(df).mark_bar().encode(
+        x='gene1',
+        y='nt_count'
+    )
+    p = p.properties(
+        width=alt.Step(100)  # controls width of bar.
+    )
+    st.write(p)
+    st.caption("Bar chart showing number of nucleotide composition in a FASTA files.")
+  
+  ### Save dataframe locally
+  df.to_csv("data/gene_seq1.csv")
+
+
+
+
 with st.container():
   st.write("---")
   st.header("Get In Touch")
@@ -153,3 +270,5 @@ with st.container():
     st.markdown(contact_form, unsafe_allow_html=True)
   with right_column:
     st.empty()
+
+

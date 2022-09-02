@@ -3,6 +3,9 @@ h1 {
   margin: 35px 0 20px 0 !important;
 }
 
+img{
+  padding-right: 40px;
+}
 
 input[type=message], input[type=email], input[type=text], textarea {
   width: 100%;
@@ -32,3 +35,7 @@ button[type=submit]:hover{
 #MainMenu{visibility: hidden;}
 header {visibility: hidden;}
 footer {visibility: hidden;}
+
+body{
+  background-color: solid blac;
+}
