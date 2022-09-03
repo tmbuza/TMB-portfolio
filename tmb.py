@@ -52,7 +52,8 @@ with st.container():
   st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
   st.title("A Data Science, Bioinformatics and Statistics Enthusiast") 
 
-  st.header("Welcome to my Portfolio! ")
+  st.header("Welcome to my Portfolio!")
+  st.text(" ...work in progress...")
   st.markdown(
     """
     #### I started compiling my minimal `Portfolio` to remind myself of what I can do in science and technology. I can then dedicate more energy to developing practical user guides in areas of expertise to help anyone interested in what I do.
@@ -113,24 +114,21 @@ with st.container():
     st.header(":fireworks:Achievements")
     st.markdown(
       """
-      Developed (...and still building) resources for analyzing the 16S rRNA Gene amplicon and metagenomics Datasets.
-
-      )
-      ## Publications
+      ### 1. Publications
       - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis.
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
       - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
       
-      ## GitHub Repositories
+      ### 2. GitHub Repositories
 
-      ### Original iMAP
+      #### Original iMAP
       
       |Repo| Description| Repo Output|
       |-------------------------|---------------------------------------------------|-----------------|
       | iMAP | Integrated Mocrobiome Analysis pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
       ||||
      
-      ### Improved iMAP
+      #### Improved iMAP
       |Repo| Description| Repo Output|
       |-------------------------|---------------------------------------------------|-----------------|      
       | iMAP-PART1 | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
@@ -138,15 +136,21 @@ with st.container():
       | iMAP-PART3 | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
       | iMAP-PART4 | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
 
-      - Practical User Guides for improved `iMAP.`
-      The [original iMAP repo](https://tmbuza.github.io/iMAP/) 
-        - [Part 1](https://complexdatainsights.com/books/microbiome-analysis/getting-started): Getting started with microbiome data analysis.
-        - [Part 2](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis): Bioinformatics analysis of amplicon and metagenomics data.
-        - [Part 3](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing): Microbiome data tidying and transformation
-        - [Part 4](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis): Exploratory analysis and visualization.
+
+
+     ### 3. Web Applications 
+     ...In Progress...
+     
         """
         )
-      
+              # - Practical User Guides for improved `iMAP.`
+      # The [original iMAP repo](https://tmbuza.github.io/iMAP/)
+      #   - [Part 1](https://complexdatainsights.com/books/microbiome-analysis/getting-started): Getting started with microbiome data analysis.
+      #   - [Part 2](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis): Bioinformatics analysis of amplicon and metagenomics data.
+      #   - [Part 3](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing): Microbiome data tidying and transformation
+      #   - [Part 4](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis): Exploratory analysis and visualization.
+
+
 #######################################
 #######################################
 #######################################
