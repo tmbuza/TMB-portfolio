@@ -37,10 +37,10 @@ header {visibility: hidden;}
 footer {visibility: hidden;}
 
 body{
-  background-color: solid blac;
+  background-color: solid black;
 }
 
-h1{
+/*h1{
   font-size: 4em;
 }
 h2{
@@ -49,4 +49,4 @@ h2{
 
 .css-18e3th9 img {
   margin: 0;
-}
+} */
