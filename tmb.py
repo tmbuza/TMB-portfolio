@@ -53,9 +53,12 @@ with st.container():
   st.title("A Data Science, Bioinformatics and Statistics Enthusiast") 
 
   st.header("Welcome to my Portfolio! ")
-  st.subheader("I started to compile my minimal `Portfolio` to remind myself of what  I am capable of doing. I can dedicate more energy to developing practical user guides in areas of expertise and, in turn, help anyone interested in what I do. Feel free to explore my passion in this portfolio. `KARIBU`:tada:")
-  
-# ---- What I do----
+  st.markdown(
+    """
+    #### I started compiling my minimal `Portfolio` to remind myself of what I can do in science and technology. I can then dedicate more energy to developing practical user guides in areas of expertise to help anyone interested in what I do.
+    #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
+    """)
+
 
 with st.container():
   # Insert a divider
@@ -155,7 +158,7 @@ with st.container():
   with image_column:
    st.image(fig1)
    st.write("""
-   Inspired by Youtube video tutorials at the [`code club`](https://riffomonas.org/code_club/).
+   ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by prof Pat Schloss.
    """)
   with text_column:
     st.subheader("Climate Data")
