@@ -4,18 +4,18 @@
 #primaryColor = '#E694FF' #pinkish
 
 # Background color for the main content area
-# backgroundColor = '#001728' #dark bluish
-backgroundColor = '#2f5e22'
+#backgroundColor = '#001728' #dark bluish
+#backgroundColor = '#2f5e22'
 
 # Background color for sidebar and most interactive widgets
 #secondaryBackgroundColor = '#0083B8' #bluish-greenish
-secondaryBackgroundColor = '#AAAAAA' #bluish-greenish
+#secondaryBackgroundColor = '#AAAAAA' #bluish-greenish
 
 # Color used for almost all text
-textColor = '#FFFFFF'
+#textColor = '#FFFFFF'
 #textColor = '#000000'
 
 # Font family for all text in the app, except code blocks
 # Accepted values (serif | sans serif | monospace)
 # Default: "sans serif"
-font = "sans serif"
+#font = "sans serif"
