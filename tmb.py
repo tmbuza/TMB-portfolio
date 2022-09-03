@@ -1,19 +1,24 @@
+#######################################
+# ----Tools and Page setup----
+#######################################
 import json
 import requests
 import streamlit as st
-
+import pandas as pd
+import altair as alt
+from PIL import Image
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. Select an Object including the two :: eg :tada: or :trophy: 
-st.set_page_config(page_title="My Portifolio", page_icon=":trophy:", layout = "wide")
+st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
 
-# 
-# def load_lottieurl(url):
-#   r = requests.get(url)
-#   if r.status_code != 200:
-#     return None
-#   return r.json()
 
-# Use local css
+def load_lottieurl(url):
+  r = requests.get(url)
+  if r.status_code != 200:
+    return None
+  return r.json()
+
+# Use local CSS
 def local_css(file_name):
   with open(file_name) as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -21,36 +26,35 @@ def local_css(file_name):
 local_css("style/style.css")
 
 
-#----Load Assets----
+#######################################
+# ----Assetes----
+#######################################
 lottie_coding = "https://iconscout.com/lottie/data-analysis-4876889"
 lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
 lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
 from PIL import Image
+
+# For microbiome data analysis
+gif1 = open("imgvideo/abund_bar.gif")
+
+# For quantitative data analysis
 fig1 = Image.open("imgvideo/climate_nasa.png")
 vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
-# For NGS section
+
+# For the NGS section
 fig2 = Image.open("img/dna_nucleotides.jpeg")
 
-# ---- Header section----
+#######################################
+# ---- Header with salutation and introduction----
+#######################################
 with st.container():
-  st.subheader("Hi there, I am Teresia Mrema-Buza:wave:")
-  st.title("A Data Science Enthusiast, Consultant, and Mentor")
-  st.subheader("Welcome to my Portfolio! ")
-  
-  st.write(
-  """
-  I am passionate about developing resources for finding insights into complex data using the **State-of-the-Art** techniques, including:
-    
-  - **Bioinformatictics**
-  - **Statistics**
-  - **Machine learning**
-  """
-  )
-  
-  
-  st.info("Learn more [Here >](https://complexdatainsights.com)")
+  st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
+  st.title("A Data Science, Bioinformatics and Statistics Enthusiast") 
 
+  st.header("Welcome to my Portfolio! ")
+  st.subheader("I started to compile my minimal `Portfolio` to remind myself of what  I am capable of doing. I can dedicate more energy to developing practical user guides in areas of expertise and, in turn, help anyone interested in what I do. Feel free to explore my passion in this portfolio. `KARIBU`:tada:")
+  
 # ---- What I do----
 
 with st.container():
@@ -60,46 +64,89 @@ with st.container():
   # Insert two spaces
   st.write("##")
 
-  st.write(
+  st.success(
     """
+    I am passionate about developing resources for finding insights into complex data using **State-of-the-Art** techniques, including:
     
-  On my GitHub I am developing multiple practical user guides for a variety of analysis of different types od data. These guides are particularly intended for users who:
+  - **Bioinformatictics**
+  - **Statistics**
+  - **Machine learning**
+  
+  On my GitHub, I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who: 
     - are looking for user-friendly solutions in R or python to leverage their daily analytical tasks.
-    - are struggling to understand how to efficiently process raw data and transform it into actionable insights.
-    - are eager to learn more on how to go beyond the traditional data analysis by integrating multiple compartible tools to achieve a greter impact.
-    - are looking for better solutions to visusalize the data and create sheareable reports in HTML, PDF or Word format and dashboard using R-Markdown.
+    - are struggling to understand how to process raw data and transform it into actionable insights efficiently.
+    - are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+    - are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, or Word format and dashboard using R-Markdown.
   
-  > If this sound interestiong to you, consider subscribing and turning on the notifications.
-  
+  > If this sounds interesting:
+    - keep an eye on my [`Complex Data Insights`](https://complexdatainsights.com/) website, which is under active development. 
+    - you ou may consider subscribing when the website is fully operational to access valuable resources that could boost your analytics and machine learning skills.
     """
   )
   
-  
- # ----My Projects----
- 
-with st.container():
+import streamlit as st
+import base64
+
+#######################################
+# ----My Projects----
+#######################################
+with st.container():  
   st.write("---")
-  st.header("NGS Bioinformatics Analysis in R")
-  st.write("##")
-  video_column, text_column = st.columns((1, 2))
-  with video_column:
-    st.video('https://www.youtube.com/watch?v=VzPD009qTN4')
-    st.write("""
-Video: Courtesy of [Kurzgesagt.Org ](https://kurzgesagt.org/) and is displayed here for educational purposes only!.
-   """)
-  with text_column:
-    st.subheader("Microbiome Data")
-    st.write(
-      """
-      - [Part 1](https://complexdatainsights.com/books/microbiome-analysis/getting-started): Getting started withe microbiome data analysis.
-      - [Part 2](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis): Bioinformatics analysis of amplicon and metagenomics data.
-      - [Part 3](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing): Microbiome data tidying and transformation
-      - [Part 4](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis): Exploratory analysis and visualization.
-      """
-      )
+  st.title("Bioinformatics Projects")
+  st.write("---")
+
+  column1, column2 = st.columns((1, 2)) 
+  with column1:
+    st.header("Microbiome Projects")
+    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif")
+    st.caption("Example of Microbial abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
+    
+    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
+    st.caption("Minimal example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe)  based on the LDA scores")
+    st.markdown("""
+    """)
       
+  with column2:
+    st.header(":fireworks:Achievements")
+    st.markdown(
+      """
+      Developed (...and still building) resources for analyzing the 16S rRNA Gene amplicon and metagenomics Datasets.
 
+      )
+      ## Publications
+      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis.
+      - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
+      - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
+      
+      ## GitHub Repositories
 
+      ### Original iMAP
+      
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | iMAP | Integrated Mocrobiome Analysis pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
+      ||||
+     
+      ### Improved iMAP
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|      
+      | iMAP-PART1 | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
+      | iMAP-PART2 | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
+      | iMAP-PART3 | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
+      | iMAP-PART4 | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
+
+      - Practical User Guides for improved `iMAP.`
+      The [original iMAP repo](https://tmbuza.github.io/iMAP/) 
+        - [Part 1](https://complexdatainsights.com/books/microbiome-analysis/getting-started): Getting started with microbiome data analysis.
+        - [Part 2](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis): Bioinformatics analysis of amplicon and metagenomics data.
+        - [Part 3](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing): Microbiome data tidying and transformation
+        - [Part 4](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis): Exploratory analysis and visualization.
+        """
+        )
+      
+#######################################
+#######################################
+#######################################
 with st.container():
   st.write("---")
   st.header("Quantitative Data Analysis")
@@ -108,19 +155,18 @@ with st.container():
   with image_column:
    st.image(fig1)
    st.write("""
-   Inspired by Dr. Pat Scholl\'s tutorials at the [`code club`](https://riffomonas.org/code_club/). This image was generated using `R script`.
+   Inspired by Youtube video tutorials at the [`code club`](https://riffomonas.org/code_club/).
    """)
   with text_column:
     st.subheader("Climate Data")
     st.write(
       """
-      - Get the same experience. I will be happy to provide you with reproducible and easily customizable practical user guide. 
-      - If interested in outsoucing or consulting services I can help you get the results faster. 
-      - You will also have the option to request a source code associated with the soughted analysis. 
+      - Get the same experience. I will be happy to provide you with a reproducible and easily customizable practical user guide. 
+      - If you are interested in outsourcing or consulting services, I can help you get the results faster. 
+      - You will also have the option to request a source code associated with the sought analysis. 
       - Explore a variety of climate data visualization available [**here!**](https://complexdatainsights.com/books/climate-analysis/climate-viz.html#plotly-image)
       """
       )
-
 
 with st.container():
   video_column, text_column = st.columns((1, 2))
@@ -129,15 +175,12 @@ with st.container():
     st.video(vid1)
     st.write(
       """
-      This MP4 was generated using an `R script`.
+     I used a custom R script to generate the MP4.
       """)
 
-
-import pandas as pd
-import streamlit as st
-import altair as alt
-from PIL import Image
-
+#######################################
+#######################################
+#######################################
 with st.container():
   st.write("---")
   st.write("---")
@@ -152,7 +195,7 @@ with st.container():
     st.title("Count Nucleotides APP")
     st.markdown(
       """
-      This web app quickly computes the number of nucleotide present in a given FASTA sequence. 
+      This web app quickly computes the number of nucleotides present in a given FASTA sequence. 
       
       `Give it a try!`
       """
@@ -241,9 +284,9 @@ with st.container():
         width=alt.Step(100)  # controls width of bar.
     )
     st.write(p)
-    st.caption("Bar chart showing number of nucleotide composition in a FASTA files.")
+    st.caption("Bar chart showing the number of nucleotide composition in a FASTA file.")
   
-  ### Save dataframe locally
+  ### Save data frame locally
   df.to_csv("data/gene_seq1.csv")
 
 
@@ -256,7 +299,7 @@ with st.container():
   
   # Contact Documentation: https://formsubmit.co/ Change the email address
   contact_form = """
-  <form action="https://formsubmit.co/yndelly@gmail.com" method="POST">
+  <form action="HTTPS://formsubmit.co/yndelly@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email" required>
