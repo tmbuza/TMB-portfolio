@@ -5,7 +5,7 @@
 
 # Background color for the main content area
 # backgroundColor = '#001728' #dark bluish
-backgroundColor = '#dba904'
+backgroundColor = '#144500'
 
 # Background color for sidebar and most interactive widgets
 #secondaryBackgroundColor = '#0083B8' #bluish-greenish
