@@ -36,6 +36,7 @@ lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 from PIL import Image
 # For Professional Passion
 wcloud1 = Image.open("imgvideo/wordcloud.png")
+gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
 gif1 = open("imgvideo/abund_bar.gif")
@@ -52,47 +53,50 @@ fig2 = Image.open("img/dna_nucleotides.jpeg")
 # ---- Header with salutation and introduction----
 #######################################
 with st.container():
-  st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
-  st.title("A Data Science, Bioinformatics and Statistics Enthusiast") 
+  header1, header2 = st.columns((2, 1))
+  with header1:
+    st.text(" ...work in progress...")
+    st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
+    st.title("A Data Science, Bioinformatics and Computational Biology Enthusiast, Consultant and Mentor.") 
+    # Insert a divider
+    st.header("Welcome to my Portfolio!")
 
-  st.header("Welcome to my Portfolio!")
-  st.text(" ...work in progress...")
-  st.markdown(
+    st.markdown(
     """
     #### I started compiling my minimal `Portfolio` to remind myself of what I can do in science and technology. I can then dedicate more energy to developing practical user guides in areas of expertise to help anyone interested in what I do.
     #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
     """)
-
-
-with st.container():
-  # Insert a divider
-  st.write("---")
-
-  # Insert two spaces
+    st.write("---")
+  with header2:
+    st.markdown(
+    """
+    """)
+    
+with st.container():    
   st.write("##")
-  st.title("Professional Passion")
-  passion1, passion2 = st.columns((1, 2))
-  with passion1:
+  st.title("Professional Passion") 
+  header1, header2 = st.columns((2, 1))
+  with header1:
+    st.success(
+        """
+        I am passionate about developing resources for finding insights into complex data using **State-of-the-Art** techniques, including:
+        
+      - **Bioinformatictics**
+      - **Statistics**
+      - **Machine learning**
+      
+      On my GitHub, I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who: 
+        - are looking for user-friendly solutions in R or python to leverage their daily analytical tasks.
+        - are struggling to understand how to process raw data and transform it into actionable insights efficiently.
+        - are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+        - are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, or Word format and dashboard using R-Markdown.
+        """
+        )  
+
+  with header2:
     st.image(wcloud1)
 
-      
-  with passion2:
-    st.success(
-    """
-    I am passionate about developing resources for finding insights into complex data using **State-of-the-Art** techniques, including:
     
-  - **Bioinformatictics**
-  - **Statistics**
-  - **Machine learning**
-  
-  On my GitHub, I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who: 
-    - are looking for user-friendly solutions in R or python to leverage their daily analytical tasks.
-    - are struggling to understand how to process raw data and transform it into actionable insights efficiently.
-    - are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-    - are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, or Word format and dashboard using R-Markdown.
-    """
-    )  
-
 #######################################
 # ----My Projects----
 #######################################
@@ -164,7 +168,7 @@ with st.container():
   with image_column:
    st.image(fig1)
    st.write("""
-   ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by prof Pat Schloss.
+   ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s Lab at the University of Mic.
    """)
   with text_column:
     st.subheader("Climate Data")
