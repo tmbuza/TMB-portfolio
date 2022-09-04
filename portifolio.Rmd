@@ -10,7 +10,7 @@ B --> |On Python| C[Create a Python Code]
 end
 
 subgraph ORGANIZE THE CODE
-D1[Import Streamlit Library] --> E{Python File}
+D1[Import Streamlit Library] --> E{Python File <br>`app.py`}
 D2[Set Page Configuration] --> E
 D3[Add Emojis from www.webfx.com] -->  |From <br>cheat-sheet<br>eg. :trophy:|E
 D4[Add titles subtitle and description ] --> E
@@ -18,7 +18,9 @@ D5[Add links to any of your important website ] --> |Signup for <br>free animati
 D6[Insert Animation e.g. LottieFiles.com ] --> |Search <br>copy URL| E
 D7[ ] --> E
 
-end 
+end
+
+E --> |Generate the App| F[On CLI <br>run streamlit run ]
 
 ", height = 800, width = 1000)
 
