@@ -34,12 +34,15 @@ lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
 lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
 from PIL import Image
+# For Professional Passion
+wcloud1 = Image.open("imgvideo/wordcloud.png")
 
 # For microbiome data analysis
 gif1 = open("imgvideo/abund_bar.gif")
 
 # For quantitative data analysis
 fig1 = Image.open("imgvideo/climate_nasa.png")
+
 vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
 
 # For the NGS section
@@ -67,8 +70,14 @@ with st.container():
 
   # Insert two spaces
   st.write("##")
+  st.title("Professional Passion")
+  passion1, passion2 = st.columns((1, 2))
+  with passion1:
+    st.image(wcloud1)
 
-  st.success(
+      
+  with passion2:
+    st.success(
     """
     I am passionate about developing resources for finding insights into complex data using **State-of-the-Art** techniques, including:
     
@@ -81,15 +90,8 @@ with st.container():
     - are struggling to understand how to process raw data and transform it into actionable insights efficiently.
     - are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
     - are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, or Word format and dashboard using R-Markdown.
-  
-  > If this sounds interesting:
-    - keep an eye on my [`Complex Data Insights`](https://complexdatainsights.com/) website, which is under active development. 
-    - you ou may consider subscribing when the website is fully operational to access valuable resources that could boost your analytics and machine learning skills.
     """
-  )
-  
-import streamlit as st
-import base64
+    )  
 
 #######################################
 # ----My Projects----
@@ -162,7 +164,7 @@ with st.container():
   with image_column:
    st.image(fig1)
    st.write("""
-   ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by prof Pat Schloss.
+   ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s Lab at the University of Mic.
    """)
   with text_column:
     st.subheader("Climate Data")
