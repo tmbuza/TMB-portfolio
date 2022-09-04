@@ -55,7 +55,7 @@ fig2 = Image.open("img/dna_nucleotides.jpeg")
 with st.container():
   header1, header2 = st.columns((2, 1))
   with header1:
-    st.text(" ...work in progress...")
+    st.write(":warning:... this is work in progress, not complete or proofread yet. It is under active construction!...")
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
     st.title("A Data Science, Bioinformatics and Computational Biology Enthusiast, Consultant and Mentor.") 
     # Insert a divider
@@ -130,36 +130,29 @@ with st.container():
 
       #### Original iMAP
       
-      |Repo| Description| Repo Output|
+      |Repo| Description| Description|
       |-------------------------|---------------------------------------------------|-----------------|
       | iMAP | Integrated Mocrobiome Analysis pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
       ||||
-     
-      #### Improved iMAP
-      > Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. Using wrong approaches can cost a significant amount of dollars and lengthy process to achieve the desired results.
-      The Table below shows four iMAP practical user guides intended to provide analytical support to the microbiome research community. 
-      The entire guide is reproducible, allowing users to easily follow along. 
+      """)
       
-      |Repo| Description| Repo Output|
-      |-------------------------|---------------------------------------------------|-----------------|      
-      | iMAP-PART1 | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
-      | iMAP-PART2 | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
-      | iMAP-PART3 | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
-      | iMAP-PART4 | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
-
-
-
-     ### 3. Web Applications 
-     ...In Progress...
-     
-        """
-        )
-              # - Practical User Guides for improved `iMAP.`
-      # The [original iMAP repo](https://tmbuza.github.io/iMAP/)
-      #   - [Part 1](https://complexdatainsights.com/books/microbiome-analysis/getting-started): Getting started with microbiome data analysis.
-      #   - [Part 2](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis): Bioinformatics analysis of amplicon and metagenomics data.
-      #   - [Part 3](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing): Microbiome data tidying and transformation
-      #   - [Part 4](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis): Exploratory analysis and visualization.
+      
+    st.subheader("Improved iMAP")
+    st.success("Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. \
+    Using wrong approaches can cost a significant amount of dollars and lengthy process to achieve the desired results.\
+    The Table below shows four iMAP practical user guides intended to provide analytical support to the microbiome research community. \
+    The entire guide is reproducible, allowing users to easily follow along.")
+    
+    st.markdown(
+      """   
+    |Repo| Description| Repo Output|
+    |-------------------------|---------------------------------------------------|-----------------|      
+    | iMAP-PART1 | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
+    | iMAP-PART2 | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
+    | iMAP-PART3 | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
+    | iMAP-PART4 | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
+    """)
+    st.write("---")
 
 
 #######################################
