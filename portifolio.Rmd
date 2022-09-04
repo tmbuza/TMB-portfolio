@@ -4,7 +4,7 @@ library(DiagrammeR)
 library(DiagrammeRsvg)
 
 mermaid("graph LR
-subgraph PRTTFOLIO WEBSITE
+subgraph PORTFOLIO WEBSITE
 A[Streamlit Potifolio] -->|On CLI| B[Install Streamlit<br><b>pip install streamlit as st</b>]
 B --> |On Python| C[Create a Python Code]
 end
@@ -23,3 +23,6 @@ end
 ", height = 800, width = 1000)
 
 ```
+
+
+
