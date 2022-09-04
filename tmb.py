@@ -135,10 +135,11 @@ with st.container():
       | iMAP | Integrated Mocrobiome Analysis pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
       ||||
      
-      ## Improved iMAP
-      ### Quick Glimpse
-      > Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. Using wrong approaches can cost a significant amount of dollars and lengthy process to achieve the desired results. This is <b>PART 1</b> of the practical user guides intended to provide analytical support to the microbiome research community. The entire guide is reproducible, allowing users to easily follow along. If interested, user may use this model to publish their findings in a book format.
-
+      #### Improved iMAP
+      > Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. Using wrong approaches can cost a significant amount of dollars and lengthy process to achieve the desired results.
+      The Table below shows four iMAP practical user guides intended to provide analytical support to the microbiome research community. 
+      The entire guide is reproducible, allowing users to easily follow along. 
+      
       |Repo| Description| Repo Output|
       |-------------------------|---------------------------------------------------|-----------------|      
       | iMAP-PART1 | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
