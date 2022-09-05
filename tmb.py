@@ -108,7 +108,7 @@ with st.container():
   st.title("Practical User Guides in Pipeline")
   st.markdown(
     """
-    On my [GitHub](), I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who:
+    On my [GitHub](https://github.com/tmbuza/TMB-portfolio), I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who:
       
     - ...are looking for friendly solutions to leverage their daily analytical tasks.
     - ...are struggling to understand how to process raw data and transform it into actionable insights efficiently.
