@@ -63,9 +63,9 @@ with st.container():
 
     st.markdown(
     """
-    **I recently started compiling my minimal `PORTFOLIO` to remind myself of what I can do or share to support the fields of Science and Technology. With this reminder, I can dedicate more energy to developing practical user guides in my areas of expertise to help anyone interested in what I do.**
+    #### I recently started compiling my minimal `PORTFOLIO` to remind myself of what I can do or share to support the fields of Science and Technology. With this reminder, I can dedicate more energy to developing practical user guides in my areas of expertise to help anyone interested in what I do.
     
-    **Feel free to explore my passion in this portfolio. `KARIBU`:tada:**
+    #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
     """)
     st.write("---")
   with header2:
