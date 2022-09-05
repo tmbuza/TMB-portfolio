@@ -39,22 +39,6 @@ footer {visibility: hidden;}
 body{
   background-color: solid black;
 }
-
-/*h1{
-  font-size: 4em;
-}
-h2{
-  font-size: 3em;
-}
- */
- 
-.css-18e3th9 img {
-  margin: 0;
-  padding: 0;
-}
-.css-eczf16 e16nr0p31 {
-  color: solid white;
-}
-.css-ocqkz7 img{
-  margin-top: 0px;
+ol li{
+  color: #081800;
 }
