@@ -57,14 +57,15 @@ with st.container():
   with header1:
     st.write(":warning:... this is work in progress, not complete or proofread yet. It is under active construction!...")
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
-    st.title("A Data Science, Bioinformatics and Computational Biology Enthusiast, Consultant and Mentor.") 
+    st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
     # Insert a divider
     st.header("Welcome to my Portfolio!")
 
     st.markdown(
     """
-    #### I started compiling my minimal `Portfolio` to remind myself of what I can do in science and technology. I can then dedicate more energy to developing practical user guides in areas of expertise to help anyone interested in what I do.
-    #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
+    **I recently started compiling my minimal `PORTFOLIO` to remind myself of what I can do or share to support the fields of Science and Technology. With this reminder, I can dedicate more energy to developing practical user guides in my areas of expertise to help anyone interested in what I do.**
+    
+    **Feel free to explore my passion in this portfolio. `KARIBU`:tada:**
     """)
     st.write("---")
   with header2:
@@ -74,34 +75,56 @@ with st.container():
     
 with st.container():    
   st.write("##")
-  st.title("Professional Passion") 
-  header1, header2 = st.columns((2, 1))
+  # st.title("Professional Passion") 
+  header1, header2 = st.columns((1, 2))
   with header1:
-    st.success(
-        """
-        I am passionate about developing resources for finding insights into complex data using **State-of-the-Art** techniques, including:
-        
-      - **Bioinformatictics**
-      - **Statistics**
-      - **Machine learning**
-      
-      On my GitHub, I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who: 
-        - are looking for user-friendly solutions in R or python to leverage their daily analytical tasks.
-        - are struggling to understand how to process raw data and transform it into actionable insights efficiently.
-        - are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-        - are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, or Word format and dashboard using R-Markdown.
-        """
-        )  
-
+    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#081800; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using <u>State-of-the-Art</u> techniques, including:</h3>"
+    st.markdown(html_string1, unsafe_allow_html=True)
+    
+    html_string2 = "<ol> \
+    	<li>Bioinformatics Analysis</li> \
+    	<li>Quantitative Data Analysis</li> \
+    	<li>Qualitative Data Analysis</li> \
+    	<li>Data Tidying and Transformation</li> \
+    	<li>Data Visualization</li> \
+    	<li>Statistical Analysis</li> \
+    	<li>Feature Engineering</li> \
+    	<li>Model Selection and Training</li> \
+    	<li>Hyperparameter Tuning</li> \
+    	<li>Predictive Modeling</li> \
+    	<li>Deployment of Simple Models</li> \
+    	<li>AOB Related to Data Insights</li> \
+    </ol>"
+    st.markdown(html_string2, unsafe_allow_html=True)
+  
   with header2:
     st.image(wcloud1)
+    st.write("##")
+  st.write("---")
+    
+    
+with st.container():
+
+  st.title("Practical User Guides in Pipeline")
+  st.markdown(
+    """
+    On my [GitHub](), I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who:
+      
+    - ...are looking for friendly solutions to leverage their daily analytical tasks.
+    - ...are struggling to understand how to process raw data and transform it into actionable insights efficiently.
+    - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+    - ...are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, Word format, and dashboard using R-Markdown.
+    - ...are looking for ways of transforming static images into interactive ones.
+    """)
+
+  st.write("---")
+
 
     
 #######################################
 # ----My Projects----
 #######################################
 with st.container():  
-  st.write("---")
   st.title("Bioinformatics Projects")
   st.write("---")
 
@@ -120,29 +143,34 @@ with st.container():
     st.header(":fireworks:Achievements")
     st.markdown(
       """
-
       ### 1. Publications
       - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis.
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
       - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
-      
+      """)
+          
+    st.write("##")
+    st.markdown(
+      """
       ### 2. GitHub Repositories
-
-      #### Original iMAP
       
       |Repo| Description| Description|
       |-------------------------|---------------------------------------------------|-----------------|
-      | iMAP | Integrated Mocrobiome Analysis pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
+      | iMAP | Integrated Microbiome Analysis Pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
       ||||
+      
       """)
       
-      
-    st.subheader("Improved iMAP")
+    st.write("##")
+    st.markdown(
+      """
+      ### 3. Microbiome Analysis eBooks
+      """)
     st.success("Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. \
-    Using wrong approaches can cost a significant amount of dollars and lengthy process to achieve the desired results.\
-    The Table below shows four iMAP practical user guides intended to provide analytical support to the microbiome research community. \
-    The entire guide is reproducible, allowing users to easily follow along.")
-    
+    Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.\
+    The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community. \
+    Each guide is reproducible, allowing **R-users** to follow along easily.")
+
     st.markdown(
       """   
     |Repo| Description| Repo Output|
@@ -153,6 +181,8 @@ with st.container():
     | iMAP-PART4 | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
     """)
     st.write("---")
+
+
 
 
 #######################################
