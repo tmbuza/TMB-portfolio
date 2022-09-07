@@ -338,7 +338,6 @@ with st.container():
   # Contact Documentation: https://formsubmit.co/ Change the email address
   contact_form = """
   <form action="HTTPS://formsubmit.co/ndelly@gmail.com" method="POST">
-  # <form action="HTTPS://formsubmit.co/7cdcf796dc9b14d3ac7f61c897996979" method="POST">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email" required>
