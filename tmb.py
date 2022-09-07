@@ -35,8 +35,8 @@ lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
 from PIL import Image
 # For Professional Passion
-omics = Image.open("imgvideo/omics.png")
-wcloud1 = Image.open("imgvideo/wordcloud.png")
+omics_ml = Image.open("imgvideo/omics_ml.png")
+# wcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
@@ -108,7 +108,7 @@ with st.container():
       ### Machine Learning & Microbiome
       are fields getting lots of attention recently. PubMed is the Proof!
       """)
-    st.image(omics)
+    st.image(omics_ml)
     st.write("##")
   st.write("---")
     
@@ -154,7 +154,8 @@ with st.container():
     st.markdown(
       """
       ### 1. Publications
-      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
+      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. 
+        - See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
       - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
       """)
