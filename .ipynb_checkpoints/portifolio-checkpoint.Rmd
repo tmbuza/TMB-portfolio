@@ -1,0 +1,28 @@
+# Streamlit Portifolio
+```{r}
+library(DiagrammeR)
+library(DiagrammeRsvg)
+
+mermaid("graph LR
+subgraph PORTFOLIO WEBSITE
+A[Streamlit Potifolio] -->|On CLI| B[Install Streamlit<br><b>pip install streamlit as st</b>]
+B --> |On Python| C[Create a Python Code]
+end
+
+subgraph ORGANIZE THE CODE
+D1[Import Streamlit Library] --> E{Python File}
+D2[Set Page Configuration] --> E
+D3[Add Emojis from www.webfx.com] -->  |From <br>cheat-sheet<br>eg. :trophy:|E
+D4[Add titles subtitle and description ] --> E
+D5[Add links to any of your important website ] --> |Signup for <br>free animation| E
+D6[Insert Animation e.g. LottieFiles.com ] --> |Search <br>copy URL| E
+D7[ ] --> E
+
+end 
+
+", height = 800, width = 1000)
+
+```
+
+
+
