@@ -27,7 +27,7 @@ local_css("style/style.css")
 
 
 #######################################
-# ----Assetes----
+# ----Assets----
 #######################################
 lottie_coding = "https://iconscout.com/lottie/data-analysis-4876889"
 lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
@@ -35,6 +35,7 @@ lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
 from PIL import Image
 # For Professional Passion
+omics = Image.open("imgvideo/omics.png")
 wcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 
@@ -47,7 +48,7 @@ fig1 = Image.open("imgvideo/climate_nasa.png")
 vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
 
 # For the NGS section
-fig2 = Image.open("img/dna_nucleotides.jpeg")
+fig2 = Image.open("imgvideo/dna_composition.png")
 
 #######################################
 # ---- Header with salutation and introduction----
@@ -55,7 +56,7 @@ fig2 = Image.open("img/dna_nucleotides.jpeg")
 with st.container():
   header1, header2 = st.columns((2, 1))
   with header1:
-    st.write(":warning:... this is work in progress, not complete or proofread yet. It is under active construction!...")
+    st.warning(":warning:... this is work in progress, not complete or proofread yet.")
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
     st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
     # Insert a divider
@@ -78,13 +79,15 @@ with st.container():
   # st.title("Professional Passion") 
   header1, header2 = st.columns((1, 2))
   with header1:
-    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#007755; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using <b>State-of-the-Art</b> techniques related to:</h3>"
+    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#007755; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
     
     html_string2 = "<ol> \
-    	<li>Bioinformatics Analysis</li> \
-    	<li>Quantitative Data Analysis</li> \
-    	<li>Qualitative Data Analysis</li> \
+    	<li><h4>Microbiome Data Analysis</h4></li> \
+    	<li><h4>Machine Learning</h4></li> \
+    	<li><h4>Multi-Omics Bioinformatics</h4></li> \
+    	<li><h4>Quantitative Data Analysis</h4></li> \
+    	<li><h4>Qualitative Data Analysis</h4></li> \
     	<li>Data Tidying and Transformation</li> \
     	<li>Data Visualization</li> \
     	<li>Statistical Analysis</li> \
@@ -98,7 +101,14 @@ with st.container():
     st.markdown(html_string2, unsafe_allow_html=True)
   
   with header2:
-    st.image(wcloud1)
+    st.write("##")
+    st.success(
+      """
+      ## Did you know?
+      ### Machine Learning & Microbiome
+      are fields getting lots of attention recently. PubMed is the Proof!
+      """)
+    st.image(omics)
     st.write("##")
   st.write("---")
     
@@ -108,10 +118,10 @@ with st.container():
   st.title("Practical User Guides in Pipeline")
   st.markdown(
     """
-    On my [GitHub](https://github.com/tmbuza/TMB-portfolio), I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who:
+    On my [GitHub](https://github.com/tmbuza?tab=repositories), I am developing multiple practical user guides for various analyses. These guides intend to help users who:
       
     - ...are looking for friendly solutions to leverage their daily analytical tasks.
-    - ...are struggling to understand how to process raw data and transform it into actionable insights efficiently.
+    - ...are struggling to understand how to efficiently process raw data and transform it into actionable insights.
     - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
     - ...are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, Word format, and dashboard using R-Markdown.
     - ...are looking for ways of transforming static images into interactive ones.
@@ -144,7 +154,7 @@ with st.container():
     st.markdown(
       """
       ### 1. Publications
-      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis.
+      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
       - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
       """)
@@ -230,13 +240,13 @@ with st.container():
   image_column, text_column = st.columns((1, 2))
   with image_column:
    st.image(fig2)
-   st.caption("Image Source: https://www.biologydiscussion.com/")
+   st.caption("A DNA sequence with colors representing different nucleotide; A, T, C, G.")
 
   with text_column:
-    st.title("Count Nucleotides APP")
+    st.title("APP to Count Nucleotides")
     st.markdown(
       """
-      This web app quickly computes the number of nucleotides present in a given FASTA sequence. 
+      This web app quickly computes the number of nucleotides present in a given DNA sequence. 
       
       `Give it a try!`
       """
@@ -258,6 +268,9 @@ with st.container():
     ## Prints the input DNA sequence
     st.subheader('DNA Query')
     sequence
+
+
+
 
 with st.container():
   st.write("##")
@@ -308,7 +321,7 @@ with st.container():
         width=alt.Step(100)  # controls width of bar.
     )
     st.write(p)
-    st.caption("Bar chart showing the number of nucleotide composition in a FASTA file.")
+    st.caption("Bar chart showing the number of nucleotide composition in a given DNA sequence.")
   
   ### Save data frame locally
   df.to_csv("data/gene_seq1.csv")
