@@ -333,11 +333,11 @@ with st.container():
 with st.container():
   st.write("---")
   st.header("Get In Touch")
-  st.write("##")
+  st.write("Please fill out the form below and let me know if we need to collaborate or need a mentor in specific fields of my expertise.")
   
   # Contact Documentation: https://formsubmit.co/ Change the email address
   contact_form = """
-  <form action="HTTPS://formsubmit.co/ndelly@gmail.com" method="POST">
+  <form action="https://formsubmit.co/ndelly@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email" required>
@@ -346,13 +346,22 @@ with st.container():
   </form>
   """
   
+# Use local css file
+  def local_css(file_name):
+    with open(file_name) as f:
+      st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+      
+  local_css("style/style.css")
+  
+  
   left_column, right_column = st.columns(2)
   with left_column:
     st.markdown(contact_form, unsafe_allow_html=True)
   with right_column:
-    st.empty()
+    # st.empty()
+    st.image("https://complexdatainsights.com/wp-content/uploads/2020/09/contactNewk.png")
 
 
 ##################################
-st.balloons()
+# st.balloons()
 ##################################
