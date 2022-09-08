@@ -9,7 +9,7 @@ img{
 
 input[type=message], input[type=email], input[type=text], textarea {
   width: 100%;
-  padding: 12px;
+  padding: 0, 120px 0, 0;
   border: 1px solid ;
   border-radius: 4px;
   box-sizing: border-box;
@@ -35,6 +35,7 @@ button[type=submit]:hover{
 #MainMenu{visibility: hidden;}
 header {visibility: hidden;}
 footer {visibility: hidden;}
+
 
 body{
   background-color: solid black;
