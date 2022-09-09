@@ -79,7 +79,7 @@ with st.container():
   # st.title("Professional Passion") 
   header1, header2 = st.columns((1, 2))
   with header1:
-    html_string1 = "<div class='passion'><h1>Professional Passion</h1><h3 style='color:#111111; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3></div>"
+    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#007755; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
     
     html_string2 = "<ol> \
@@ -106,7 +106,7 @@ with st.container():
       """
       ## Did you know?
       ### Machine Learning & Microbiome
-      are fields getting lots of attention recently. PubMed is the Proof!
+      are fields getting lots of attention recently. PubMed metrics can prove this theory!
       """)
     st.image(omics_ml)
     st.write("##")
