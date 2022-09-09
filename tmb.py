@@ -76,10 +76,10 @@ with st.container():
     
 with st.container():    
   st.write("##")
-  # st.title("Professional Passion") 
+  st.title(":gift_heart:Professional Passion")
   header1, header2 = st.columns((1, 2))
   with header1:
-    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#007755; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
+    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
     
     html_string2 = "<ol> \
@@ -101,7 +101,6 @@ with st.container():
     st.markdown(html_string2, unsafe_allow_html=True)
   
   with header2:
-    st.write("##")
     st.success(
       """
       ## Did you know?
@@ -109,7 +108,6 @@ with st.container():
       ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
       """)
     st.image(omics_ml)
-    st.write("##")
   st.write("---")
     
     
@@ -135,29 +133,29 @@ with st.container():
 # ----My Projects----
 #######################################
 with st.container():  
-  st.title("Bioinformatics Projects")
+  st.title("Microbiome Bioinformatics Projects")
   st.write("---")
 
   column1, column2 = st.columns((1, 2)) 
   with column1:
-    st.header("Microbiome Projects")
+    st.header("Microbial Profiling")
     st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif")
-    st.caption("Example of Microbial abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
+    st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
     
+    st.header("Biomarker Discovery")    
     st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
-    st.caption("Minimal example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe)  based on the LDA scores")
+    st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
     st.markdown("""
     """)
-      
+
   with column2:
     st.header(":fireworks:Achievements")
     st.markdown(
       """
       ### 1. Publications
       - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. 
-        - See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326)
+        - See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326).
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
-      - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
       """)
           
     st.write("##")
@@ -167,20 +165,33 @@ with st.container():
       
       |Repo| Description| Description|
       |-------------------------|---------------------------------------------------|-----------------|
-      | iMAP | Integrated Microbiome Analysis Pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
-      ||||
+      | iMAP | Original Pipeline linked to [iMAP manuscript](https://rdcu.be/bIxrg) | [GitHub Page](https://tmbuza.github.io/iMAP/) |
+      > The original iMAP is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
       
+
+      ### :tada: Improved iMAP in Four-Tiers!
+      
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | [iMAP-PART1](https://github.com/tmbuza/iMAP-part1/) | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
+      | [iMAP-PART2](https://github.com/tmbuza/iMAP-part2/) | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
+      | [iMAP-PART3](https://github.com/tmbuza/iMAP-part3/) | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
+      | [iMAP-PART4](https://github.com/tmbuza/iMAP-part4/) | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
       """)
       
     st.write("##")
     st.markdown(
       """
-      ### 3. Microbiome Analysis eBooks
+      ### 3. End-to-End Microbiome Analysis eBooks
       """)
-    st.success("Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. \
-    Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.\
-    The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community. \
-    Each guide is reproducible, allowing **R-users** to follow along easily.")
+      
+    st.success(
+      """Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
+      Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.
+      The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community.
+      Each guide is reproducible, allowing **R-users** to follow along easily.
+      - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
+      """)
 
     st.markdown(
       """   
