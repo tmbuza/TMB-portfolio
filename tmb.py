@@ -106,7 +106,7 @@ with st.container():
       """
       ## Did you know?
       ### Machine Learning & Microbiome
-      are fields getting lots of attention recently. PubMed metrics can prove this theory!
+      ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
       """)
     st.image(omics_ml)
     st.write("##")
