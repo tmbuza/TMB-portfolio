@@ -26,6 +26,7 @@ button[type=submit]:hover{
   visibility: hidden;
 }
 
-ol li p{
-  color: #111111;
+ol li{
+  color: #222222;
+  font-weight: 500;
 }
