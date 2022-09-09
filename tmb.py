@@ -79,15 +79,15 @@ with st.container():
   # st.title("Professional Passion") 
   header1, header2 = st.columns((1, 2))
   with header1:
-    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#007755; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
+    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#111111; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
     
     html_string2 = "<ol> \
-    	<li><h4>Microbiome Data Analysis</h4></li> \
-    	<li><h4>Machine Learning</h4></li> \
-    	<li><h4>Multi-Omics Bioinformatics</h4></li> \
-    	<li><h4>Quantitative Data Analysis</h4></li> \
-    	<li><h4>Qualitative Data Analysis</h4></li> \
+    	<li>Microbiome Data Analysis</li> \
+    	<li>Machine Learning</li> \
+    	<li>Multi-Omics Bioinformatics</li> \
+    	<li>Quantitative Data Analysis</li> \
+    	<li>Qualitative Data Analysis</li> \
     	<li>Data Tidying and Transformation</li> \
     	<li>Data Visualization</li> \
     	<li>Statistical Analysis</li> \
