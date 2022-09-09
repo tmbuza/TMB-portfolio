@@ -115,7 +115,7 @@ with st.container():
     
 with st.container():
 
-  st.title("Practical User Guides Under Development")
+  st.title("Practical User\'s Guides Under Development")
   st.markdown(
     """
     On my [GitHub](https://github.com/tmbuza?tab=repositories), I am developing multiple practical user guides for various analyses. These guides intend to help users who:
