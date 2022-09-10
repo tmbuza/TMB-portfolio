@@ -4,38 +4,29 @@
 import json
 import requests
 import streamlit as st
+from streamlit_lottie import st_lottie
 import pandas as pd
 import altair as alt
 from PIL import Image
 
-# Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. Select an Object including the two :: eg :tada: or :trophy: 
+# Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
 st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
 
-
-def load_lottieurl(url):
-  r = requests.get(url)
-  if r.status_code != 200:
-    return None
-  return r.json()
-
-# Use local CSS
+# Using local CSS
 def local_css(file_name):
-  with open(file_name) as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
 
 
 #######################################
-# ----Assetes----
+# ----Assets----
 #######################################
-lottie_coding = "https://iconscout.com/lottie/data-analysis-4876889"
-lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
-lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
-from PIL import Image
 # For Professional Passion
-wcloud1 = Image.open("imgvideo/wordcloud.png")
+omics_ml = Image.open("imgvideo/omics_ml.png")
+# wcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
@@ -46,8 +37,9 @@ fig1 = Image.open("imgvideo/climate_nasa.png")
 
 vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
 
+
 # For the NGS section
-fig2 = Image.open("img/dna_nucleotides.jpeg")
+fig2 = Image.open("imgvideo/dna_composition.png")
 
 #######################################
 # ---- Header with salutation and introduction----
@@ -55,7 +47,7 @@ fig2 = Image.open("img/dna_nucleotides.jpeg")
 with st.container():
   header1, header2 = st.columns((2, 1))
   with header1:
-    st.write(":warning:... this is work in progress, not complete or proofread yet. It is under active construction!...")
+    st.warning(":warning:... this is work in progress, not complete or proofread yet.")
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
     st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
     # Insert a divider
@@ -75,14 +67,16 @@ with st.container():
     
 with st.container():    
   st.write("##")
-  # st.title("Professional Passion") 
+  st.title(":gift_heart:Professional Passion")
   header1, header2 = st.columns((1, 2))
   with header1:
-    html_string1 = "<h1>Professional Passion</h1><h3 style='color:#007755; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using <b>State-of-the-Art</b> techniques related to:</h3>"
+    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
     
     html_string2 = "<ol> \
-    	<li>Bioinformatics Analysis</li> \
+    	<li>Microbiome Data Analysis</li> \
+    	<li>Machine Learning</li> \
+    	<li>Multi-Omics Bioinformatics</li> \
     	<li>Quantitative Data Analysis</li> \
     	<li>Qualitative Data Analysis</li> \
     	<li>Data Tidying and Transformation</li> \
@@ -98,89 +92,114 @@ with st.container():
     st.markdown(html_string2, unsafe_allow_html=True)
   
   with header2:
-    st.image(wcloud1)
-    st.write("##")
-  st.write("---")
+    st.success(
+      """
+      ## Did you know?
+      ### Machine Learning & Microbiome
+      ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
+      """)
+    st.image(omics_ml)
     
     
+# ---- WHAT I DO ----
 with st.container():
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.header("What I Currently Do")
+        st.write("##")
+        st.write(
+            """
+            ### On my [GitHub account](https://github.com/tmbuza?tab=repositories):
+              - I am developing multiple practical user guides for various analyses.
+              - Most of these guides are under development in my private repositories and will be shared publicly once completed.
+              - The intended audience is users who:
+                  - ...are looking for friendly solutions to leverage their daily analytical tasks.
+                  - ...are struggling to understand how to efficiently process raw data and transform it into actionable insights.
+                  - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+                  - ...are looking for better solutions to visualize the data and create shareable reports and dashboards.
+                  - ...are looking for ways of transforming static images into interactive ones.
+                  - ...are interested in developing and deploying simple data exploratory apps.
+                  - ...are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
+           """)
+        st.info(
+            """
+            If what I do sounds interesting to you, [get in touch](https://complexdatainsights.com/#contactus). Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
+            """)
 
-  st.title("Practical User Guides in Pipeline")
-  st.markdown(
-    """
-    On my [GitHub](https://github.com/tmbuza/TMB-portfolio), I am developing multiple practical user guides for a variety of analyses of different types of data. These guides intend to help users who:
-      
-    - ...are looking for friendly solutions to leverage their daily analytical tasks.
-    - ...are struggling to understand how to process raw data and transform it into actionable insights efficiently.
-    - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-    - ...are looking for better solutions to visualize the data and create shareable reports in HTML, PDF, Word format, and dashboard using R-Markdown.
-    - ...are looking for ways of transforming static images into interactive ones.
-    """)
-
-  st.write("---")
-
-
+    with right_column:
+        st.header("")
+        st.write("##")
+        st.image(fig1)
     
 #######################################
 # ----My Projects----
 #######################################
 with st.container():  
-  st.title("Bioinformatics Projects")
+  st.title("Microbiome Bioinformatics Projects")
   st.write("---")
 
-  column1, column2 = st.columns((1, 2)) 
+  column1, separator, column2 = st.columns((1, 0.5,  2)) 
   with column1:
-    st.header("Microbiome Projects")
+    st.header("Microbial Profiling")
     st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif")
-    st.caption("Example of Microbial abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
+    st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
     
+    st.header("Biomarker Discovery")    
     st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
-    st.caption("Minimal example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe)  based on the LDA scores")
+    st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
     st.markdown("""
     """)
-      
+    
+  with separator:
+    st.write("")
+    
   with column2:
     st.header(":fireworks:Achievements")
-    st.markdown(
-      """
+    st.success(
+    """
       ### 1. Publications
-      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis.
+      - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. 
+        - See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326).
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
-      - [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/): Systematic Microbiome Data Analysis (SMDA)...In progress.
-      """)
-          
-    st.write("##")
-    st.markdown(
-      """
+
+
+      
       ### 2. GitHub Repositories
       
       |Repo| Description| Description|
       |-------------------------|---------------------------------------------------|-----------------|
-      | iMAP | Integrated Microbiome Analysis Pipeline | [GitHub Page](https://tmbuza.github.io/iMAP/) |
-      ||||
-      
-      """)
-      
-    st.write("##")
-    st.markdown(
-      """
-      ### 3. Microbiome Analysis eBooks
-      """)
-    st.success("Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process. \
-    Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.\
-    The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community. \
-    Each guide is reproducible, allowing **R-users** to follow along easily.")
+      | iMAP | Original Pipeline linked to [iMAP manuscript](https://rdcu.be/bIxrg) | [GitHub Page](https://tmbuza.github.io/iMAP/) |
+      > The original iMAP is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
+ 
 
-    st.markdown(
-      """   
-    |Repo| Description| Repo Output|
-    |-------------------------|---------------------------------------------------|-----------------|      
-    | iMAP-PART1 | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
-    | iMAP-PART2 | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
-    | iMAP-PART3 | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
-    | iMAP-PART4 | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
-    """)
-    st.write("---")
+     
+      ### :tada: Improved iMAP in Four-Tiers!
+           
+
+      > Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
+      Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.
+      The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community.
+      Each guide is reproducible, allowing **R-users** to follow along easily.
+
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | [iMAP-PART1](https://github.com/tmbuza/iMAP-part1/) | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
+      | [iMAP-PART2](https://github.com/tmbuza/iMAP-part2/) | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
+      | [iMAP-PART3](https://github.com/tmbuza/iMAP-part3/) | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
+      | [iMAP-PART4](https://github.com/tmbuza/iMAP-part4/) | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
+
+
+
+      ### 3. End-to-End Microbiome Analysis eBooks
+
+    
+      |eBook| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | SMDA | Systematic Microbiome Data Analysis (SMDA)...In progress.| [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/) |
+      """)
+    
+st.write("---")
 
 
 
@@ -190,101 +209,94 @@ with st.container():
 #######################################
 with st.container():
   st.write("---")
-  st.header("Quantitative Data Analysis")
+  st.header("Quantitative Data Analysis Projects")
   st.write("##")
-  image_column, text_column = st.columns((1, 2))
-  with image_column:
-   st.image(fig1)
-   st.write("""
-   ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s Lab at the University of Mic.
-   """)
-  with text_column:
-    st.subheader("Climate Data")
-    st.write(
-      """
-      - Get the same experience. I will be happy to provide you with a reproducible and easily customizable practical user guide. 
-      - If you are interested in outsourcing or consulting services, I can help you get the results faster. 
-      - You will also have the option to request a source code associated with the sought analysis. 
-      - Explore a variety of climate data visualization available [**here!**](https://complexdatainsights.com/books/climate-analysis/climate-viz.html#plotly-image)
-      """
-      )
-
-with st.container():
-  video_column, text_column = st.columns((1, 2))
+  video_column, separator, text_column = st.columns((1, 0.5, 2))
   with video_column:
-    st.info("Click the image below to see how \nthe static image was generated stepwise from 1880 to 2022!")
+    st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
     st.video(vid1)
     st.write(
       """
-     I used a custom R script to generate the MP4.
+      I used a custom R script to generate the MP4.
       """)
+    st.write(
+      """
+      ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s.
+      """)
+    
+  with separator:
+    st.write("")
+    
+  with text_column:
+    st.subheader("Reproducible Research")
+    st.write(
+      """
+      **The climate data can be replaced with any quantitative or time series data to reproduce similar image.**
+      
+      - Get the same experience. I will be happy to provide you with a reproducible and easily customizable practical user guide. 
+      - If you are interested in outsourcing or consulting services, I can help you get the results faster. 
+      - You will also have the option to request a source code associated with the sought analysis. 
+      """
+      )
+      # - Explore a variety of climate data visualization available [**here!**](https://complexdatainsights.com/books/climate-analysis/climate-viz.html#plotly-image)
+
+
+# with st.container():
+#   video_column, text_column = st.columns((1, 2))
+#   with video_column:
+#     st.info("Click the image below to see how \nthe static image was generated stepwise from 1880 to 2022!")
+#     st.video(vid1)
+#     st.write(
+#       """
+#      I used a custom R script to generate the MP4.
+#       """)
 
 #######################################
 #######################################
 #######################################
 with st.container():
   st.write("---")
-  st.write("---")
-  st.header("NGS: Next Generation Sequence Analysis")
+  st.title("Next Generation Sequence Exploration Projects")
   st.write("##")
-  image_column, text_column = st.columns((1, 2))
+  image_column, separator, output_column = st.columns((1, 0.5, 2))
   with image_column:
-   st.image(fig2)
-   st.caption("Image Source: https://www.biologydiscussion.com/")
-
-  with text_column:
-    st.title("Count Nucleotides APP")
+    st.image(fig2)
+    st.caption("Example of a DNA sequence with colors representing different nucleotide; A, T, C, G. How many each of these nucleotides are in a FASTA sequence?")
+    
+    # with query_column:
+    st.header("APP to Count Nucleotides")
     st.markdown(
-      """
-      This web app quickly computes the number of nucleotides present in a given FASTA sequence. 
-      
-      `Give it a try!`
-      """
+    """
+    This web app quickly computes the number of nucleotides present in a FASTA sequence.
+    `Give it a try!`
+    """
     )
-    st.write("##")
+    
     st.subheader('Enter query sequence in the box below')
-    sequence_input = ">LC557153.1 Erwinia amylovora Eaap3-1 gene for 16S rRNA, partial sequence\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGG \
-  GTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACG \
-  GTAGCTAATACCGCATAACGTCTACGGACCAAAGTGGGGGACCTTCGGGCCTCACACCATCGGATGTGCC \
-  CAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT \
-  GACCAGCCACACTGGAACTGAGACACGGTCCAGACTCCTACGGGAGGCAGCAGTGGGGAATATTGCACAA \
-  TGGGCGCAAGCCTGATGCAGCCATGCCGCGTGTATGAAGAAGGCCTTCGGGTTGTAAAGTACTTTCAGCG \
-  GGGAGGAAGGGGGAGAGGTTAATAACCTCTTCCATTGACGTTACCCGCAGAAGAAGCACCGGCTAACTCC \
-  GTGCCAGCAGCCGCGGTAATACGGAGGGTGCAAGCGTTAATCGGAATTACTGGGCGTAAAGCGCACGCAG \
-  GCGGTCTGTCAAGTCGGATGTGAAATCCCCGGGCTTAACCTGGGAACTGCATTCGAAACTGGCAGGCTAG \
-  AGTCTCGTAGAGGGGGGTAGAATTCCAGGTGTAGCGGTGAAATGCGTAGAGATCTGGAGGAATACCGGTG \
-  GCGAAGGCGGCCCCCTGGACGAAGACTGACGCTCAGGTGCGAAAGCGTGGGGAGCAAACAGGATTAGATA \
-  CCCTGGTAGTCCACGCCGTAAACGATGTCGACTTGGAGGCTGTTCCCCTGAGGAGTGGCTTCCGGAGCTA \
-  ACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACTCAAATGAATTGACGGGGGCCCGC \
-  ACAAGCGGTGGAGCATGTGGTTTAATTCGATGCAACGCGAAGAACCTTACCTGGCCTTGACATCCACGGA \
-  ATTCTGCAGAGATGCGGAAGTGCCTTCGGGAACCGTGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTG \
-  TTGTGAAATGTTGGGTTAAGTCCCGCAACGAGCGCAACCCTTATCCTTTGTTGCCAGCGATTCGGTCGGG \
-  AACTCAAAGGAGACTGCCGGTGATAAACCGGAGGAAGGTGGGGATGACGTCAAGTCATCATGGCCCTTAC \
-  GGCCAGGGCTACACACGTGCTACAATGGCGCATACAAAGAGAAGCGACCTCGCGAGAGCAAGCGGACCTC \
-  ATAAAGTGCGTCGTAGTCCGGATCGGAGTCTGCAACTCGACTCCGTGAAGTCGGAATCGCTAGTAATCGT \
-  AGATCAGAATGCTACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGTCACACCATGGGGAGTGGG \
-  TTGCAAAAGAAGTAGGTAGCTTAACCTTCGGGAGGGCGCTTA"
-
-    #sequence = st.sidebar.text_area("Sequence input", sequence_input, height=250)
-    sequence = st.text_area("Fasta sequence with header in line 1", sequence_input, height=250)
+    sequence_input = ">Partial sequence\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
+    
+    sequence = st.text_area("Fasta sequence", sequence_input, height=250)
     sequence = sequence.splitlines()
     sequence = sequence[1:] # Skips the sequence name (first line)
     sequence = ''.join(sequence) # Concatenates list to string
     
-    
-    ## Prints the input DNA sequence
+    # with seq_column:
+    ## Print the input DNA sequence
     st.subheader('DNA Query')
     sequence
-
-with st.container():
-  st.write("##")
-  text_column, figure_column = st.columns((1, 2))
-  
-  with text_column:
-    st.header("Nucleotides Count")
     
-    # ### 1. Output
-    # st.subheader('1. Total nucleotide count')
+    
+
+
+# with st.container():
+#   st.write("##")
+#   text_column, figure_column = st.columns((1, 2))
+#   
+  with separator:
+    st.write("")
+  with output_column:
+    st.subheader("App Output")
+    
     def DNA_nucleotide_count(seq):
       d = dict([
                 ('A',seq.count('A')),
@@ -295,52 +307,56 @@ with st.container():
       return d
     
     X = DNA_nucleotide_count(sequence)
-    #X
     
-    ### 1. Observation
+    ### 1. Nucleotide Count
     st.subheader('1. Observation')
     st.write('There are  ' + str(X['A']) + ' adenine (A)')
     st.write('There are  ' + str(X['T']) + ' thymine (T)')
     st.write('There are  ' + str(X['G']) + ' guanine (G)')
     st.write('There are  ' + str(X['C']) + ' cytosine (C)')
-    
 
-    ### 2. DataFrame
+    ### 2. Count Matrix
     st.subheader('2. DataFrame')
     df = pd.DataFrame.from_dict(X, orient='index')
-    df = df.rename({0: 'nt_count'}, axis='columns')
+    df = df.rename({0: 'NT-Count'}, axis='columns')
     df.reset_index(inplace=True)
-    df = df.rename(columns = {'index':'gene1'})
+    df = df.rename(columns = {'index':'Sequence'})
     st.write(df)
     
-  with figure_column:
-    st.header("Nucleotides Distribution")
-    ### 3. Bar chart
+  # with figure_column:
+    # st.header("Nucleotides Distribution")
+    ### 3. Graphical Distribution
     st.subheader('3. Bar chart')
     p = alt.Chart(df).mark_bar().encode(
-        x='gene1',
-        y='nt_count'
+        x='Sequence',
+        y='NT-Count'
     )
     p = p.properties(
         width=alt.Step(100)  # controls width of bar.
     )
     st.write(p)
-    st.caption("Bar chart showing the number of nucleotide composition in a FASTA file.")
+    st.caption("Bar chart showing the number of nucleotide composition in a given DNA sequence.")
   
   ### Save data frame locally
   df.to_csv("data/gene_seq1.csv")
 
 
 
-
+st.write("##")
+st.write("##")
 with st.container():
   st.write("---")
   st.header("Get In Touch")
-  st.write("##")
+  st.write(
+    """
+    - Let's collaborate and work together in this world of Data Science and many more...
+    - Together we can transform complex data into **ACTIONABLE INSIGHTS**.
+    - Feel free to contact me by filling out the form below to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+    """)
   
   # Contact Documentation: https://formsubmit.co/ Change the email address
   contact_form = """
-  <form action="HTTPS://formsubmit.co/yndelly@gmail.com" method="POST">
+  <form action="https://formsubmit.co/ndelly@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email" required>
@@ -349,10 +365,22 @@ with st.container():
   </form>
   """
   
+# Use local css file
+  def local_css(file_name):
+    with open(file_name) as f:
+      st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+      
+  local_css("style/style.css")
+  
+  
   left_column, right_column = st.columns(2)
   with left_column:
     st.markdown(contact_form, unsafe_allow_html=True)
   with right_column:
-    st.empty()
+    # st.empty()
+    st.image("https://complexdatainsights.com/wp-content/uploads/2020/09/contactNewk.png")
 
 
+##################################
+# st.balloons()
+##################################

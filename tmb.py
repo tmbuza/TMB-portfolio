@@ -4,24 +4,18 @@
 import json
 import requests
 import streamlit as st
+from streamlit_lottie import st_lottie
 import pandas as pd
 import altair as alt
 from PIL import Image
 
-# Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. Select an Object including the two :: eg :tada: or :trophy: 
+# Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
 st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
 
-
-def load_lottieurl(url):
-  r = requests.get(url)
-  if r.status_code != 200:
-    return None
-  return r.json()
-
-# Use local CSS
+# Using local CSS
 def local_css(file_name):
-  with open(file_name) as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
 
@@ -29,11 +23,7 @@ local_css("style/style.css")
 #######################################
 # ----Assets----
 #######################################
-lottie_coding = "https://iconscout.com/lottie/data-analysis-4876889"
-lottie_coding = "https://iconscout.com/lottie/data-analysis-3647751"
-lottie_coding = "https://iconscout.com/lottie/data-analysis-4179002"
 
-from PIL import Image
 # For Professional Passion
 omics_ml = Image.open("imgvideo/omics_ml.png")
 # wcloud1 = Image.open("imgvideo/wordcloud.png")
@@ -46,6 +36,7 @@ gif1 = open("imgvideo/abund_bar.gif")
 fig1 = Image.open("imgvideo/climate_nasa.png")
 
 vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
+
 
 # For the NGS section
 fig2 = Image.open("imgvideo/dna_composition.png")
@@ -108,30 +99,38 @@ with st.container():
       ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
       """)
     st.image(omics_ml)
-  st.write("---")
     
     
+# ---- WHAT I DO ----
 with st.container():
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.header("What I Currently Do")
+        st.write("##")
+        st.write(
+            """
+            ### On my [GitHub account](https://github.com/tmbuza?tab=repositories):
+              - I am developing multiple practical user guides for various analyses.
+              - Most of these guides are under development in my private repositories and will be shared publicly once completed.
+              - The intended audience is users who:
+                  - ...are looking for friendly solutions to leverage their daily analytical tasks.
+                  - ...are struggling to understand how to efficiently process raw data and transform it into actionable insights.
+                  - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+                  - ...are looking for better solutions to visualize the data and create shareable reports and dashboards.
+                  - ...are looking for ways of transforming static images into interactive ones.
+                  - ...are interested in developing and deploying simple data exploratory apps.
+                  - ...are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
+           """)
+        st.info(
+            """
+            If what I do sounds interesting to you, [get in touch](https://complexdatainsights.com/#contactus). Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
+            """)
 
-  st.title("Practical User\'s Guides")
-  st.markdown(
-    """
-    ### On my [GitHub account](https://github.com/tmbuza?tab=repositories):
-      - I am developing multiple practical user guides for various analyses.
-      - Most of these guides are under development in my private repositories and will be shared publicly once completed.
-      - The intended audience is users who:
-          - ...are looking for friendly solutions to leverage their daily analytical tasks.
-          - ...are struggling to understand how to efficiently process raw data and transform it into actionable insights.
-          - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-          - ...are looking for better solutions to visualize the data and create shareable reports and dashboards.
-          - ...are looking for ways of transforming static images into interactive ones.
-          - ...are interested in developing and deploying simple data exploratory apps.
-          - ...are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
-    """)
-
-  st.write("---")
-
-
+    with right_column:
+        st.header("")
+        st.write("##")
+        st.image(fig1)
     
 #######################################
 # ----My Projects----
@@ -274,7 +273,7 @@ with st.container():
     )
     
     st.subheader('Enter query sequence in the box below')
-    sequence_input = ">LC557153.1 Erwinia amylovora Eaap3-1 gene for 16S rRNA, partial sequence\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
+    sequence_input = ">Partial sequence\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
     
     sequence = st.text_area("Fasta sequence", sequence_input, height=250)
     sequence = sequence.splitlines()
