@@ -45,7 +45,7 @@ fig2 = Image.open("imgvideo/dna_composition.png")
 # ---- Header with salutation and introduction----
 #######################################
 with st.container():
-  header1, header2 = st.columns((2, 1))
+  header1, separator, header2 = st.columns((2, 0.5, 2))
   with header1:
     st.warning(":warning:... this is work in progress, not complete or proofread yet.")
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
@@ -60,6 +60,10 @@ with st.container():
     #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
     """)
     st.write("---")
+    
+  with separator: 
+    st.write("")
+    
   with header2:
     st.markdown(
     """
@@ -68,7 +72,7 @@ with st.container():
 with st.container():    
   st.write("##")
   st.title(":gift_heart:Professional Passion")
-  header1, header2 = st.columns((1, 2))
+  header1, separator, header2 = st.columns((2, 0.5, 2))
   with header1:
     html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
@@ -90,21 +94,24 @@ with st.container():
     	<li>AOB Related to Data Insights</li> \
     </ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
-  
-  with header2:
-    st.success(
-      """
-      ## Did you know?
-      ### Machine Learning & Microbiome
-      ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
-      """)
-    st.image(omics_ml)
+      
+    with separator: 
+        st.write("")
+
+    with header2:
+        st.success(
+          """
+          ## Did you know?
+          ### Machine Learning & Microbiome
+          ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
+          """)
+        st.image(omics_ml)
     
     
 # ---- WHAT I DO ----
 with st.container():
     st.write("---")
-    left_column, right_column = st.columns(2)
+    left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
         st.header("What I Currently Do")
         st.write("##")
@@ -127,6 +134,10 @@ with st.container():
             If what I do sounds interesting to you, [get in touch](https://complexdatainsights.com/#contactus). Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
             """)
 
+    with separator:
+        st.write("")
+
+
     with right_column:
         st.header("")
         st.write("##")
@@ -139,7 +150,7 @@ with st.container():
   st.title("Microbiome Bioinformatics Projects")
   st.write("---")
 
-  column1, separator, column2 = st.columns((1, 0.5,  2)) 
+  column1, separator, column2 = st.columns((2, 0.5,  2)) 
   with column1:
     st.header("Microbial Profiling")
     st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif")
@@ -211,7 +222,7 @@ with st.container():
   st.write("---")
   st.header("Quantitative Data Analysis Projects")
   st.write("##")
-  video_column, separator, text_column = st.columns((1, 0.5, 2))
+  video_column, separator, text_column = st.columns((2, 0.5, 2))
   with video_column:
     st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
     st.video(vid1)
@@ -258,7 +269,7 @@ with st.container():
   st.write("---")
   st.title("Next Generation Sequence Exploration Projects")
   st.write("##")
-  image_column, separator, output_column = st.columns((1, 0.5, 2))
+  image_column, separator, output_column = st.columns((2, 0.5, 2))
   with image_column:
     st.image(fig2)
     st.caption("Example of a DNA sequence with colors representing different nucleotide; A, T, C, G. How many each of these nucleotides are in a FASTA sequence?")
