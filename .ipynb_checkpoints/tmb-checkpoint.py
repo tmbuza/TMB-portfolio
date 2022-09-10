@@ -26,7 +26,7 @@ local_css("style/style.css")
 
 # For Professional Passion
 omics_ml = Image.open("imgvideo/omics_ml.png")
-# wcloud1 = Image.open("imgvideo/wordcloud.png")
+wcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
