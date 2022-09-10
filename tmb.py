@@ -116,7 +116,7 @@ with st.container():
   st.title("Practical User\'s Guides")
   st.markdown(
     """
-    ### On my [GitHub](https://github.com/tmbuza?tab=repositories):
+    ### On my [GitHub account](https://github.com/tmbuza?tab=repositories):
       - I am developing multiple practical user guides for various analyses.
       - Most of these guides are under development in my private repositories and will be shared publicly once completed.
       - The intended audience is users who:
@@ -164,7 +164,7 @@ with st.container():
         - See the current [iMAP manuscript dimensions](https://badge.dimensions.ai/details/id/pub.1117740326).
       - [Paper 2](https://www.nature.com/articles/s41598-019-53969-7): Microbial Diversity in Bushmeat Samples Recovered from the Serengeti Ecosystem in Tanzania.
 
-      \n
+
       
       ### 2. GitHub Repositories
       
@@ -173,12 +173,12 @@ with st.container():
       | iMAP | Original Pipeline linked to [iMAP manuscript](https://rdcu.be/bIxrg) | [GitHub Page](https://tmbuza.github.io/iMAP/) |
       > The original iMAP is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
  
-      \n
+
      
       ### :tada: Improved iMAP in Four-Tiers!
            
 
-      Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
+      > Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
       Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.
       The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community.
       Each guide is reproducible, allowing **R-users** to follow along easily.
@@ -190,7 +190,7 @@ with st.container():
       | [iMAP-PART3](https://github.com/tmbuza/iMAP-part3/) | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
       | [iMAP-PART4](https://github.com/tmbuza/iMAP-part4/) | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
 
-      \n
+
 
       ### 3. End-to-End Microbiome Analysis eBooks
 
