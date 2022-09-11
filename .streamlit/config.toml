@@ -19,3 +19,7 @@
 # Accepted values (serif | sans serif | monospace)
 # Default: "sans serif"
 #font = "sans serif"
+
+base = "light"
+primaryColor = "#ff9d4b"
+secondaryBackgroundColor = "#e6ecf7"
