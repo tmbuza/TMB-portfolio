@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from PIL import Image
+import subprocess
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
 st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
@@ -71,7 +72,7 @@ with st.container():
 with st.container():    
   st.write("##")
   st.title(":gift_heart:Professional Passion")
-  header1, separator, header2 = st.columns((2, 0.5, 2))
+  header1, separator, header2 = st.columns((2, 0.3, 2))
   with header1:
     html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
@@ -80,6 +81,7 @@ with st.container():
     	<li>Microbiome Data Analysis</li> \
     	<li>Machine Learning</li> \
     	<li>Multi-Omics Bioinformatics</li> \
+    	<li>Text Mining & Summarization</li> \
     	<li>Quantitative Data Analysis</li> \
     	<li>Qualitative Data Analysis</li> \
     	<li>Data Tidying and Transformation</li> \
@@ -90,6 +92,7 @@ with st.container():
     	<li>Hyperparameter Tuning</li> \
     	<li>Predictive Modeling</li> \
     	<li>Deployment of Simple Models</li> \
+    	<li>Report Generation</li> \
     	<li>AOB Related to Data Insights</li> \
     </ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
@@ -104,15 +107,60 @@ with st.container():
           ### Machine Learning & Microbiome
           ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
           """)
-        st.image(omics_ml)
+        # st.image(omics_ml)
+        
+        ##################################
+        # Code and Image
+        ##################################
+        # with st.container():
+        process = subprocess.Popen(["Rscript", "search_pubmed.R"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = process.communicate()
+        image = Image.open("figures/pubmed_search_bar_plot.png")
+        st.image(image)
+        st.caption("This line chart was created using an `R script`, then imported into this web app generated using `streamlit` library and `Python`. Integration of different tools demonstrates robust solutions for gaining insights into complex data.")
+        # st.subheader("Creating a plot using `ggplot2`")
+        with st.expander("Click to see the R code"):
+          code ="""
+            library(tidyverse)
+            
+            # Importing preprocessed Pubmed searches
+            read_csv("data/search_counts.csv", show_col_types = TRUE) %>% 
+              select(year, ends_with("_res")) %>%  
+              filter(year >= 1991) %>% # Filter as you please!
+              mutate(
+                Microbiome = 100 * (microb_res / all_res),
+                Genomics = 100 * (genom_res / all_res),
+                Proteomics = 100 * (proteo_res / all_res),
+                Metabolomics = 100 * (metabol_res / all_res),
+                Lipidomics = 100 * (lipid_res / all_res),
+                Phenomics = 100 * (pheno_res / all_res),
+                Transcriptomics = 100 * (transcr_res / all_res),
+                MachineLearning = 100 * (ml_res / all_res),
+                Bioinformatics = 100 * (bioinfo_res / all_res),
+                Pharmacogenomics = 100 * (pharma_res / all_res),
+                AllArticles = all_res) %>% 
+              select(-AllArticles, -ends_with("_res")) %>% 
+              pivot_longer(-year) %>%
+              filter(value > 0) %>% 
+              ggplot(aes(x = year, y = value, group = name, color = name)) +
+              geom_line(size = 1.2) +
+              # Optional color scaleing
+              scale_color_manual(name = "FIELD",
+                                 values = c("red", "green4", "gray", "orange", "blue4", "green2", "magenta", "purple", "maroon", "blue1")) +
+              labs(x = "Year", y = "Percentage of articles in PubMed", color = "FIELD") +
+              theme_classic()
+            
+            ggsave("figures/pubmed_search_bar_plot.png", width = 8, height = 5)
+          """
+          st.code(code, language="R")
     
     
 # ---- WHAT I DO ----
 with st.container():
+    st.title("What I Currently Do")
     st.write("---")
     left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
-        st.header("What I Currently Do")
         st.write("##")
         st.write(
             """
@@ -390,6 +438,53 @@ with st.container():
     # st.empty()
     st.image("https://complexdatainsights.com/wp-content/uploads/2020/09/contactNewk.png")
 
+
+# ##################################
+# # Code and Image
+# ##################################
+# # with st.container():
+# process = subprocess.Popen(["Rscript", "search_pubmed.R"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+# result = process.communicate()
+# image = Image.open("figures/pubmed_search_bar_plot.png")
+# st.image(image)
+# st.caption("**This line chart is created with `R` and imported in a `streamlit web app`, which uses `Python` for the most part. Integration of different tools demonstrates robust solutions for gaining insights into complex data.**")
+# 
+# # st.subheader("Creating a plot using `ggplot2`")
+# with st.expander("Click to see the code"):
+#   code ="""
+#     library(tidyverse)
+#     
+#     # Pubmed searches
+#     # Tidying, filtering, transformation, and plotting
+#     p <- read_csv("data/search_counts.csv", show_col_types = TRUE) %>% 
+#       select(year, ends_with("_res")) %>%  
+#       filter(year >= 1991) %>% # Filter as you please!
+#       mutate(
+#         Microbiome = 100 * (microb_res / all_res),
+#         Genomics = 100 * (genom_res / all_res),
+#         Proteomics = 100 * (proteo_res / all_res),
+#         Metabolomics = 100 * (metabol_res / all_res),
+#         Lipidomics = 100 * (lipid_res / all_res),
+#         Phenomics = 100 * (pheno_res / all_res),
+#         Transcriptomics = 100 * (transcr_res / all_res),
+#         MachineLearning = 100 * (ml_res / all_res),
+#         Bioinformatics = 100 * (bioinfo_res / all_res),
+#         Pharmacogenomics = 100 * (pharma_res / all_res),
+#         AllArticles = all_res) %>% 
+#       select(-AllArticles, -ends_with("_res")) %>% 
+#       pivot_longer(-year) %>%
+#       filter(value > 0) %>% 
+#       ggplot(aes(x = year, y = value, group = name, color = name)) +
+#       geom_line(size = 1.2) +
+#       # Optional color scaleing
+#       scale_color_manual(name = "FIELD",
+#                          values = c("red", "green4", "gray", "orange", "blue4", "green2", "magenta", "purple", "maroon", "blue1")) +
+#       labs(x = "Year", y = "Percentage \nof articles in PubMed", color = "FIELD") +
+#       theme_classic()
+#     
+#     ggsave("figures/pubmed_search_bar_plot.png", width = 8, height = 8)
+#   """
+#   st.code(code, language="R")
 
 ##################################
 # st.balloons()
