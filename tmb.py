@@ -14,7 +14,8 @@ from defined import pub_search_code
 
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
-st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
+# st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
+st.set_page_config(page_title="TMB Portfolio", page_icon=":sunflower:", layout = "wide")
 
 # Using local files
 def local_css(file_name):
@@ -23,41 +24,38 @@ def local_css(file_name):
 
 local_css("style/style.css")
 
-# def defined_code(file_name):
-#     with open(file_name) as f:
-#         st.markdown(f"{f.read()}", unsafe_allow_html=True)
-# 
-# defined_code("defined.py")
-
-
 #######################################
 # ----Assets----
 #######################################
 
 # For Professional Passion
-pubmed_stats = Image.open("figures/pubmed_search_bar_plot.png")
+pubstats = Image.open("figures/pubmed_search_bar_plot.png")
 wcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
-gif1 = open("imgvideo/abund_bar.gif")
+abundgif1 = open("imgvideo/abund_bar.gif")
 
 # For quantitative data analysis
-fig1 = Image.open("imgvideo/climate_nasa.png")
+temp1 = Image.open("imgvideo/climate_nasa.png")
 
-vid1 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
-
+tempmp4 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
 
 # For the NGS section
-fig2 = Image.open("imgvideo/dna_composition.png")
+dna = Image.open("imgvideo/dna_composition.png")
 
 #######################################
 # ---- Header with salutation and introduction----
 #######################################
+with st.container(): 
+  st.markdown("<h1 style='text-align: center; color: grey;'>TMB Professional Portfolio</h1>", unsafe_allow_html=True)
+
+st.write("---")
+st.write("##")
+  
 with st.container():
-  header1, separator, header2 = st.columns((2, 0.5, 2))
+  header1, separator, header2 = st.columns((2, 0.2, 2))
   with header1:
-    st.warning(":warning:... this is work in progress, not complete or proofread yet.")
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
     st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
     # Insert a divider
@@ -69,72 +67,50 @@ with st.container():
     
     #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
     """)
-    st.write("---")
-    
-  with separator: 
-    st.write("")
-    
-  with header2:
-    st.markdown(
-    """
-    """)
-    
-with st.container():    
-  st.write("##")
-  st.title(":gift_heart:Professional Passion")
-  header1, separator, header2 = st.columns((2, 0.3, 2))
-  with header1:
-    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing resources for finding insights into complex data using modern techniques. Also, I am interested in providing mentorship to interested individuals, particularly in the fields related to: </h3>"
+
+    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing <u>Open-Source DIY Practical User Guides</u>to support diverse communities in finding insights into complex data using modern techniques. I am also interested in providing <u>Mentorship</u> to interested individuals. I focus more on specific fields than others. Of high priority at the moment are: </h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
     
+  with header2:
+    st.success(
+    """
+    ## Did you know?
+    ### Microbiome & Machine Learning
+    ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
+    """)
+    
+    st.image(pubstats)
+    # st.caption("This line chart was created using an `R script`, then imported into this web app generated using `streamlit` library and `Python`. Integration of different tools demonstrates robust solutions for gaining insights into complex data.")
+    # st.subheader("Creating a plot using `ggplot2`")
+    # with st.expander("Click to see or copy the R code"):
+    #   st.code(pub_search_code, language="R")
+    
+    st.subheader("I Currently Focus on:")
     html_string2 = "<ol> \
-    	<li>Microbiome Data Analysis</li> \
-    	<li>Machine Learning</li> \
-    	<li>Multi-Omics Bioinformatics</li> \
-    	<li>Text Mining & Summarization</li> \
-    	<li>Quantitative Data Analysis</li> \
-    	<li>Qualitative Data Analysis</li> \
-    	<li>Data Tidying and Transformation</li> \
-    	<li>Data Visualization</li> \
-    	<li>Statistical Analysis</li> \
-    	<li>Feature Engineering</li> \
-    	<li>Model Selection and Training</li> \
-    	<li>Hyperparameter Tuning</li> \
-    	<li>Predictive Modeling</li> \
-    	<li>Deployment of Simple Models</li> \
-    	<li>Report Generation</li> \
-    	<li>AOB Related to Data Insights</li> \
+		<li>Microbiome Data Science</li> \
+		<li>Machine Learning</li> \
+		<li>Exploratory Data Analysis</li> \
+		<li>Web Applications</li> \
+		<li>AOB for Data Insights</li> \
     </ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
-      
-    with separator: 
-        st.write("")
 
-    with header2:
-        st.success(
-          """
-          ## Did you know?
-          ### Machine Learning & Microbiome
-          ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
-          """)
-        image = Image.open("figures/pubmed_search_bar_plot.png")
-        st.image(image)
-        st.caption("This line chart was created using an `R script`, then imported into this web app generated using `streamlit` library and `Python`. Integration of different tools demonstrates robust solutions for gaining insights into complex data.")
-        # st.subheader("Creating a plot using `ggplot2`")
-        with st.expander("Click to see or copy the R code"):
-          st.code(pub_search_code, language="R")
-    
-    
+st.write("---")  
+
+
 # ---- WHAT I DO ----
 with st.container():
-    st.title("What I Currently Do")
-    st.write("---")
+    st.info(
+      """
+      # On my [GitHub account](https://github.com/tmbuza?tab=repositories):
+      """)
+      
     left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
         st.write("##")
         st.write(
             """
-            ### On my [GitHub account](https://github.com/tmbuza?tab=repositories):
+            ### Work in progress::
               - I am developing multiple practical user guides for various analyses.
               - Most of these guides are under development in my private repositories and will be shared publicly once completed.
               - The intended audience is users who:
@@ -151,22 +127,21 @@ with st.container():
             If what I do sounds interesting to you, [get in touch](https://complexdatainsights.com/#contactus). Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
             """)
 
-    with separator:
-        st.write("")
-
-
     with right_column:
         st.header("")
         st.write("##")
-        st.image(fig1)
+        st.image(wcloud1)
+        # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png")
     
 #######################################
 # ----My Projects----
 #######################################
-with st.container():  
-  st.title("Microbiome Bioinformatics Projects")
+with st.container():
+  st.success(
+  """
+  # :fireworks:Microbiome-Related Achievements
+  """)
   st.write("---")
-
   column1, separator, column2 = st.columns((2, 0.5,  2)) 
   with column1:
     st.header("Microbial Profiling")
@@ -183,7 +158,6 @@ with st.container():
     st.write("")
     
   with column2:
-    st.header(":fireworks:Achievements")
     st.success(
     """
       ### 1. Publications
@@ -242,7 +216,7 @@ with st.container():
   video_column, separator, text_column = st.columns((2, 0.5, 2))
   with video_column:
     st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
-    st.video(vid1)
+    st.video(tempmp4)
     st.write(
       """
       I used a custom R script to generate the MP4.
@@ -273,57 +247,53 @@ with st.container():
 #   video_column, text_column = st.columns((1, 2))
 #   with video_column:
 #     st.info("Click the image below to see how \nthe static image was generated stepwise from 1880 to 2022!")
-#     st.video(vid1)
+#     st.video(tempmp4)
 #     st.write(
 #       """
 #      I used a custom R script to generate the MP4.
 #       """)
 
-#######################################
-#######################################
-#######################################
-with st.container():
-  st.write("---")
-  st.title("Next Generation Sequence Exploration Projects")
+#---------------------------------------------
+with st.container(): 
   st.write("##")
-  image_column, separator, output_column = st.columns((2, 0.5, 2))
-  with image_column:
-    st.image(fig2)
+  st.markdown("<h1 style='text-align: left; color: skyblue;'>6. NGS Exploration</h1>", unsafe_allow_html=True)
+
+  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1.5, 0.2, 1.5, 0.2, 1, 0.2, 1))
+  with panel1:
+    st.info(
+    """
+    ### :question:Nucleotides in a DNA Sequence
+    """)
+    st.image(dna)
     st.caption("Example of a DNA sequence with colors representing different nucleotide; A, T, C, G. How many each of these nucleotides are in a FASTA sequence?")
     
-    # with query_column:
-    st.header("APP to Count Nucleotides")
+  with panel2:
+    st.info(
+      """
+      ### Nucleotide Count APP
+      """)
     st.markdown(
     """
     This web app quickly computes the number of nucleotides present in a FASTA sequence.
     `Give it a try!`
     """
     )
+
+    sequence_input = ">Sequence1\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
     
-    st.subheader('Enter query sequence in the box below')
-    sequence_input = ">Partial sequence\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
-    
-    sequence = st.text_area("Fasta sequence", sequence_input, height=250)
+    sequence = st.text_area("Enter Fasta Sequence", sequence_input, height=150)
     sequence = sequence.splitlines()
     sequence = sequence[1:] # Skips the sequence name (first line)
     sequence = ''.join(sequence) # Concatenates list to string
     
-    # with seq_column:
-    ## Print the input DNA sequence
-    st.subheader('DNA Query')
-    sequence
-    
+    st.text_area("Clean Query Sequence", sequence, height=150)
     
 
-
-# with st.container():
-#   st.write("##")
-#   text_column, figure_column = st.columns((1, 2))
-#   
-  with separator:
-    st.write("")
-  with output_column:
-    st.subheader("App Output")
+  with panel3:
+    st.success(
+      """
+      ### APP Output
+      """)
     
     def DNA_nucleotide_count(seq):
       d = dict([
@@ -336,37 +306,37 @@ with st.container():
     
     X = DNA_nucleotide_count(sequence)
     
-    ### 1. Nucleotide Count
-    st.subheader('1. Observation')
-    st.write('There are  ' + str(X['A']) + ' adenine (A)')
-    st.write('There are  ' + str(X['T']) + ' thymine (T)')
-    st.write('There are  ' + str(X['G']) + ' guanine (G)')
-    st.write('There are  ' + str(X['C']) + ' cytosine (C)')
+    # ### Nucleotide Count
+    # st.subheader('1. Observation')
+    # st.write('There are  ' + str(X['A']) + ' adenine (A)')
+    # st.write('There are  ' + str(X['T']) + ' thymine (T)')
+    # st.write('There are  ' + str(X['G']) + ' guanine (G)')
+    # st.write('There are  ' + str(X['C']) + ' cytosine (C)')
 
-    ### 2. Count Matrix
-    st.subheader('2. DataFrame')
     df = pd.DataFrame.from_dict(X, orient='index')
-    df = df.rename({0: 'NT-Count'}, axis='columns')
+    df = df.rename({0: 'Count'}, axis='columns')
     df.reset_index(inplace=True)
-    df = df.rename(columns = {'index':'Sequence'})
+    df = df.rename(columns = {'index':'Nucleotide'})
     st.write(df)
     
-  # with figure_column:
-    # st.header("Nucleotides Distribution")
-    ### 3. Graphical Distribution
-    st.subheader('3. Bar chart')
+  with panel4:
+    st.success(
+      """
+      ### NT Count Bar Chart
+      """)
+      
     p = alt.Chart(df).mark_bar().encode(
-        x='Sequence',
-        y='NT-Count'
+        x='Nucleotide',
+        y='Count'
     )
     p = p.properties(
-        width=alt.Step(100)  # controls width of bar.
+        width=alt.Step(75)  # controls width of bar.
     )
     st.write(p)
     st.caption("Bar chart showing the number of nucleotide composition in a given DNA sequence.")
   
-  ### Save data frame locally
-  df.to_csv("data/gene_seq1.csv")
+ 
+#---------------------------------------------
 
 
 
