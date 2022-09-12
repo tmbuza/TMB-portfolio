@@ -256,7 +256,7 @@ with st.container():
 #---------------------------------------------
 with st.container(): 
   st.write("##")
-  st.markdown("<h1 style='text-align: left; color: skyblue;'>6. NGS Exploration</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: left; color: #000000;'>NGS Exploration</h1>", unsafe_allow_html=True)
 
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1.5, 0.2, 1.5, 0.2, 1, 0.2, 1))
   with panel1:
