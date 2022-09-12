@@ -1,1 +1,2 @@
-streamlit=v1.12.2
+streamlit==v1.12.2
+Python==3.9.13
