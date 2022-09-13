@@ -72,7 +72,7 @@ with st.container():
     st.markdown(html_string1, unsafe_allow_html=True)
     
   with header2:
-    st.success(
+    st.info(
     """
     ## Did you know?
     ### Microbiome & Machine Learning
