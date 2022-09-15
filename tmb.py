@@ -58,8 +58,8 @@ with st.container():
   
   header1, separator, header2 = st.columns((2, 0.2, 2))
   with header1:
-    st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
-    st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
+    # st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
+    # st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
     # Insert a divider
     st.header("Welcome to my Portfolio!")
 
