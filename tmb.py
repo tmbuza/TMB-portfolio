@@ -227,36 +227,36 @@ st.write("---")
 with st.container():
   st.write("---")
   st.header("Quantitative Data Analysis Projects")
-  st.write("##")
-  video_column, separator, text_column = st.columns((2, 0.5, 2))
-  with video_column:
-    st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
-    st.video(tempmp4)
-    st.write(
-      """
-      I used a custom R script to generate the MP4.
-      """)
-    st.write(
-      """
-      ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s.
-      """)
-    
-  with separator:
-    st.write("")
-    
-  with text_column:
-    st.subheader("Reproducible Research")
-    st.write(
-      """
-      **The climate data can be replaced with any quantitative or time series data to reproduce similar image.**
-      
-      - Get the same experience. I will be happy to provide you with a reproducible and easily customizable practical user guide. 
-      - If you are interested in outsourcing or consulting services, I can help you get the results faster. 
-      - You will also have the option to request a source code associated with the sought analysis. 
-      """
-      )
-      # - Explore a variety of climate data visualization available [**here!**](https://complexdatainsights.com/books/climate-analysis/climate-viz.html#plotly-image)
-
+  st.write("...In Progress...")
+  # video_column, separator, text_column = st.columns((2, 0.5, 2))
+  # with video_column:
+  #   st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
+  #   st.video(tempmp4)
+  #   st.write(
+  #     """
+  #     I used a custom R script to generate the MP4.
+  #     """)
+  #   st.write(
+  #     """
+  #     ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s.
+  #     """)
+  #   
+  # with separator:
+  #   st.write("")
+  #   
+  # with text_column:
+  #   st.subheader("Reproducible Research")
+  #   st.write(
+  #     """
+  #     **The climate data can be replaced with any quantitative or time series data to reproduce similar image.**
+  #     
+  #     - Get the same experience. I will be happy to provide you with a reproducible and easily customizable practical user guide. 
+  #     - If you are interested in outsourcing or consulting services, I can help you get the results faster. 
+  #     - You will also have the option to request a source code associated with the sought analysis. 
+  #     """
+  #     )
+  #     # - Explore a variety of climate data visualization available [**here!**](https://complexdatainsights.com/books/climate-analysis/climate-viz.html#plotly-image)
+  # 
 
 # with st.container():
 #   video_column, text_column = st.columns((1, 2))
