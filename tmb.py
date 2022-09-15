@@ -73,13 +73,13 @@ with st.container():
     
     st.write(
       """
-      ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including: </h3>
+      ### <h3>I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including: </h3>
       """)
         
     html_string2 = "<ol> \
-				<li><h3>Microbiome</h3></li> \
-				<li><h3>Machine Learning</h3></li> \
-				<li><h3>Bioinformatics</h3></li> \
+				<li><h4>Microbiome</h4></li> \
+				<li><h4>Machine Learning</h4></li> \
+				<li><h4>Bioinformatics</h4></li> \
 				</ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
     
