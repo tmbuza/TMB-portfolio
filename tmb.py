@@ -76,11 +76,11 @@ with st.container():
       ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including: </h3>
       """)
         
-    html_string2 = "<ol><h3> \
-		<li>Machine Learning</li> \
-		<li>Microbiome</li> \
-		<li>Bioinformatics</li></h3> \
-    </ol>"
+    html_string2 = "<ol> \
+				<li><h3>Microbiome</h3></li> \
+				<li><h3>Machine Learning</h3></li> \
+				<li><h3>Bioinformatics</h3></li> \
+				</ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
     
   with header2:
