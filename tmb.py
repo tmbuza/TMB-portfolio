@@ -73,7 +73,7 @@ with st.container():
     
     st.write(
       """
-      ### <h3>I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including: </h3>
+      ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including:
       """)
         
     html_string2 = "<ol> \
