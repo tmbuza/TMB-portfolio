@@ -68,16 +68,18 @@ with st.container():
     #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
     """)
 
-    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing <u>Open-Source DIY Practical User Guides</u>to support diverse communities in finding insights into complex data using modern techniques. I am also interested in providing <u>Mentorship</u> to interested individuals. I focus more on specific fields than others. Of high priority at the moment are: </h3>"
+    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing <u>Open-Source DIY Practical User Guides</u>to support diverse communities in finding insights into complex data using modern techniques. I am also interested in providing <u>Mentorship</u> to interested individuals.</h3>"
     st.markdown(html_string1, unsafe_allow_html=True)
+    
+    st.write(
+      """
+      ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including: </h3>
+      """)
         
-    st.subheader("I Currently Focus on:")
-    html_string2 = "<ol> \
-		<li>Microbiome Data Science</li> \
+    html_string2 = "<ol><h3> \
 		<li>Machine Learning</li> \
-		<li>Exploratory Data Analysis</li> \
-		<li>Web Applications</li> \
-		<li>AOB for Data Insights</li> \
+		<li>Microbiome</li> \
+		<li>Bioinformatics</li></h3> \
     </ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
     
