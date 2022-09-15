@@ -137,9 +137,11 @@ with st.container():
            """)
         st.info(
             """
-            If what I do sounds interesting to you, [get in touch](https://complexdatainsights.com/#contactus). Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
+            If what I do sounds interesting to you, [get in touch](https://complexdatainsights.com/#contactus).
             """)
-
+           # Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
+    
+    
     with right_column:
         st.header("")
         st.write("##")
