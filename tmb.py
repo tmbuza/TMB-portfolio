@@ -102,7 +102,8 @@ with st.container():
   		<li>Quantitative Data Analysis</li> \
   		<li>Qualitative Data Analysis</li> \
    		<li>Static and Interactive Data Visualization</li> \
-   		<li>EDA Web Applications... new dedication:)</li> \
+   		<li>EDA Web Applications... my new dedication:tada:</li> \
+   		<li>AOB Related to Data Insights:</li> \
   		</ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
 
