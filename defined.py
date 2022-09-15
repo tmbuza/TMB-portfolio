@@ -35,3 +35,10 @@ pub_search_code ="""
   ggsave("figures/pubmed_search_bar_plot.png", width = 8, height = 5)
 """
 
+def add_margin(ax,x=0.05,y=0.05):
+      xlim = ax.get_xlim()
+      ylim = ax.get_ylim()
+      xmargin = (xlim[1]-xlim[0])*x
+      ymargin = (ylim[1]-ylim[0])*y
+      ax.set_xlim(xlim[0]-xmargin,xlim[1]+xmargin)
+      ax.set_ylim(ylim[0]-ymargin,ylim[1]+ymargin)
