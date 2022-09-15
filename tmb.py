@@ -49,20 +49,17 @@ dna = Image.open("imgvideo/dna_composition.png")
 #######################################
 with st.container(): 
   st.markdown("<h1 style='text-align: center; color: grey;'>TMB Professional Portfolio</h1>", unsafe_allow_html=True)
+  st.write("##")
+  st.write("##")
   st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
   st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
 st.write("---")
 st.write("##")
   
 with st.container():
-  
   header1, separator, header2 = st.columns((2, 0.2, 2))
   with header1:
-    # st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
-    # st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
-    # Insert a divider
     st.header("Welcome to my Portfolio!")
-
     st.markdown(
     """
     #### I recently started compiling my minimal `PORTFOLIO` to remind myself of what I can do or share to support the fields of Science and Technology. With this reminder, I can dedicate more energy to developing practical user guides in my areas of expertise to help anyone interested in what I do.
@@ -79,15 +76,15 @@ with st.container():
       #### Microbiome Data Science
       #### Microbiome Bioinformatics
       #### Machine Learning
+      #### Data Visualization
       """)
       
     
   with header2:
     st.info(
     """
-    ## Did you know?
-    ### Microbiome & Machine Learning
-    ...are fields getting lots of attention recently. PubMed metrics can prove this theory!
+    ## Did you know? Microbiome & Machine Learning
+    ...are fields getting lots of attention recently. PubMed metrics tells all!
     """)
     
     st.image(pubstats)
@@ -117,7 +114,7 @@ st.write("---")
 with st.container():
     st.info(
       """
-      # On my [GitHub account](https://github.com/tmbuza?tab=repositories):
+      # Work in progress on my [GitHub account](https://github.com/tmbuza?tab=repositories):
       """)
       
     left_column, separator, right_column = st.columns((2, 0.5, 2))
@@ -125,17 +122,18 @@ with st.container():
         st.write("##")
         st.write(
             """
-            ### Work in progress::
+            ### DIY Practical User\'s Guides
               - I am developing multiple practical user guides for various analyses.
               - Most of these guides are under development in my private repositories and will be shared publicly once completed.
               - The intended audience is users who:
-                  - ...are looking for friendly solutions to leverage their daily analytical tasks.
-                  - ...are struggling to understand how to efficiently process raw data and transform it into actionable insights.
-                  - ...are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-                  - ...are looking for better solutions to visualize the data and create shareable reports and dashboards.
-                  - ...are looking for ways of transforming static images into interactive ones.
-                  - ...are interested in developing and deploying simple data exploratory apps.
-                  - ...are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
+                  - ... student who need reproducible tool to analyse data for theses, dissertations or presentations.
+                  - ... academic members who need reproducible workflows for teaching and training purposes.
+                  - ... users who are looking for friendly solutions to leverage their daily analytical tasks.
+                  - ... users who are struggling to understand how to efficiently process raw data and transform it into actionable insights.
+                  - ... users who are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+                  - ... users who are looking for better solutions to visualize the data and create shareable reports and dashboards.
+                  - ... users who are interested in developing and deploying simple data exploratory apps.
+                  - ... users who are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
            """)
         st.info(
             """
