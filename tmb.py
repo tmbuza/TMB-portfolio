@@ -49,11 +49,13 @@ dna = Image.open("imgvideo/dna_composition.png")
 #######################################
 with st.container(): 
   st.markdown("<h1 style='text-align: center; color: grey;'>TMB Professional Portfolio</h1>", unsafe_allow_html=True)
-
+  st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
+  st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
 st.write("---")
 st.write("##")
   
 with st.container():
+  
   header1, separator, header2 = st.columns((2, 0.2, 2))
   with header1:
     st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
