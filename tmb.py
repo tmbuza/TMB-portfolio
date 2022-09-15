@@ -77,9 +77,6 @@ with st.container():
       #### Microbiome Data Science
       #### Microbiome Bioinformatics
       #### Machine Learning
-      #### Data Visualization
-      #### Quantitative Data Analysis
-      #### Qualitative Data Analysis
       """)
       
     
@@ -98,14 +95,13 @@ with st.container():
     #   st.code(pub_search_code, language="R")
     
     html_string2 = "\
-    <h3>Additionally: \
-      </h3>I also work with different data type to perform: \
+    <h3>Specifically, I work with different data type to perform: \
       <ol> \
-  		<li>Data Analysis</li> \
-  		<li>Data Visualization</li> \
+  		<li>Data Tidying, Transformation & Analysis</li> \
   		<li>Quantitative Data Analysis</li> \
   		<li>Qualitative Data Analysis</li> \
-  		<li>EDA Web Applications</li> \
+   		<li>Static and Interactive Data Visualization</li> \
+   		<li>EDA Web Applications</li> \
   		</ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
 
