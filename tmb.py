@@ -226,6 +226,8 @@ st.write("---")
 #######################################
 with st.container():
   st.write("---")
+  st.header("Machine Learning Projects")
+  st.header("Qualitative Data Analysis Projects")
   st.header("Quantitative Data Analysis Projects")
   st.write("...In Progress...")
   # video_column, separator, text_column = st.columns((2, 0.5, 2))
