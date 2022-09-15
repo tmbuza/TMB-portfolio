@@ -95,13 +95,14 @@ with st.container():
     #   st.code(pub_search_code, language="R")
     
     html_string2 = "\
-    <h3>Specifically, I work with different data type to perform: \
+    <h3>Routinely: \
+      </h4>I work with different data type to perform: \
       <ol> \
   		<li>Data Tidying, Transformation & Analysis</li> \
   		<li>Quantitative Data Analysis</li> \
   		<li>Qualitative Data Analysis</li> \
    		<li>Static and Interactive Data Visualization</li> \
-   		<li>EDA Web Applications</li> \
+   		<li>EDA Web Applications... new dedication:)</li> \
   		</ol>"
     st.markdown(html_string2, unsafe_allow_html=True)
 
