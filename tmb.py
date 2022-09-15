@@ -74,20 +74,14 @@ with st.container():
     st.info(
       """
       ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including:
-      #### Microbiome
+      #### Microbiome Data Science
+      #### Microbiome Bioinformatics
       #### Machine Learning
-      #### Bioinformatics
       #### Data Visualization
       #### Quantitative Data Analysis
       #### Qualitative Data Analysis
       """)
-        
-    html_string2 = "<ol> \
-				<li><h4>Microbiome</h4></li> \
-				<li><h4>Machine Learning</h4></li> \
-				<li><h4>Bioinformatics</h4></li> \
-				</ol>"
-    st.markdown(html_string2, unsafe_allow_html=True)
+      
     
   with header2:
     st.info(
@@ -102,6 +96,18 @@ with st.container():
     # st.subheader("Creating a plot using `ggplot2`")
     # with st.expander("Click to see or copy the R code"):
     #   st.code(pub_search_code, language="R")
+    
+    html_string2 = "\
+    <h3>Additionally: \
+      </h3>I also work with different data type to perform: \
+      <ol> \
+  		<li>Data Analysis</li> \
+  		<li>Data Visualization</li> \
+  		<li>Quantitative Data Analysis</li> \
+  		<li>Qualitative Data Analysis</li> \
+  		<li>EDA Web Applications</li> \
+  		</ol>"
+    st.markdown(html_string2, unsafe_allow_html=True)
 
 
 st.write("---")  
