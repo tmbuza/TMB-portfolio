@@ -72,7 +72,7 @@ with st.container():
     
     st.info(
       """
-      ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention including:
+      ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention, including:
       #### Microbiome Data Science
       #### Microbiome Bioinformatics
       #### Machine Learning
@@ -84,7 +84,7 @@ with st.container():
     st.info(
     """
     ## Did you know? Microbiome & Machine Learning
-    ...are fields getting lots of attention recently. PubMed metrics tells all!
+    ...are fields getting lots of attention recently. The publication trend in PubMed tells all!
     """)
     
     st.image(pubstats)
@@ -126,56 +126,55 @@ with st.container():
               - I am developing DIY practical user guides to support diverse data analytics communities.
               - Most of these guides are under development in my private repositories and will be shared publicly once completed.
               - The intended audience is users who:
-                  - ... student who need reproducible tool to analyse data for theses, dissertations or presentations.
+                  - ... students who need reproducible tools to analyze data for theses, dissertations, or presentations.
                   - ... academic members who need reproducible workflows for teaching and training purposes.
-                  - ... users who are looking for friendly solutions to leverage their daily analytical tasks.
-                  - ... users who are struggling to understand how to efficiently process raw data and transform it into actionable insights.
-                  - ... users who are eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-                  - ... users who are looking for better solutions to visualize the data and create shareable reports and dashboards.
-                  - ... users who are interested in developing and deploying simple data exploratory apps.
-                  - ... users who are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
+                  - ... users looking for friendly solutions to leverage their daily analytical tasks.
+                  - ... users who struggle to understand how to efficiently process raw data and transform it into actionable insights.
+                  - ... users eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+                  - ... users looking for better solutions for visualizing the data and creating shareable reports and dashboards.
+                  - ... users interested in developing and deploying simple data-related web apps.
+                  - ... users enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
            """)
            
     with right_column:
-        st.header("")
-        st.write("##")
-        st.image(wcloud1)
-        # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png")
+      st.write("##")
+      st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png", width=500)
+      # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
+      # st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
+        
 
-        st.info(
-                """
-                If what I do sounds interesting to you, we can collaborate at many levels. 
-                Feel free to contact me by filling out the contact form at the end of this 
-                page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
-                
-                Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
-                under construction) to benefit from the available DIY resources. 
-                Don\'t forget to turn on the notifications to receive updates.
-                """)
+    
+with st.container():
+  left_column, middle_column, right_column = st.columns((1, 2, 1))  
+  with middle_column:
+    st.subheader("Let's Collaborate!")
+    st.info(
+      """
+      We can collaborate at many levels if what I do interests you. 
+      Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+      
+      Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
+      under construction) to benefit from the available DIY resources. 
+      """)
+    st.write("##")
+    st.write("---")
+    
 #######################################
 # ----My Projects----
 #######################################
 with st.container():
   st.success(
   """
-  # :fireworks:Microbiome-Related Achievements
+  # :books:Microbiome Bioinformatics
   """)
   st.write("---")
-  column1, separator, column2 = st.columns((2, 0.5,  2)) 
+  column1, separator, column2 = st.columns((1.5, 0.5,  2.5)) 
   with column1:
     st.header("Microbial Profiling")
-    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif")
+    st.image(wcloud1)
+    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif", width=500)
     st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
-    
-    st.header("Biomarker Discovery")    
-    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
-    st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
-    st.markdown("""
-    """)
-    
-  with separator:
-    st.write("")
-    
+
   with column2:
     st.success(
     """
@@ -229,13 +228,56 @@ st.write("---")
 #######################################
 #######################################
 with st.container():
+  st.write("##")
+  st.header(":books:Machine Learning")
+  st.write("...In Progress...")
+  st.write(
+    """
+    |Repo| Description| Repo Output| Remarks|
+    |-------------------------|---------------------------------------------------|-----------------|-----------|
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+
+    """)
+
   st.write("---")
-  st.header("Machine Learning Projects")
+  
+with st.container():
+  st.write("##")
+  st.header(":books:Qualitative Data Analysis")
   st.write("...In Progress...")
-  st.header("Qualitative Data Analysis Projects")
-  st.write("...In Progress...")  
-  st.header("Quantitative Data Analysis Projects")
+  st.write(
+    """
+    |Repo| Description| Repo Output| Remarks|
+    |-------------------------|---------------------------------------------------|-----------------|-----------|
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    """)
+
+  st.write("---")
+  
+with st.container():
+  st.write("##")
+  st.header(":books:Quantitative Data Analysis")
   st.write("...In Progress...")
+  st.write(
+    """
+    |Repo| Description| Repo Output| Remarks|
+    |-------------------------|---------------------------------------------------|-----------------|-----------|
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
+    """)
+
+  st.write("---")
   # video_column, separator, text_column = st.columns((2, 0.5, 2))
   # with video_column:
   #   st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
@@ -277,9 +319,15 @@ with st.container():
 #       """)
 
 #---------------------------------------------
-with st.container(): 
+
+with st.container():
   st.write("##")
-  st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
+  st.header(":books:Simple Web Applications")
+  st.write(""" ### Example 1""")
+
+# with st.container(): 
+#   st.write("##")
+#   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
 
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1.5, 0.2, 1.5, 0.2, 1, 0.2, 1))
   with panel1:
@@ -371,7 +419,7 @@ with st.container():
   st.write(
     """
     - Let's collaborate and work together in telling stories using data...
-    - Together we can make impact when transforming complex data into **ACTIONABLE INSIGHTS**.
+    - Together, we can make an impact when transforming complex data into **ACTIONABLE INSIGHTS**.
     - Feel free to contact me by filling out the form below to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
     """)
   
@@ -385,8 +433,16 @@ with st.container():
     <button type="submit">Send</button>
   </form>
   """
+# # Additional to Advanced form
+#     <input type="hidden" name="_subject" value="New submission!">
+#     <input type="hidden" name="_cc" value="ndelly@gmail.com,tmbuza@complexdatainsights.com">
+#     <input type="text" name="_honey" style="display:none">
+#     <input type="hidden" name="_webhook" value="https://complexdatainsights.com/Hello Thre!">
+#     <button type="submit">Send</button>
   
-# Use local css file
+  
+  
+# Use local CSS file
   def local_css(file_name):
     with open(file_name) as f:
       st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
