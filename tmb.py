@@ -141,10 +141,7 @@ with st.container():
         st.write("##")
         st.image(wcloud1)
         # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png")
-    
-        st.success("""
-                  Colaboration
-                  """)
+
         st.info(
                 """
                 If what I do sounds interesting to you, we can collaborate at many levels. 
