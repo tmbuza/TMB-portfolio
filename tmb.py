@@ -122,8 +122,8 @@ with st.container():
         st.write("##")
         st.write(
             """
-            ### DIY Practical User\'s Guides
-              - I am developing multiple practical user guides for various analyses.
+            ### Practical User\'s Guides
+              - I am developing DIY practical user guides to support diverse data analytics communities.
               - Most of these guides are under development in my private repositories and will be shared publicly once completed.
               - The intended audience is users who:
                   - ... student who need reproducible tool to analyse data for theses, dissertations or presentations.
@@ -135,19 +135,26 @@ with st.container():
                   - ... users who are interested in developing and deploying simple data exploratory apps.
                   - ... users who are enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
            """)
-        st.info(
-            """
-            If what I do sounds interesting to you, we can collaborate at many levels. Please, [get in touch](https://complexdatainsights.com/#contactus).
-            
-            Also, consider subscribing to my [website](https://complexdatainsights.com) (currently under active development) to benefit from the available DIY resources. Don\'t forget to turn on the notifications to receive updates.
-            """)
-    
+           
     with right_column:
         st.header("")
         st.write("##")
         st.image(wcloud1)
         # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png")
     
+        st.succes("""
+        
+                  """)
+        st.info(
+                """
+                If what I do sounds interesting to you, we can collaborate at many levels. 
+                Feel free to contact me by filling out the contact form at the end of this 
+                page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+                
+                Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
+                under construction) to benefit from the available DIY resources. 
+                Don\'t forget to turn on the notifications to receive updates.
+                """)
 #######################################
 # ----My Projects----
 #######################################
@@ -275,7 +282,7 @@ with st.container():
 #---------------------------------------------
 with st.container(): 
   st.write("##")
-  st.markdown("<h1 style='text-align: left; color: #000000;'>NGS Exploration</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
 
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1.5, 0.2, 1.5, 0.2, 1, 0.2, 1))
   with panel1:
@@ -366,8 +373,8 @@ with st.container():
   st.header("Get In Touch")
   st.write(
     """
-    - Let's collaborate and work together in this world of Data Science and many more...
-    - Together we can transform complex data into **ACTIONABLE INSIGHTS**.
+    - Let's collaborate and work together in telling stories using data...
+    - Together we can make impact when transforming complex data into **ACTIONABLE INSIGHTS**.
     - Feel free to contact me by filling out the form below to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
     """)
   
