@@ -143,7 +143,7 @@ with st.container():
         # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png")
     
         st.succes("""
-        
+                  Colaboration
                   """)
         st.info(
                 """
