@@ -142,7 +142,7 @@ with st.container():
         st.image(wcloud1)
         # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png")
     
-        st.succes("""
+        st.success("""
                   Colaboration
                   """)
         st.info(
