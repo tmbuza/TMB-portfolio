@@ -64,7 +64,7 @@ st.write("---")
 st.write("##")
   
 with st.container():
-  header1, separator, header2 = st.columns((2, 0.2, 2))
+  header1, separator, header2 = st.columns((2, 0.2, 1.5))
   with header1:
     st.header("Welcome to my Portfolio!")
     st.markdown(
@@ -108,13 +108,13 @@ with st.container():
     ...are fields getting lots of attention recently. The publication trend in PubMed tells all!
     """)
     
-    st.image(pubstats, width=800)
+    st.image(pubstats, width=600)
     # st.caption("This line chart was created using an `R script`, then imported into this web app generated using `streamlit` library and `Python`. Integration of different tools demonstrates robust solutions for gaining insights into complex data.")
     # st.subheader("Creating a plot using `ggplot2`")
     # with st.expander("Click to see or copy the R code"):
     #   st.code(pub_search_code, language="R")
-      
-    st.image(wdcloud1, width=650)
+    st.write("##")
+    st.image(wdcloud1, width=550)
         
         
 st.write("---")  
