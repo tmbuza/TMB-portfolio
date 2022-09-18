@@ -36,7 +36,7 @@ pubstats = Image.open("figures/pubmed_search_bar_plot.png")
 
 # For Word cloud
 # conda install -c conda-forge wordcloud
-# wordcloud_cli --text wordcloud.txt --imagefile imgvideo/wordcloud.png
+# wordcloud_cli --text docs/wordcloud.txt --imagefile imgvideo/wordcloud.png
 # pdftotext mydocument.pdf - | wordcloud_cli --imagefile imgvideo/wordcloud.png
 # wordcloud depends on numpy and pillow
 wdcloud1 = Image.open("imgvideo/wordcloud.png")
@@ -126,17 +126,17 @@ st.write("---")
 
 # ---- WHAT I DO ----
 with st.container():
-    st.info(
+    st.write(
       """
-      # My Work in progress on my [GitHub account](https://github.com/tmbuza?tab=repositories):
+      # Resources Under Development
       """)
       
     left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
         st.write("##")
-        st.write(
+        st.info(
             """
-            ### Practical User\'s Guides
+            ### On my [GitHub account](https://github.com/tmbuza?tab=repositories)
               - I am developing DIY practical user guides to support diverse data analytics communities.
               - Most of these guides are under development in my private repositories and will be shared publicly once completed.
               - The intended audience is users who:
@@ -187,7 +187,7 @@ with st.container():
 with st.container():
   st.success(
     """
-    # My Projects & Achievements
+    # Achievements & Progress
     """)
 #######################################
 with st.container():
@@ -203,7 +203,7 @@ with st.container():
     for analyzing microbiome data. It comprises iMAP-Part 1, 2, 3, & 4 described in the next section")
 
   with column2:
-    st.success(
+    st.write(
     """
       ### 1. Publications
       - [Paper 1](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2965-4): iMAP: an integrated bioinformatics and visualization pipeline for microbiome data analysis. 
@@ -217,14 +217,14 @@ with st.container():
       |Repo| Description| Description|
       |-------------------------|---------------------------------------------------|-----------------|
       | [iMAP](https://github.com/tmbuza/iMAP/) | Original Pipeline linked to [iMAP manuscript](https://rdcu.be/bIxrg) | [GitHub Page](https://tmbuza.github.io/iMAP/) |
-      > The original iMAP is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
+      The original iMAP is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
  
 
      
       ### :tada: Improved iMAP in Four-Tiers!
            
 
-      > Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
+      Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
       Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.
       The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community.
       Each guide is reproducible, allowing **R-users** to follow along easily.
