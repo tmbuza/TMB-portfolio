@@ -1,3 +1,6 @@
+
+
+
 #######################################
 # ----Tools and Page setup----
 #######################################
@@ -30,11 +33,19 @@ local_css("style/style.css")
 
 # For Professional Passion
 pubstats = Image.open("figures/pubmed_search_bar_plot.png")
-wcloud1 = Image.open("imgvideo/wordcloud.png")
+
+# For Word cloud
+# conda install -c conda-forge wordcloud
+# wordcloud_cli --text wordcloud.txt --imagefile imgvideo/wordcloud.png
+# pdftotext mydocument.pdf - | wordcloud_cli --imagefile imgvideo/wordcloud.png
+# wordcloud depends on numpy and pillow
+wdcloud1 = Image.open("imgvideo/wordcloud.png")
+
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
 abundgif1 = open("imgvideo/abund_bar.gif")
+bookcover = open("imgvideo/bookcover.png")
 
 # For quantitative data analysis
 temp1 = Image.open("imgvideo/climate_nasa.png")
@@ -62,23 +73,37 @@ with st.container():
     st.header("Welcome to my Portfolio!")
     st.markdown(
     """
-    #### I recently started compiling my minimal `PORTFOLIO` to remind myself of what I can do or share to support the fields of Science and Technology. With this reminder, I can dedicate more energy to developing practical user guides in my areas of expertise to help anyone interested in what I do.
+    #### My minimal PORTFOLIO displays areas of expertise and accomplishment. I want to dedicate more energy to developing \
+    DIY practical user guides to support the scientific and analytics communities and anyone interested in what I do.
+    """)
     
-    #### Feel free to explore my passion in this portfolio. `KARIBU`:tada:
+    st.write("##")
+    st.success("""
+    # My Passion
+    ### Briefly, I am passionate about finding insights into complex data using integrated approaches.
+    ### I am also interested in providing Mentorship in selected areas, including: 
+      - Microbiome Bioinformatics
+      - Machine Learning
+      - Data Analysis in General
+      - Data Visualization
+      - Simple Web Applications... my new passion
+    """)
+    
+    st.success("""
+    ### Additionally, I routinely work with different data types to perform: 
+      - Data Tidying, Transformation & Analysis
+      - Quantitative Data Analysis
+      - Qualitative Data Analysis
+      - Statistical Data Analysis
+      - Static Data Visualization
+      - Interactive Data Visualization
+      - AOB Related to Data Insights
     """)
 
-    html_string1 = "<h3 style='color:#005500; font-size:24px;'>I am passionate about developing <u>Open-Source DIY Practical User Guides</u>to support diverse communities in finding insights into complex data using modern techniques. I am also interested in providing <u>Mentorship</u> to interested individuals.</h3>"
-    st.markdown(html_string1, unsafe_allow_html=True)
-    
-    st.info(
+    st.write(
       """
-      ### I focus more on specific fields than others. Of high priority on my list are fields currently receiving lots of attention, including:
-      #### Microbiome Data Science
-      #### Microbiome Bioinformatics
-      #### Machine Learning
-      #### Data Visualization
+    #### Feel free to explore the entire portfolio. `KARIBU`:tada:      
       """)
-      
     
   with header2:
     st.info(
@@ -87,26 +112,15 @@ with st.container():
     ...are fields getting lots of attention recently. The publication trend in PubMed tells all!
     """)
     
-    st.image(pubstats)
+    st.image(pubstats, width=800)
     # st.caption("This line chart was created using an `R script`, then imported into this web app generated using `streamlit` library and `Python`. Integration of different tools demonstrates robust solutions for gaining insights into complex data.")
     # st.subheader("Creating a plot using `ggplot2`")
     # with st.expander("Click to see or copy the R code"):
     #   st.code(pub_search_code, language="R")
-    
-    html_string2 = "\
-    <h3>Routinely: \
-      </h4>I work with different data type to perform: \
-      <ol> \
-  		<li>Data Tidying, Transformation & Analysis</li> \
-  		<li>Quantitative Data Analysis</li> \
-  		<li>Qualitative Data Analysis</li> \
-   		<li>Static and Interactive Data Visualization</li> \
-   		<li>EDA Web Applications... my new dedication:tada:</li> \
-   		<li>AOB Related to Data Insights:</li> \
-  		</ol>"
-    st.markdown(html_string2, unsafe_allow_html=True)
-
-
+      
+    st.image(wdcloud1, width=650)
+        
+        
 st.write("---")  
 
 
@@ -114,7 +128,7 @@ st.write("---")
 with st.container():
     st.info(
       """
-      # Work in progress on my [GitHub account](https://github.com/tmbuza?tab=repositories):
+      # My Work in progress on my [GitHub account](https://github.com/tmbuza?tab=repositories):
       """)
       
     left_column, separator, right_column = st.columns((2, 0.5, 2))
@@ -138,42 +152,55 @@ with st.container():
            
     with right_column:
       st.write("##")
-      st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png", width=500)
+      # st.image(wdcloud1, width=300)
+      # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png", width=300)
       # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
       # st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
+      st.subheader("Let's Collaborate!")
+      st.info(
+        """
+        We can collaborate at many levels if what I do interests you. 
+        Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
         
+        Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
+        under construction) to benefit from the available DIY resources. 
+        """)   
 
     
-with st.container():
-  left_column, middle_column, right_column = st.columns((1, 2, 1))  
-  with middle_column:
-    st.subheader("Let's Collaborate!")
-    st.info(
-      """
-      We can collaborate at many levels if what I do interests you. 
-      Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
-      
-      Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
-      under construction) to benefit from the available DIY resources. 
-      """)
-    st.write("##")
-    st.write("---")
+# with st.container():
+#   left_column, middle_column, right_column = st.columns((1, 2, 1))  
+#   with middle_column:
+#     st.subheader("Let's Collaborate!")
+#     st.info(
+#       """
+#       We can collaborate at many levels if what I do interests you. 
+#       Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+#       
+#       Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
+#       under construction) to benefit from the available DIY resources. 
+#       """)
+#     st.write("##")
+#     st.write("---")
     
 #######################################
 # ----My Projects----
-#######################################
 with st.container():
   st.success(
-  """
-  # :books:Microbiome Bioinformatics
-  """)
-  st.write("---")
+    """
+    # My Projects & Achievements
+    """)
+#######################################
+with st.container():
+  st.write("##")
   column1, separator, column2 = st.columns((1.5, 0.5,  2.5)) 
   with column1:
-    st.header("Microbial Profiling")
-    st.image(wcloud1)
-    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif", width=500)
-    st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
+    st.header(":books:Microbiome Bioinformatics")
+    # st.image(bookcover)
+    # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif", width=300)
+    # st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
+    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/global/cover.png", width=500)
+    st.caption("In progress: Systematic Microbiome Data Analysis in R. This eBook provides an end-to-end practical user guide \
+    for analyzing microbiome data. It comprises iMAP-Part 1, 2, 3, & 4 described in the next section")
 
   with column2:
     st.success(
@@ -361,7 +388,7 @@ with st.container():
     
 
   with panel3:
-    st.success(
+    st.write(
       """
       ### APP Output
       """)
@@ -391,7 +418,7 @@ with st.container():
     st.write(df)
     
   with panel4:
-    st.success(
+    st.write(
       """
       ### NT Count Bar Chart
       """)
@@ -456,4 +483,5 @@ with st.container():
   with right_column:
     # st.empty()
     st.image("https://complexdatainsights.com/wp-content/uploads/2020/09/contactNewk.png")
+
 
