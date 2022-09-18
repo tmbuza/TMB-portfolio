@@ -2,7 +2,8 @@ coding_projects
 imgvideo
 figures
 data
-
+.DS_Store
+_pycache_
 
 .Rproj.user
 .Rhistory
