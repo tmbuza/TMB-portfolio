@@ -1,6 +1,3 @@
-
-
-
 #######################################
 # ----Tools and Page setup----
 #######################################
@@ -45,7 +42,6 @@ gwas = Image.open("imgvideo/gwas_in_biome.png")
 
 # For microbiome data analysis
 abundgif1 = open("imgvideo/abund_bar.gif")
-bookcover = open("imgvideo/bookcover.png")
 
 # For quantitative data analysis
 temp1 = Image.open("imgvideo/climate_nasa.png")
