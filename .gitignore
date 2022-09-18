@@ -15,10 +15,10 @@ code
 img
 *.Rmd
 *.ipynb
-!*.mp3
-!*.mp4
-!*.png
-!*.Rmd
+*.mp3
+*.mp4
+*.png
+*.Rmd
 *.Rproj
 .ipynb_checkpoints
 
