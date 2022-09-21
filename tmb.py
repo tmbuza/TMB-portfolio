@@ -131,21 +131,26 @@ with st.container():
     left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
         st.write("##")
+        st.write(
+          """
+          ### On my `personal` and `organization` GitHub accounts:
+          
+          """)
+        
         st.info(
-            """
-            ### On my [personal](https://github.com/tmbuza?tab=repositories) and [organization](https://github.com/DataInsights?tab=repositories) GitHub accounts:
-              - I am developing DIY practical user guides to support diverse data analytics communities.
-              - Most of these guides are under development in my private repositories and will be shared publicly once completed.
-              - The intended audience is users who:
-                  - ... students who need reproducible tools to analyze data for theses, dissertations, or presentations.
-                  - ... academic members who need reproducible workflows for teaching and training purposes.
-                  - ... users looking for friendly solutions to leverage their daily analytical tasks.
-                  - ... users who struggle to understand how to efficiently process raw data and transform it into actionable insights.
-                  - ... users eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-                  - ... users looking for better solutions for visualizing the data and creating shareable reports and dashboards.
-                  - ... users interested in developing and deploying simple data-related web apps.
-                  - ... users enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
-           """)
+          """
+            - I am developing DIY practical user guides to support diverse data analytics communities.
+            - Most of these guides are under development in my private repositories and will be shared publicly once completed.
+            - The intended audience is users who:
+                - ... students who need reproducible tools to analyze data for theses, dissertations, or presentations.
+                - ... academic members who need reproducible workflows for teaching and training purposes.
+                - ... users looking for friendly solutions to leverage their daily analytical tasks.
+                - ... users who struggle to understand how to efficiently process raw data and transform it into actionable insights.
+                - ... users eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+                - ... users looking for better solutions for visualizing the data and creating shareable reports and dashboards.
+                - ... users interested in developing and deploying simple data-related web apps.
+                - ... users enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
+         """)
            
     with right_column:
       st.write("##")
@@ -161,26 +166,12 @@ with st.container():
         
         Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
         under construction) to benefit from the available DIY resources. 
-        """)   
+        """) 
+        
+st.write("##")
+st.write("##")
+st.write("##")
 
-    
-# with st.container():
-#   left_column, middle_column, right_column = st.columns((1, 2, 1))  
-#   with middle_column:
-#     st.subheader("Let's Collaborate!")
-#     st.info(
-#       """
-#       We can collaborate at many levels if what I do interests you. 
-#       Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
-#       
-#       Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
-#       under construction) to benefit from the available DIY resources. 
-#       """)
-#     st.write("##")
-#     st.write("---")
-    
-#######################################
-# ----My Projects----
 with st.container():
   st.success(
     """
@@ -347,7 +338,7 @@ with st.container():
 with st.container():
   st.write("##")
   st.header(":books:Simple Web Applications")
-  st.write(""" ### Example 1""")
+  st.write(""" ### 1. Bioinformatics App Example""")
 
 # with st.container(): 
 #   st.write("##")
@@ -431,6 +422,16 @@ with st.container():
     st.caption("Bar chart showing the number of nucleotide composition in a given DNA sequence.")
   
  
+#---------------------------------------------
+  st.write("##")
+  st.write(""" ### 2. Exploratory Analysis App""")
+  st.write("In progress...")
+#---------------------------------------------  
+ 
+#---------------------------------------------
+  st.write("##")
+  st.write(""" ### 3. Target Prediction App""")
+  st.write("In progress...")
 #---------------------------------------------
 
 
