@@ -59,7 +59,7 @@ with st.container():
   st.write("##")
   st.write("##")
   st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
-  st.title("A Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
+  st.title("Microbiome,  Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
 st.write("---")
 st.write("##")
   
@@ -132,7 +132,7 @@ with st.container():
         st.write("##")
         st.info(
             """
-            ### On my [GitHub account](https://github.com/tmbuza?tab=repositories)
+            ### On my [personal](https://github.com/tmbuza?tab=repositories) and [organization](https://github.com/DataInsights?tab=repositories) GitHub accounts:
               - I am developing DIY practical user guides to support diverse data analytics communities.
               - Most of these guides are under development in my private repositories and will be shared publicly once completed.
               - The intended audience is users who:
@@ -183,14 +183,14 @@ with st.container():
 with st.container():
   st.success(
     """
-    # Achievements & Progress
+    # Achievements & In-Progress
     """)
 #######################################
 with st.container():
   st.write("##")
   column1, separator, column2 = st.columns((1.5, 0.5,  2.5)) 
   with column1:
-    st.header(":books:Microbiome Bioinformatics")
+    st.header(":books:Microbiome End-to-End")
     # st.image(bookcover)
     # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif", width=300)
     # st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
