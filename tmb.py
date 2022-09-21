@@ -59,9 +59,10 @@ with st.container():
   st.write("##")
   st.write("##")
   st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
-  st.title("Microbiome,  Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
+  left, right = st.columns((2, 1))
+  with left:
+    st.title("Microbiome,  Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
 st.write("---")
-st.write("##")
   
 with st.container():
   header1, separator, header2 = st.columns((2, 0.2, 1.5))
@@ -70,7 +71,7 @@ with st.container():
     st.markdown(
     """
     #### My minimal PORTFOLIO displays areas of expertise and accomplishment. I want to dedicate more energy to developing \
-    DIY practical user guides to support the scientific and analytics communities and anyone interested in what I do.
+    `open-source` user guides to support the scientific and analytics communities and anyone interested in what I do.
     """)
     
     st.write("##")
