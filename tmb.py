@@ -34,7 +34,7 @@ pubstats = Image.open("figures/pubmed_search_bar_plot.png")
 # Image objects: Use Image.open("")
 wdcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
-bookcover1 = Image.open("imgvideo/bookcover1.png")
+# bookcover1 = Image.open("imgvideo/bookcover1.png")
 temp1 = Image.open("imgvideo/climate_nasa.png")
 dna = Image.open("imgvideo/dna_composition.png")
 
@@ -150,6 +150,7 @@ with st.container():
       # st.image(wdcloud1, width=300)
       # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png", width=300)
       # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
+      # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
       # st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
       st.subheader("Let's Collaborate!")
       st.info(
@@ -184,7 +185,7 @@ with st.container():
 #######################################
 with st.container():
   st.write("##")
-  column1, separator, column2 = st.columns((1.5, 0.5,  2.5)) 
+  column1, separator, column2 = st.columns((1, 0.5,  2.5)) 
   with column1:
     st.header(":books:Microbiome Bioinformatics")
     st.info("""
@@ -192,7 +193,7 @@ with st.container():
     analytical process. Using the wrong approaches can cost a significant amount of dollars and make a lengthy process 
     to achieve the desired results.)
     """)
-    st.image(bookcover1)
+    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/bookcover1.png")
     st.caption("In progress: Systematic Microbiome Data Analysis in R. This eBook provides an end-to-end practical user guide \
     for analyzing microbiome data. It comprises iMAP-Part 1, 2, 3, & 4 described in the next section")
 
