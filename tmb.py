@@ -186,7 +186,12 @@ with st.container():
   st.write("##")
   column1, separator, column2 = st.columns((1.5, 0.5,  2.5)) 
   with column1:
-    st.header(":books:Microbiome End-to-End")
+    st.header(":books:Microbiome Bioinformatics")
+    st.info("""
+    Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire 
+    analytical process. Using the wrong approaches can cost a significant amount of dollars and make a lengthy process 
+    to achieve the desired results.)
+    """)
     st.image(bookcover1)
     st.caption("In progress: Systematic Microbiome Data Analysis in R. This eBook provides an end-to-end practical user guide \
     for analyzing microbiome data. It comprises iMAP-Part 1, 2, 3, & 4 described in the next section")
@@ -213,11 +218,7 @@ with st.container():
       """)
 
     st.write("""
-      ### :tada: Improved iMAP in Four-Tiers!
-           
-
-      Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire analytical process.
-      Using the wrong approaches can cost a significant amount of dollars and make a lengthy process to achieve the desired results.
+      ### Improved iMAP in Four-Tiers!
       The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community.
       Each guide is reproducible, allowing **R-users** to follow along easily.
 
@@ -227,13 +228,14 @@ with st.container():
       | [iMAP-PART2](https://github.com/tmbuza/iMAP-part2/) | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
       | [iMAP-PART3](https://github.com/tmbuza/iMAP-part3/) | Data Preprocessing | [eBook](https://complexdatainsights.com/books/microbiome-analysis/data-preprocessing) |
       | [iMAP-PART4](https://github.com/tmbuza/iMAP-part4/) | Exploratory Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/exploratory-analysis) |
+      """)
 
-
-
+    st.write("##")
+    st.write("""
       ### 3. End-to-End Microbiome Analysis eBooks
 
     
-      |eBook| Description| Repo Output|
+      |Repo| Description| Repo Output|
       |-------------------------|---------------------------------------------------|-----------------|
       | SMDA | Systematic Microbiome Data Analysis (SMDA)...In progress.| [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/) |
       """)
