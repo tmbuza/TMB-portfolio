@@ -31,25 +31,18 @@ local_css("style/style.css")
 # For Professional Passion
 pubstats = Image.open("figures/pubmed_search_bar_plot.png")
 
-# For Word cloud
-# conda install -c conda-forge wordcloud
-# wordcloud_cli --text docs/wordcloud.txt --imagefile imgvideo/wordcloud.png
-# pdftotext mydocument.pdf - | wordcloud_cli --imagefile imgvideo/wordcloud.png
-# wordcloud depends on numpy and pillow
+# Image objects: Use Image.open("")
 wdcloud1 = Image.open("imgvideo/wordcloud.png")
-
 gwas = Image.open("imgvideo/gwas_in_biome.png")
+bookcover1 = Image.open("imgvideo/bookcover1.png")
+temp1 = Image.open("imgvideo/climate_nasa.png")
+dna = Image.open("imgvideo/dna_composition.png")
 
-# For microbiome data analysis
+# GIF objects: Use open("")
 abundgif1 = open("imgvideo/abund_bar.gif")
 
-# For quantitative data analysis
-temp1 = Image.open("imgvideo/climate_nasa.png")
-
+# Video objects: Use open("", "rb").read()
 tempmp4 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
-
-# For the NGS section
-dna = Image.open("imgvideo/dna_composition.png")
 
 #######################################
 # ---- Header with salutation and introduction----
@@ -61,7 +54,7 @@ with st.container():
   st.subheader("Hi, I am Teresia Mrema-Buza:wave:")
   left, right = st.columns((2, 1))
   with left:
-    st.title("Microbiome,  Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
+    st.title("A Microbiome,  Data Science, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
 st.write("---")
   
 with st.container():
@@ -105,8 +98,8 @@ with st.container():
   with header2:
     st.info(
     """
-    ## Did you know? Microbiome & Machine Learning
-    ...are fields getting lots of attention recently. The publication trend in PubMed tells all!
+    #### Did you know? Microbiome & Machine Learning
+    ...are fields getting lots of attention recently. The publication trend in PubMed is genuine proof!
     """)
     
     st.image(pubstats, width=600)
@@ -125,7 +118,7 @@ st.write("---")
 with st.container():
     st.write(
       """
-      # Resources Under Development
+      # What I Do
       """)
       
     left_column, separator, right_column = st.columns((2, 0.5, 2))
@@ -141,8 +134,8 @@ with st.container():
           """
             - I am developing DIY practical user guides to support diverse data analytics communities.
             - Most of these guides are under development in my private repositories and will be shared publicly once completed.
-            - The intended audience is users who:
-                - ... students who need reproducible tools to analyze data for theses, dissertations, or presentations.
+            - The intended audience is:
+                - ... researchers who need reproducible tools to analyze data for their manuscripts, theses, dissertations, or presentations.
                 - ... academic members who need reproducible workflows for teaching and training purposes.
                 - ... users looking for friendly solutions to leverage their daily analytical tasks.
                 - ... users who struggle to understand how to efficiently process raw data and transform it into actionable insights.
@@ -162,9 +155,20 @@ with st.container():
       st.info(
         """
         We can collaborate at many levels if what I do interests you. 
-        Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+        Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields.
+        """)
+      
+      st.subheader("Outsource or DIY ")
+      st.info(
+        """
+        Outsourcing can increase efficiency and save time. Feel free to contact me by filling out the contact form at the end of this page to discuss the logistics.
+
+        """)   
         
-        Also, consider subscribing to my [website](https://complexdatainsights.com) (currently 
+      st.subheader("Subscribe for Updates")
+      st.info(
+        """
+        Consider subscribing to my [website](https://complexdatainsights.com) (currently 
         under construction) to benefit from the available DIY resources. 
         """) 
         
@@ -183,10 +187,7 @@ with st.container():
   column1, separator, column2 = st.columns((1.5, 0.5,  2.5)) 
   with column1:
     st.header(":books:Microbiome End-to-End")
-    # st.image(bookcover)
-    # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/stacked_bar_fig-.gif", width=300)
-    # st.caption("Simple example of Microbial relative abundance profiles at Taxon-level. This image show only the most abundant taxa and the remaining are in the other category.")
-    st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/global/cover.png", width=500)
+    st.image(bookcover1)
     st.caption("In progress: Systematic Microbiome Data Analysis in R. This eBook provides an end-to-end practical user guide \
     for analyzing microbiome data. It comprises iMAP-Part 1, 2, 3, & 4 described in the next section")
 
@@ -205,10 +206,13 @@ with st.container():
       |Repo| Description| Description|
       |-------------------------|---------------------------------------------------|-----------------|
       | [iMAP](https://github.com/tmbuza/iMAP/) | Original Pipeline linked to [iMAP manuscript](https://rdcu.be/bIxrg) | [GitHub Page](https://tmbuza.github.io/iMAP/) |
+      """)
+      
+    st.info("""
       The original iMAP is being restructured and updated with more improved workflows. The updated version will replace the existing pipeline. Please consider this an ongoing process of finding better and integrated solutions for microbiome data analysis.
- 
+      """)
 
-     
+    st.write("""
       ### :tada: Improved iMAP in Four-Tiers!
            
 
