@@ -34,7 +34,6 @@ pubstats = Image.open("figures/pubmed_search_bar_plot.png")
 # Image objects: Use Image.open("")
 wdcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
-# bookcover1 = Image.open("imgvideo/bookcover1.png")
 temp1 = Image.open("imgvideo/climate_nasa.png")
 dna = Image.open("imgvideo/dna_composition.png")
 aa_abbrev = Image.open("imgvideo/amino_acid_abbr.png")
@@ -195,7 +194,7 @@ with st.container():
     analytical process. Using the wrong approaches can cost a significant amount of dollars and make a lengthy process 
     to achieve the desired results.)
     """)
-    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/bookcover1.png")
+    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/bookcover.png")
     st.caption("In progress: Systematic Microbiome Data Analysis in R. This eBook provides an end-to-end practical user guide \
     for analyzing microbiome data. It comprises iMAP-Part 1, 2, 3, & 4 described in the next section")
 
@@ -447,7 +446,7 @@ with st.container():
     """
     ### :question:Amino Acid in a Protein Sequence
     """)
-    st.image(aa_abbrev)
+    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png")
     st.caption("Example of a Amino Acid (AA) sequence with colors representing different the 20 AA.")
     
   with panel2:
@@ -462,7 +461,7 @@ with st.container():
     """
     )
 
-    aa_query = ">QRG27454.1 hemagglutinin [\Influenza A virus\] \
+    aa_query = ">QRG27454.1 hemagglutinin, Influenza A virus\n \
 MKTIIALSYILCLVFAQKIPGNDNSTATLCLGHHAVPNGTIVKTITNDRIEVTNATELVQNSSIGEICDS \
 PHQILDGENCTLIDALLGDPQCDGFQNKKWDLFVERSKAYSNCYPYDVPDYASLRSLVASSGTLEFNNES \
 FNWTGVKQNGTSSACIRKSSSSFFSRLNWLTHLNYTYPALNVTMPNNEQFDKLYIWGVHHPGTDKDQIFL \
