@@ -36,7 +36,6 @@ wdcloud1 = Image.open("imgvideo/wordcloud.png")
 gwas = Image.open("imgvideo/gwas_in_biome.png")
 temp1 = Image.open("imgvideo/climate_nasa.png")
 dna = Image.open("imgvideo/dna_composition.png")
-aa_abbrev = Image.open("imgvideo/amino_acid_abbr.png")
 prot_align = Image.open("imgvideo/prot_align.png")
 
 # GIF objects: Use open("")
