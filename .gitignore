@@ -9,7 +9,7 @@ _pycache_
 .Rhistory
 .RData
 .Ruserdata
-imgvideo
+!imgvideo
 data
 code
 img
