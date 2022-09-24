@@ -37,6 +37,8 @@ gwas = Image.open("imgvideo/gwas_in_biome.png")
 # bookcover1 = Image.open("imgvideo/bookcover1.png")
 temp1 = Image.open("imgvideo/climate_nasa.png")
 dna = Image.open("imgvideo/dna_composition.png")
+aa_abbrev = Image.open("imgvideo/amino_acid_abbr.png")
+prot_align = Image.open("imgvideo/prot_align.png")
 
 # GIF objects: Use open("")
 abundgif1 = open("imgvideo/abund_bar.gif")
@@ -344,8 +346,8 @@ with st.container():
 
 with st.container():
   st.write("##")
-  st.header(":books:Simple Web Applications")
-  st.write(""" ### 1. Bioinformatics App Example""")
+  st.header(":books:NGS Annotation")
+  st.write(""" ### 1. Count Nucleotides App""")
 
 # with st.container(): 
 #   st.write("##")
@@ -372,9 +374,9 @@ with st.container():
     """
     )
 
-    sequence_input = ">Sequence1\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
+    dna_query = ">Sequence1\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
     
-    sequence = st.text_area("Enter Fasta Sequence", sequence_input, height=150)
+    sequence = st.text_area("Enter Fasta Sequence", dna_query, height=150)
     sequence = sequence.splitlines()
     sequence = sequence[1:] # Skips the sequence name (first line)
     sequence = ''.join(sequence) # Concatenates list to string
@@ -423,12 +425,111 @@ with st.container():
         y='Count'
     )
     p = p.properties(
-        width=alt.Step(75)  # controls width of bar.
+        width=alt.Step(25)  # controls width of bar.
     )
     st.write(p)
     st.caption("Bar chart showing the number of nucleotide composition in a given DNA sequence.")
   
- 
+
+#---------------------------------------------
+
+with st.container():
+  st.write("##")
+  st.write(""" ### Amino Acid Count App""")
+
+# with st.container(): 
+#   st.write("##")
+#   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
+
+  panel1, separator1, panel2 = st.columns((1, 0.2, 2))
+  with panel1:
+    st.info(
+    """
+    ### :question:Amino Acid in a Protein Sequence
+    """)
+    st.image(aa_abbrev)
+    st.caption("Example of a Amino Acid (AA) sequence with colors representing different the 20 AA.")
+    
+  with panel2:
+    st.info(
+      """
+      ### Nucleotide Count APP
+      """)
+    st.markdown(
+    """
+    This web app quickly computes the number of nucleotides present in a FASTA sequence.
+    `Give it a try!`
+    """
+    )
+
+    aa_query = ">Sequence2\nCTCAGATGCAAGTCGAACGGTAGTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
+    
+    sequence = st.text_area("Enter Fasta Sequence", aa_query, height=150)
+    sequence = sequence.splitlines()
+    sequence = sequence[1:] # Skips the sequence name (first line)
+    sequence = ''.join(sequence) # Concatenates list to string
+    
+    st.text_area("Clean Query Sequence", sequence, height=150)
+    
+  panel3, separator1, panel4 = st.columns((1, 0.2, 2))
+  with panel3:
+    st.write(
+      """
+      ### APP Output
+      """)
+    
+    def aa_count(seq):
+      aa = dict([
+                ('A',seq.count('A')),
+                ('R',seq.count('R')),
+                ('N',seq.count('N')),
+                ('D',seq.count('D')),
+                ('C',seq.count('C')),
+                ('E',seq.count('E')),
+                ('Q',seq.count('Q')),
+                ('G',seq.count('G')),
+                ('H',seq.count('H')),
+                ('I',seq.count('I')),
+                ('L',seq.count('L')),
+                ('K',seq.count('K')),
+                ('M',seq.count('M')),
+                ('F',seq.count('F')),
+                ('P',seq.count('P')),
+                ('S',seq.count('S')),
+                ('T',seq.count('T')),
+                ('W',seq.count('W')),
+                ('Y',seq.count('Y')),
+                ('V',seq.count('V'))
+                ])
+      return aa
+    
+    AA = aa_count(sequence)
+    
+    # ### Amino Acid Count
+    # st.subheader('1. Observation')
+    # st.write('There are  ' + str(AA['A']) + ' adenine (A)')
+
+    df = pd.DataFrame.from_dict(AA, orient='index')
+    df = df.rename({0: 'Count'}, axis='columns')
+    df.reset_index(inplace=True)
+    df = df.rename(columns = {'index':'Amino Acid'})
+    st.write(df)
+    
+  with panel4:
+    st.write(
+      """
+      ### AA Count Bar Chart
+      """)
+      
+    p = alt.Chart(df).mark_bar().encode(
+        x='Amino Acid',
+        y='Count'
+    )
+    p = p.properties(
+        width=alt.Step(20)  # controls width of bar.
+    )
+    st.write(p)
+
 #---------------------------------------------
   st.write("##")
   st.write(""" ### 2. Exploratory Analysis App""")
@@ -465,14 +566,6 @@ with st.container():
     <button type="submit">Send</button>
   </form>
   """
-# # Additional to Advanced form
-#     <input type="hidden" name="_subject" value="New submission!">
-#     <input type="hidden" name="_cc" value="ndelly@gmail.com,tmbuza@complexdatainsights.com">
-#     <input type="text" name="_honey" style="display:none">
-#     <input type="hidden" name="_webhook" value="https://complexdatainsights.com/Hello Thre!">
-#     <button type="submit">Send</button>
-  
-  
   
 # Use local CSS file
   def local_css(file_name):
