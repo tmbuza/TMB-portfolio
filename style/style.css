@@ -30,3 +30,12 @@ ol li{
   font-weight: 400;
 
 }
+
+
+img {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+}
