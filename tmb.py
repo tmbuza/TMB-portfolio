@@ -345,7 +345,7 @@ with st.container():
 with st.container():
   st.write("##")
   st.header(":books:NGS Feature Annotation")
-  st.write(""" ### 1. DNA Nucleotide Count App""")
+  st.write(""" ### 1. Nucleotide Count App""")
 
 # with st.container(): 
 #   st.write("##")
@@ -359,7 +359,7 @@ with st.container():
   with panel2:
     st.write(
       """
-      #### Nucleotide Count APP
+      #### NT Count APP
       """)
     st.markdown(
     """
