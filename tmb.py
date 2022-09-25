@@ -269,7 +269,7 @@ with st.container():
   
 with st.container():
   st.write("##")
-  st.header(":computer:Qualitative Data Analysis")
+  st.header(":books:Qualitative Data Analysis")
   st.write("...In Progress...")
   st.write(
     """
@@ -355,7 +355,7 @@ with st.container():
   with panel1:
     st.info(
     """
-    ### :question:Nucleotides in a DNA Sequence
+    #### :question:Nucleotides in a DNA Sequence
     """)
     st.image(dna)
     st.caption("Example of a DNA sequence with colors representing different nucleotide; A, T, C, G. How many each of these nucleotides are in a FASTA sequence?")
@@ -363,7 +363,7 @@ with st.container():
   with panel2:
     st.info(
       """
-      ### Nucleotide Count APP
+      #### Nucleotide Count APP
       """)
     st.markdown(
     """
@@ -385,7 +385,7 @@ with st.container():
   with panel3:
     st.write(
       """
-      ### NT Count Output
+      #### NT Count Output
       """)
     
     def DNA_nucleotide_count(seq):
@@ -415,7 +415,7 @@ with st.container():
   with panel4:
     st.write(
       """
-      ### NT Count Bar Chart
+      #### NT Count Bar Chart
       """)
       
     p = alt.Chart(df).mark_bar().encode(
@@ -433,7 +433,7 @@ with st.container():
 
 with st.container():
   st.write("##")
-  st.write(""" ### Amino Acid Count App""")
+  st.write(""" #### Amino Acid Count App""")
 
 # with st.container(): 
 #   st.write("##")
@@ -452,7 +452,7 @@ with st.container():
   with panel2:
     st.info(
       """
-      ### Amino Acid Count APP
+      #### Amino Acid Count APP
       """)
     st.markdown(
     """
@@ -484,7 +484,7 @@ RCNICI"
   with panel3:
     st.write(
       """
-      ### AA Count Output
+      #### AA Count Output
       """)
     
     def aa_count(seq):
@@ -527,7 +527,7 @@ RCNICI"
   with panel4:
     st.write(
       """
-      ### AA Count Bar Chart
+      #### AA Count Bar Chart
       """)
       
     p = alt.Chart(df).mark_bar().encode(
