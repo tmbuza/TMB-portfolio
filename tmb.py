@@ -446,7 +446,7 @@ with st.container():
     ### :question:Amino Acid in a Protein Sequence
     """)
     st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png")
-    st.caption("Example of a Amino Acid (AA) sequence with colors representing different the 20 AA.")
+    st.caption("The 20 Amino Acid (AA) names, the three letter abbreviations and single letter code.")
     
   with panel2:
     st.info(
