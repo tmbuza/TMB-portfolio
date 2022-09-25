@@ -344,14 +344,14 @@ with st.container():
 
 with st.container():
   st.write("##")
-  st.header(":books:NGS Annotation")
-  st.write(""" ### 1. Count Nucleotides App""")
+  st.header(":books:NGS Feature Annotation")
+  st.write(""" ### 1. DNA Nucleotide Count App""")
 
 # with st.container(): 
 #   st.write("##")
 #   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
 
-  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1.5, 0.2, 1.5, 0.2, 1, 0.2, 1))
+  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1))
   with panel1:
     st.info(
     """
@@ -367,8 +367,8 @@ with st.container():
       """)
     st.markdown(
     """
-    This web app quickly computes the number of nucleotides present in a FASTA sequence.
-    `Give it a try!`
+    This web app computes the number of nucleotides present in a FASTA sequence.\n
+    `Test the App by replacing the default DNA fasta sequence in the text area!`
     """
     )
 
@@ -385,7 +385,7 @@ with st.container():
   with panel3:
     st.write(
       """
-      ### APP Output
+      ### NT Count Output
       """)
     
     def DNA_nucleotide_count(seq):
@@ -439,13 +439,14 @@ with st.container():
 #   st.write("##")
 #   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
 
-  panel1, separator1, panel2 = st.columns((1, 0.2, 2))
+  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1))
+  # panel1, separator1, panel2 = st.columns((1, 0.2, 2))
   with panel1:
     st.info(
     """
     ### :question:Amino Acid in a Protein Sequence
     """)
-    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png")
+    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png", width=300)
     st.caption("The 20 Amino Acid (AA) names, the three letter abbreviations and single letter code.")
     
   with panel2:
@@ -455,8 +456,8 @@ with st.container():
       """)
     st.markdown(
     """
-    This web app interactively computes the number of amino acids in a protein FASTA sequence.
-    `Give it a try!`
+    This web app interactively computes the number of amino acids in a protein FASTA sequence. \n
+    `Give it a try! Replace the default protein fasta sequence in the text area!`
     """
     )
 
@@ -470,7 +471,8 @@ IAGFIENGWEGMVDGWYGFRHQNSEGRGQAADLKSTQAAIDQINGKLNRLIGKTNEKFHQIEKEFSEVEG \
 RIQDLEKYVEDTKIDLWSYNAELLVALENQHTIDLTDSEMNKLFEKTKKQLRENAEDMGNGCFKIYHKCD \
 NACIGSIRNGTYDHHVYRDEALNNRFQIKGVELKSGYKDWILWISFAISCFLLCVALLGFIMWACQKGNI \
 RCNICI"
-    
+
+    # aa_query = ""
     sequence = st.text_area("Enter Fasta Sequence", aa_query, height=150)
     sequence = sequence.splitlines()
     sequence = sequence[1:] # Skips the sequence name (first line)
@@ -478,11 +480,11 @@ RCNICI"
     
     st.text_area("Clean Query Sequence", sequence, height=150)
     
-  panel3, separator1, panel4 = st.columns((1, 0.2, 2))
+  # panel3, separator1, panel4 = st.columns((1, 0.2, 2))
   with panel3:
     st.write(
       """
-      ### APP Output
+      ### AA Count Output
       """)
     
     def aa_count(seq):
@@ -519,7 +521,7 @@ RCNICI"
     df = pd.DataFrame.from_dict(AA, orient='index')
     df = df.rename({0: 'Count'}, axis='columns')
     df.reset_index(inplace=True)
-    df = df.rename(columns = {'index':'Amino Acid'})
+    df = df.rename(columns = {'index':'AA'})
     st.write(df)
     
   with panel4:
@@ -529,7 +531,7 @@ RCNICI"
       """)
       
     p = alt.Chart(df).mark_bar().encode(
-        x='Amino Acid',
+        x='AA',
         y='Count'
     )
     p = p.properties(
