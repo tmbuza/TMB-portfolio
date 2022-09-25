@@ -451,7 +451,7 @@ with st.container():
   with panel2:
     st.info(
       """
-      ### Nucleotide Count APP
+      ### Amino Acid Count APP
       """)
     st.markdown(
     """
