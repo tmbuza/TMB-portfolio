@@ -269,7 +269,7 @@ with st.container():
   
 with st.container():
   st.write("##")
-  st.header(":books:Qualitative Data Analysis")
+  st.header(":computer:Qualitative Data Analysis")
   st.write("...In Progress...")
   st.write(
     """
