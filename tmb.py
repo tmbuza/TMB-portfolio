@@ -446,8 +446,9 @@ with st.container():
     """
     ### :question:Amino Acid in a Protein Sequence
     """)
-    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png", width=300)
-    st.caption("The 20 Amino Acid (AA) names, the three letter abbreviations and single letter code.")
+    st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/aligments.png", width=300)
+    # st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png", width=300)
+    # st.caption("The 20 Amino Acid (AA) names, the three letter abbreviations and single letter code.")
     
   with panel2:
     st.info(
