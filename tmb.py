@@ -353,15 +353,11 @@ with st.container():
 
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1))
   with panel1:
-    st.info(
-    """
-    #### :question:Nucleotides in a DNA Sequence
-    """)
     st.image(dna)
     st.caption("Example of a DNA sequence with colors representing different nucleotide; A, T, C, G. How many each of these nucleotides are in a FASTA sequence?")
     
   with panel2:
-    st.info(
+    st.write(
       """
       #### Nucleotide Count APP
       """)
@@ -374,7 +370,7 @@ with st.container():
 
     dna_query = ">Sequence1\nCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAGCACAGAGAGCTTGCTCTTGGGTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCCGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCTACGGACCAAAGT\GGGGGACCTTCGGGCCTCACACCATCGGATGTGCCCAGATGGGATTAGCTGGTAGGTGGGGTAACGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGAT"
     
-    sequence = st.text_area("Enter Fasta Sequence", dna_query, height=150)
+    sequence = st.text_area("Enter a DNA Fasta Sequence", dna_query, height=150)
     sequence = sequence.splitlines()
     sequence = sequence[1:] # Skips the sequence name (first line)
     sequence = ''.join(sequence) # Concatenates list to string
@@ -397,19 +393,11 @@ with st.container():
                 ])
       return d
     
-    X = DNA_nucleotide_count(sequence)
-    
-    # ### Nucleotide Count
-    # st.subheader('1. Observation')
-    # st.write('There are  ' + str(X['A']) + ' adenine (A)')
-    # st.write('There are  ' + str(X['T']) + ' thymine (T)')
-    # st.write('There are  ' + str(X['G']) + ' guanine (G)')
-    # st.write('There are  ' + str(X['C']) + ' cytosine (C)')
-
-    df = pd.DataFrame.from_dict(X, orient='index')
+    nt_count = DNA_nucleotide_count(sequence)
+    df = pd.DataFrame.from_dict(nt_count, orient='index')
     df = df.rename({0: 'Count'}, axis='columns')
     df.reset_index(inplace=True)
-    df = df.rename(columns = {'index':'Nucleotide'})
+    df = df.rename(columns = {'index':'NT'})
     st.write(df)
     
   with panel4:
@@ -419,7 +407,7 @@ with st.container():
       """)
       
     p = alt.Chart(df).mark_bar().encode(
-        x='Nucleotide',
+        x='NT',
         y='Count'
     )
     p = p.properties(
@@ -433,7 +421,7 @@ with st.container():
 
 with st.container():
   st.write("##")
-  st.write(""" #### Amino Acid Count App""")
+  st.write(""" ### 2. Amino Acid Count App""")
 
 # with st.container(): 
 #   st.write("##")
@@ -442,26 +430,17 @@ with st.container():
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1))
   # panel1, separator1, panel2 = st.columns((1, 0.2, 2))
   with panel1:
-    st.info(
-    """
-    ### :question:Amino Acid in a Protein Sequence
-    """)
     st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/aligments.png")
     # st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png", width=300)
-    # st.caption("The 20 Amino Acid (AA) names, the three letter abbreviations and single letter code.")
-    
+    st.caption("A typical protein sequence contains 20 unique amino acids represented with single letter code. What is the composition of each amino acid?")
   with panel2:
-    st.info(
-      """
-      #### Amino Acid Count APP
-      """)
+    st.write(""" #### AA Count APP""")
     st.markdown(
     """
-    This web app interactively computes the number of amino acids in a protein FASTA sequence. \n
-    `Give it a try! Replace the default protein fasta sequence in the text area!`
+    This web app interactively computes the number of amino acids in a protein FASTA sequence.\n
+    `Test the App by replacing the default protein fasta sequence in the text area!`
     """
     )
-
     aa_query = ">QRG27454.1 hemagglutinin, Influenza A virus\n \
 MKTIIALSYILCLVFAQKIPGNDNSTATLCLGHHAVPNGTIVKTITNDRIEVTNATELVQNSSIGEICDS \
 PHQILDGENCTLIDALLGDPQCDGFQNKKWDLFVERSKAYSNCYPYDVPDYASLRSLVASSGTLEFNNES \
@@ -474,7 +453,7 @@ NACIGSIRNGTYDHHVYRDEALNNRFQIKGVELKSGYKDWILWISFAISCFLLCVALLGFIMWACQKGNI \
 RCNICI"
 
     # aa_query = ""
-    sequence = st.text_area("Enter Fasta Sequence", aa_query, height=150)
+    sequence = st.text_area("Enter a Protein Fasta Sequence", aa_query, height=150)
     sequence = sequence.splitlines()
     sequence = sequence[1:] # Skips the sequence name (first line)
     sequence = ''.join(sequence) # Concatenates list to string
@@ -513,13 +492,8 @@ RCNICI"
                 ])
       return aa
     
-    AA = aa_count(sequence)
-    
-    # ### Amino Acid Count
-    # st.subheader('1. Observation')
-    # st.write('There are  ' + str(AA['A']) + ' adenine (A)')
-
-    df = pd.DataFrame.from_dict(AA, orient='index')
+    aa_count = aa_count(sequence)
+    df = pd.DataFrame.from_dict(aa_count, orient='index')
     df = df.rename({0: 'Count'}, axis='columns')
     df.reset_index(inplace=True)
     df = df.rename(columns = {'index':'AA'})
