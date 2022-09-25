@@ -351,7 +351,7 @@ with st.container():
 #   st.write("##")
 #   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
 
-  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1))
+  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1.5))
   with panel1:
     st.image(dna)
     st.caption("Example of a DNA sequence with colors representing different nucleotide; A, T, C, G. How many each of these nucleotides are in a FASTA sequence?")
@@ -427,7 +427,7 @@ with st.container():
 #   st.write("##")
 #   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
 
-  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1))
+  panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1.5))
   # panel1, separator1, panel2 = st.columns((1, 0.2, 2))
   with panel1:
     st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/aligments.png")
