@@ -556,7 +556,7 @@ with st.container():
     <input type="text" required placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your email" required>
     <input type="text" required placeholder="Enter Subject" required>
-    <textarea name="message" id="" cols="15" rows="7" placeholder="Enter Your Message Here..." required></textarea>
+    <textarea name="message" id="" cols="15" rows="6" placeholder="Enter Your Message Here..." required></textarea>
     <button type="submit">Send</button>
   </form>  
   """ 
