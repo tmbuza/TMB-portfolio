@@ -541,15 +541,25 @@ with st.container():
     """)
   
   # Contact Documentation: https://formsubmit.co/ Change the email address
+  # contact_form = """
+  # <form action="https://formsubmit.co/ndelly@gmail.com" method="POST">
+  #   <input type="hidden" name="_captcha" value="false">
+  #   <input type="text" name="name" placeholder="Your name" required>
+  #   <input type="email" name="email" placeholder="Your email" required>
+  #   <textarea name="message" placeholder="Your message here" required></textarea>
+  #   <button type="submit">Send</button>
+  # </form>
+  # """
+  
   contact_form = """
-  <form action="https://formsubmit.co/ndelly@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Your name" required>
+  <form action="https://formsubmit.co/ndelly@gmail.com" class="contact-form" method="POST">
+    <input type="text" required placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message here" required></textarea>
+    <input type="text" required placeholder="Enter Subject" required>
+    <textarea name="message" id="" cols="15" rows="7" placeholder="Enter Your Message Here..." required></textarea>
     <button type="submit">Send</button>
-  </form>
-  """
+  </form>  
+  """ 
   
 # Use local CSS file
   def local_css(file_name):
