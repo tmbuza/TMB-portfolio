@@ -1,6 +1,0 @@
-streamlit==v1.12.2
-Python==3.9.13
-requests==2.25
-pandas==1.2.0
-altair==4.2.0
-pillow==9.1.0
