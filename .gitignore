@@ -10,7 +10,7 @@ _pycache_
 .RData
 .Ruserdata
 !imgvideo
-data
+!data
 code
 img
 *.Rmd
