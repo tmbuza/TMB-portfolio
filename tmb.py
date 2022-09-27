@@ -44,6 +44,23 @@ abundgif1 = open("imgvideo/abund_bar.gif")
 # Video objects: Use open("", "rb").read()
 tempmp4 = open("imgvideo/climate_spiral_nasa.mp4", "rb").read()
 
+contact_form = """
+<form action="https://formsubmit.co/ndelly@gmail.com" class="contact-form" method="POST">
+  <input type="text" required placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your email" required>
+  <input type="text" required placeholder="Enter Subject" required>
+  <textarea name="message" id="" cols="15" rows="6" placeholder="Enter Your Message Here..." required></textarea>
+  <button type="submit">Send</button>
+</form>  
+""" 
+
+resume = """
+<a href="https://complexdatainsights.com/cv-resumes/Teresia-Mrema-Buza_resume_20220926.pdf" class="main-btn">
+  <span class="btn-text">Download Resume</span>
+  <span class="btn-icon"><i class="fas fa-download"></i></span>
+</a>
+""" 
+
 #######################################
 # ---- Header with salutation and introduction----
 #######################################
@@ -96,6 +113,7 @@ with st.container():
       """)
     
   with header2:
+    st.markdown(resume, unsafe_allow_html=True)
     st.info(
     """
     #### Did you know? Microbiome & Machine Learning
@@ -431,8 +449,13 @@ with st.container():
   # panel1, separator1, panel2 = st.columns((1, 0.2, 2))
   with panel1:
     st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/aligments.png")
-    # st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png", width=300)
-    st.caption("A typical protein sequence contains 20 unique amino acids represented with single letter code. What is the composition of each amino acid?")
+    # st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/amino_acid_abbr.png", width=250)
+    st.caption("A typical protein sequence contains 20 unique amino acids represented with single or three letter code. What is the composition of each amino acid?")
+    
+    st.subheader("The 20 Amino Acid Code")
+    df = pd.read_csv('data/aa.csv')
+    st.dataframe(df)
+
   with panel2:
     st.write(""" #### AA Count APP""")
     st.markdown(
@@ -551,16 +574,7 @@ with st.container():
   # </form>
   # """
   
-  contact_form = """
-  <form action="https://formsubmit.co/ndelly@gmail.com" class="contact-form" method="POST">
-    <input type="text" required placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your email" required>
-    <input type="text" required placeholder="Enter Subject" required>
-    <textarea name="message" id="" cols="15" rows="6" placeholder="Enter Your Message Here..." required></textarea>
-    <button type="submit">Send</button>
-  </form>  
-  """ 
-  
+
 # Use local CSS file
   def local_css(file_name):
     with open(file_name) as f:
@@ -575,5 +589,3 @@ with st.container():
   with right_column:
     # st.empty()
     st.image("https://complexdatainsights.com/wp-content/uploads/2020/09/contactNewk.png")
-
-
