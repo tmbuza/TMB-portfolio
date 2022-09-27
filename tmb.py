@@ -50,7 +50,7 @@ contact_form = """
   <input type="email" name="email" placeholder="Your email" required>
   <input type="text" required placeholder="Enter Subject" required>
   <textarea name="message" id="" cols="15" rows="6" placeholder="Enter Your Message Here..." required></textarea>
-  <button type="submit">Send</button>
+  <button type="submit">Submit</button>
 </form>  
 """ 
 
@@ -555,13 +555,13 @@ st.write("##")
 st.write("##")
 with st.container():
   st.write("---")
-  st.header("Get In Touch")
-  st.write(
-    """
-    - Let's collaborate and work together in telling stories using data...
-    - Together, we can make an impact when transforming complex data into **ACTIONABLE INSIGHTS**.
-    - Feel free to contact me by filling out the form below to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
-    """)
+  # st.header("Get In Touch")
+  # st.write(
+    # """
+    # - Let's collaborate and work together in telling stories using data...
+    # - Together, we can make an impact when transforming complex data into **ACTIONABLE INSIGHTS**.
+    # - Feel free to contact me by filling out the form below to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+    # """)
   
   # Contact Documentation: https://formsubmit.co/ Change the email address
   # contact_form = """
@@ -570,7 +570,7 @@ with st.container():
   #   <input type="text" name="name" placeholder="Your name" required>
   #   <input type="email" name="email" placeholder="Your email" required>
   #   <textarea name="message" placeholder="Your message here" required></textarea>
-  #   <button type="submit">Send</button>
+  #   <button type="submit">Submit</button>
   # </form>
   # """
   
@@ -583,9 +583,15 @@ with st.container():
   local_css("style/style.css")
   
   
-  left_column, right_column = st.columns(2)
-  with left_column:
+  col1, col2, col3 = st.columns((1, 1, 1))
+  with col2:
+    st.header("Get In Touch")
+    # st.write(
+    # """
+    # - Let's collaborate and work together in telling stories using data...
+    # - Together, we can make an impact when transforming complex data into **ACTIONABLE INSIGHTS**.
+    # - Feel free to contact me by filling out the form below to let me know if we need to collaborate or need a mentor in specific fields of my expertise.
+    # """)
     st.markdown(contact_form, unsafe_allow_html=True)
-  with right_column:
-    # st.empty()
+    st.write("##")
     st.image("https://complexdatainsights.com/wp-content/uploads/2020/09/contactNewk.png")
