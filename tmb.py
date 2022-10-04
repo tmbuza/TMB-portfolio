@@ -314,7 +314,7 @@ with st.container():
   
 with st.container():
   st.write("##")
-  st.header(":books:Qualitative Data Analysis")
+  st.header(":books:Quantitative Data Analysis")
   st.write("...In Progress...")
   st.write(
     """
@@ -331,7 +331,7 @@ with st.container():
   
 with st.container():
   st.write("##")
-  st.header(":books:Quantitative Data Analysis")
+  st.header(":books:Qualitative Data Analysis")
   st.write("...In Progress...")
   st.write(
     """
