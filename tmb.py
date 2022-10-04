@@ -29,28 +29,22 @@ st.set_page_config(
   layout = "wide")
   # layout = "centered")
 
-# Using local files
+# STYLING
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
 
-st.markdown(""" <style>
-footer {visibility: hidden;}
-</style> """, unsafe_allow_html=True)
+st.markdown(
+  """ 
+  <style>
+  footer {visibility: hidden;}
+  </style> 
+  """, 
+  unsafe_allow_html=True)
 
-padding = 0
-st.markdown(f""" <style>
-    .reportview-container .main .block-container{{
-        padding-top: {padding}rem;
-        padding-right: {padding}rem;
-        padding-left: {padding}rem;
-        padding-bottom: {padding}rem;
-    }} </style> """, unsafe_allow_html=True)
-    
-    
-    
+
 #------------------------------
 # ----Assets----
 #------------------------------
@@ -83,8 +77,7 @@ contact_form = """
 
 resume = """
 <a href="https://complexdatainsights.com/cv-resumes/Teresia-Mrema-Buza_resume_20220926.pdf" class="main-btn">
-  <span class="btn-text">Download Resume</span>
-  <span class="btn-icon"><i class="fas fa-download"></i></span>
+  <span class="btn-text"><h4><center>View my Resume</center></h4></span>
 </a>
 """ 
 
@@ -133,14 +126,24 @@ with st.container():
       - Interactive Data Visualization
       - AOB Related to Data Insights
     """)
-
+    st.markdown(
+      """
+      #### [View my Resume](https://complexdatainsights.com/cv-resumes/Teresia-Mrema-Buza_resume_20220926.pdf)
+      """)
+      
     st.write(
       """
-    #### Feel free to explore the entire portfolio. `KARIBU`:tada:      
+      #### Feel free to explore the entire portfolio. `KARIBU SANA!`:tada:      
       """)
+
+
     
   with header2:
-    st.markdown(resume, unsafe_allow_html=True)
+    st.write("##")
+    st.image(wdcloud1, width=550)
+    
+    st.write("##")
+    st.write("##")
     st.info(
     """
     #### Did you know? Microbiome & Machine Learning
@@ -152,8 +155,7 @@ with st.container():
     # st.subheader("Creating a plot using `ggplot2`")
     # with st.expander("Click to see or copy the R code"):
     #   st.code(pub_search_code, language="R")
-    st.write("##")
-    st.image(wdcloud1, width=550)
+
         
         
 st.write("---")  
@@ -225,18 +227,18 @@ st.write("##")
 with st.container():
   st.success(
     """
-    # ":books:Microbiome Bioinformatics"
+    # Microbiome Bioinformatics
     """)
 #######################################
 with st.container():
   st.write("##")
   column1, separator, column2 = st.columns((1, 0.5,  2.5)) 
   with column1:
-    st.header("Microbiome Data Analysis")
+    # st.header("Microbial profiling")
     st.info("""
     Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire 
     analytical process. Using the wrong approaches can cost a significant amount of dollars and make a lengthy process 
-    to achieve the desired results.)
+    to achieve the desired results.
     """)
     st.image("https://complexdatainsights.com/wp-content/uploads/2022/09/bookcover.png")
     st.caption("In progress: Systematic Microbiome Data Analysis in R. This eBook provides an end-to-end practical user guide \
@@ -268,7 +270,7 @@ with st.container():
       The Table below shows four iMAP practical user guides that systematically provide analytical support to the microbiome research community.
       Each guide is reproducible, allowing **R-users** to follow along easily.
 
-      |Repo| Description| Repo Output|
+      |Repo| Description| :books:Repo Output|
       |-------------------------|---------------------------------------------------|-----------------|
       | [iMAP-PART1](https://github.com/tmbuza/iMAP-part1/) | How to Get Started with Microbiome Data Analysis | [eBook](https://complexdatainsights.com/books/microbiome-analysis/getting-started) |
       | [iMAP-PART2](https://github.com/tmbuza/iMAP-part2/) | Bioinformatics Analysis of Microbiome Data | [eBook](https://complexdatainsights.com/books/microbiome-analysis/bioinformatics-analysis) |
@@ -281,7 +283,7 @@ with st.container():
       ### 3. End-to-End Microbiome Analysis eBooks
 
     
-      |Repo| Description| Repo Output|
+      |Repo| Description| :books:Repo Output|
       |-------------------------|---------------------------------------------------|-----------------|
       | SMDA | Systematic Microbiome Data Analysis (SMDA)...In progress.| [eBook 1](https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/) |
       """)
@@ -292,66 +294,96 @@ st.write("---")
 
 
 #######################################
-#######################################
-#######################################
+
 with st.container():
   st.write("##")
-  st.header(":books:Machine Learning")
-  st.write("...In Progress...")
-  st.write(
-    """
-    |Repo| Description| Repo Output| Remarks|
-    |-------------------------|---------------------------------------------------|-----------------|-----------|
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-
-    """)
-
-  st.write("---")
+  st.success(
+  """
+  # Machine Learning
+  """)
+with st.container():
+  st.write("##")
+  column1, separator, column2 = st.columns((1, 0.5,  2.5)) 
+  with column1:
+    st.write("...In Progress...")
+  with column2:
+    st.write(
+      """
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+  
+      """)
+  
+    st.write("---")
   
 with st.container():
   st.write("##")
-  st.header(":books:Quantitative Data Analysis")
-  st.write("...In Progress...")
-  st.write(
-    """
-    |Repo| Description| Repo Output| Remarks|
-    |-------------------------|---------------------------------------------------|-----------------|-----------|
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    """)
-
-  st.write("---")
+  st.success(
+  """
+  # Quantitative Data Analysis
+  """)
+with st.container():
+  st.write("##")
+  column1, separator, column2 = st.columns((1, 0.5,  2.5)) 
+  with column1:
+    st.write("...In Progress...")
+  with column2:
+    st.write(
+      """
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+  
+      """)
+  
+    st.write("---")
+  
   
 with st.container():
   st.write("##")
-  st.header(":books:Qualitative Data Analysis")
-  st.write("...In Progress...")
-  st.write(
-    """
-    |Repo| Description| Repo Output| Remarks|
-    |-------------------------|---------------------------------------------------|-----------------|-----------|
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) ||
-    """)
-
-  st.write("---")
+  st.success(
+  """
+  # Qualitative Data Analysis
+  """)
+with st.container():
+  st.write("##")
+  column1, separator, column2 = st.columns((1, 0.5,  2.5)) 
+  with column1:
+    st.write("...In Progress...")
+  with column2:
+    st.write(
+      """
+      |Repo| Description| Repo Output|
+      |-------------------------|---------------------------------------------------|-----------------|
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+      | [Repo goes here](https://github.com/tmbuza/addrepohere/) |  | [eBook goes here](https://complexdatainsights.com/books/addebookhere) |
+  
+      """)
+  
+    st.write("---")
+  
 
 #---------------------------------------------
 
 with st.container():
   st.write("##")
-  st.header(":books:Web Applications")
-  st.subheader("1. Nucleotide Count App")
+  st.success(
+    """
+    # Next Generation Sequencing
+    """)
+  st.header("1. Nucleotide Count App")
 
 # with st.container(): 
 #   st.write("##")
@@ -427,7 +459,7 @@ with st.container():
 
 with st.container():
   st.write("##")
-  st.subheader("2. Amino Acid Count App")
+  st.header("2. Amino Acid Count App")
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1.5))
   # panel1, separator1, panel2 = st.columns((1, 0.2, 2))
   with panel1:
@@ -525,13 +557,15 @@ diamonds = diamonds.iloc[:, 0:]
 diamonds.to_csv("data/preprocessed_diamonds.csv", index = False) 
 
 with st.container():
-  st.write("##")
-  st.subheader("3. Exploratory Data Analysis App")
+  st.success(
+    """
+    # Exploratory Data Analysis
+    """)
   panel1, separator1, panel2, separator2, panel3 = st.columns((2, 0.2, 2, 0.2, 2))
   with panel1:
     st.markdown(
       """
-      #### What EDA App does:
+      ### Minimal EDA App:
       - Reads the `data` uploaded by user and automatically starts exploration.
       - Displays the `head` and `tail` of the uploaded data (input dataframe).
       - Shows the dataframe `dimension`, `variable names` and `missing values`.
@@ -541,7 +575,7 @@ with st.container():
       
   with panel2:
     st.write("""
-      #### Getting started""")
+      ### Getting started""")
     st.markdown(
       """
       - Upload input file using the provided user\'s widget. 
@@ -588,7 +622,7 @@ with st.container():
     
     with panel3: 
       st.write("""
-        #### User input widget""")
+        ### User input widget""")
       st.markdown(
         """ """)
       uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])  
@@ -626,14 +660,6 @@ with st.container():
         st.write(fig, use_container_width=False) 
       else:
         st.warning(':exclamation: Awaiting user\'s input file')
-#---------------------------------------------
-with st.container():
-  st.write("##")  
-  st.write("##")  
-  st.write("##")
-  st.write(""" ### 3. Target Prediction App""")
-  st.write("In progress...")
-#---------------------------------------------
 
 st.write("##")
 st.write("##")
