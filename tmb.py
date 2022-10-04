@@ -11,6 +11,13 @@ import subprocess
 import sys
 import defined
 from defined import pub_search_code
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
+import warnings
+warnings.filterwarnings('ignore')
+import plotly.figure_factory as ff
+import seaborn as sns
+from plotnine.data import diamonds
 
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
@@ -498,20 +505,6 @@ RCNICI"
     st.write(p)
 
 #---------------------------------------------
-import numpy as np
-import pandas as pd
-import streamlit as st
-from pandas_profiling import ProfileReport
-from streamlit_pandas_profiling import st_profile_report
-import matplotlib.pyplot as plt
-import warnings
-warnings.filterwarnings('ignore')
-
-import plotly.figure_factory as ff
-import seaborn as sns
-
-     
-from plotnine.data import diamonds
 diamonds = diamonds.iloc[:, 0:]
 diamonds.to_csv("data/preprocessed_diamonds.csv", index = False) 
 
@@ -583,7 +576,6 @@ with st.container():
       st.markdown(
         """ """)
       uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])  
-      st.write("##")
       if uploaded_file is not None:    
         def load_data():
             a = pd.read_csv(uploaded_file)
