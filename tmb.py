@@ -564,7 +564,7 @@ with st.container():
       st.dataframe(missing_df)
    
       st.subheader("""Descriptive statistics""")
-      st.dataframe(df.describe(include='all'))
+      st.dataframe(df.describe())
   
       st.subheader("""Correlation heatmap""")    
       fig, ax = plt.subplots()
