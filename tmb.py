@@ -322,52 +322,13 @@ with st.container():
     """)
 
   st.write("---")
-  # video_column, separator, text_column = st.columns((2, 0.5, 2))
-  # with video_column:
-  #   st.info("Click the image below to see how \nthe temperature is changing stepwise from 1880 to 2022!")
-  #   st.video(tempmp4)
-  #   st.write(
-  #     """
-  #     I used a custom R script to generate the MP4.
-  #     """)
-  #   st.write(
-  #     """
-  #     ...Inspired by [`code club Youtube video tutorials`](https://riffomonas.org/code_club/) presented by Pat Schloss\'s.
-  #     """)
-  #   
-  # with separator:
-  #   st.write("")
-  #   
-  # with text_column:
-  #   st.subheader("Reproducible Research")
-  #   st.write(
-  #     """
-  #     **The climate data can be replaced with any quantitative or time series data to reproduce similar image.**
-  #     
-  #     - Get the same experience. I will be happy to provide you with a reproducible and easily customizable practical user guide. 
-  #     - If you are interested in outsourcing or consulting services, I can help you get the results faster. 
-  #     - You will also have the option to request a source code associated with the sought analysis. 
-  #     """
-  #     )
-  #     # - Explore a variety of climate data visualization available [**here!**](https://complexdatainsights.com/books/climate-analysis/climate-viz.html#plotly-image)
-  # 
-
-# with st.container():
-#   video_column, text_column = st.columns((1, 2))
-#   with video_column:
-#     st.info("Click the image below to see how \nthe static image was generated stepwise from 1880 to 2022!")
-#     st.video(tempmp4)
-#     st.write(
-#       """
-#      I used a custom R script to generate the MP4.
-#       """)
 
 #---------------------------------------------
 
 with st.container():
   st.write("##")
-  st.header(":books:NGS Feature Annotation")
-  st.write(""" ### 1. Nucleotide Count App""")
+  st.header(":books:Web Applications")
+  st.subheader("1. Nucleotide Count App")
 
 # with st.container(): 
 #   st.write("##")
@@ -443,12 +404,7 @@ with st.container():
 
 with st.container():
   st.write("##")
-  st.write(""" ### 2. Amino Acid Count App""")
-
-# with st.container(): 
-#   st.write("##")
-#   st.markdown("<h1 style='text-align: left; color: #000000;'>Web Applications</h1>", unsafe_allow_html=True)
-
+  st.subheader("2. Amino Acid Count App")
   panel1, separator1, panel2, separator2, panel3, separator3, panel4 = st.columns((1, 0.2, 1.5, 0.2, 1, 0.2, 1.5))
   # panel1, separator1, panel2 = st.columns((1, 0.2, 2))
   with panel1:
@@ -542,18 +498,134 @@ RCNICI"
     st.write(p)
 
 #---------------------------------------------
+import numpy as np
+import pandas as pd
+import streamlit as st
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
+import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings('ignore')
+
+import plotly.figure_factory as ff
+import seaborn as sns
+
+     
+from plotnine.data import diamonds
+diamonds = diamonds.iloc[:, 0:]
+diamonds.to_csv("data/preprocessed_diamonds.csv", index = False) 
+
+with st.container():
   st.write("##")
-  st.write(""" ### 2. Exploratory Analysis App""")
-  st.write("In progress...")
-#---------------------------------------------  
- 
+  st.subheader("3. Exploratory Analysis App (EDAA)")
+  panel1, separator1, panel2, separator2, panel3 = st.columns((2, 0.2, 2, 0.2, 2))
+  with panel1:
+    st.markdown(
+      """
+      #### What EDAA does:
+      - Reads the `data` uploaded by user and automatically starts exploration.
+      - Displays the `head` and `tail` of the uploaded data (input dataframe).
+      - Shows the dataframe `dimension`, `variable names` and `missing values`.
+      - Perform `descriptive` statistical analysis of the numerical variables.
+      - Plots a `correlation` heatmap.
+      """)
+      
+  with panel2:
+    st.write("""
+      #### Getting started""")
+    st.markdown(
+      """
+      - Upload input file using the provided user\'s widget. 
+      - Make sure that the uploaded data is tidy.
+      - You may start by testing the app using a demo data.
+      - To test the app click on the `Test EDA App` button.
+      """)
+    
+    if st.button('Test EDA App'):
+      # Using a demo data
+      @st.cache
+      def load_data():
+          a = pd.read_csv('data/preprocessed_diamonds.csv')
+          return a
+    
+      df = load_data()
+      st.write(""" > This demo uses a preprocessed `diamond dataset` for demonstration only.""")
+      st.header("""Demo Data Exploration""")
+      st.subheader("""Input DataFrame""")
+      st.write("Head", df.head())
+      st.write("Tail", df.tail())
+  
+      st.subheader("""Dataframe dimension""")
+      st.markdown("> Note that 0 = rows, and 1 = columns")
+      st.dataframe(df.shape)
+  
+      st.subheader("""Variable names""")
+      st.dataframe(pd.DataFrame({'Variable': df.columns}))
+      
+      st.subheader("""Missing values""")
+      missing_count = df.isnull().sum()
+      value_count = df.isnull().count() #denominator
+      missing_percentage = round(missing_count/value_count*100, 2)
+      missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
+      st.dataframe(missing_df)
+   
+      st.subheader("""Descriptive statistics""")
+      st.dataframe(df.describe())
+  
+      st.subheader("""Correlation heatmap""")    
+      fig, ax = plt.subplots()
+      sns.heatmap(df.corr(), ax = ax)
+      st.write(fig, use_container_width=False) 
+    
+    with panel3: 
+      st.write("""
+        #### User input widget""")
+      st.markdown(
+        """ """)
+      uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])  
+      st.write("##")
+      if uploaded_file is not None:    
+        def load_data():
+            a = pd.read_csv(uploaded_file)
+            return a
+        df = load_data()
+        st.header("""Data Exploration""")
+        st.subheader("""Input DataFrame""")
+        st.write("Head", df.head())
+        st.write("Tail", df.tail())
+    
+        st.subheader("""Dataframe dimension""")
+        st.markdown("> Note that 0 = rows, and 1 = columns")
+        st.dataframe(df.shape)
+    
+        st.subheader("""Variable names""")
+        st.dataframe(pd.DataFrame({'Variable': df.columns}))
+        
+        st.subheader("""Missing values""")
+        missing_count = df.isnull().sum()
+        value_count = df.isnull().count() #denominator
+        missing_percentage = round(missing_count/value_count*100, 2)
+        missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
+        st.dataframe(missing_df)
+    
+        st.header("""Basic Statistics""")    
+        st.subheader("""Descriptive statistics""")
+        st.dataframe(df.describe())
+    
+        st.subheader("""Correlation heatmap""")    
+        fig, ax = plt.subplots()
+        sns.heatmap(df.corr(), ax = ax)
+        st.write(fig, use_container_width=False) 
+      else:
+        st.warning(':exclamation: Awaiting user\'s input file')
 #---------------------------------------------
+with st.container():
+  st.write("##")  
+  st.write("##")  
   st.write("##")
   st.write(""" ### 3. Target Prediction App""")
   st.write("In progress...")
 #---------------------------------------------
-
-
 
 st.write("##")
 st.write("##")
