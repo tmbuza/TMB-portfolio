@@ -511,7 +511,7 @@ diamonds.to_csv("data/preprocessed_diamonds.csv", index = False)
 
 with st.container():
   st.write("##")
-  st.subheader("3. Exploratory Data Analysis App
+  st.subheader("3. Exploratory Data Analysis App")
   panel1, separator1, panel2, separator2, panel3 = st.columns((2, 0.2, 2, 0.2, 2))
   with panel1:
     st.markdown(
