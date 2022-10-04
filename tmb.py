@@ -25,9 +25,9 @@ from plotnine.data import diamonds
 # st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
 st.set_page_config(
   page_title="TMB Portfolio", 
-  # page_icon=":sunflower:",
   page_icon=":outbox_tray:",
   layout = "wide")
+  # layout = "centered")
 
 # Using local files
 def local_css(file_name):
@@ -36,11 +36,26 @@ def local_css(file_name):
 
 local_css("style/style.css")
 
-#######################################
-# ----Assets----
-#######################################
+st.markdown(""" <style>
+footer {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
 
-# For Professional Passion
+padding = 0
+st.markdown(f""" <style>
+    .reportview-container .main .block-container{{
+        padding-top: {padding}rem;
+        padding-right: {padding}rem;
+        padding-left: {padding}rem;
+        padding-bottom: {padding}rem;
+    }} </style> """, unsafe_allow_html=True)
+    
+    
+    
+#------------------------------
+# ----Assets----
+#------------------------------
+
+# Passion section
 pubstats = Image.open("figures/pubmed_search_bar_plot.png")
 
 # Image objects: Use Image.open("")
@@ -156,14 +171,14 @@ with st.container():
         st.write("##")
         st.write(
           """
-          ### On my `personal` and `organization` GitHub accounts:
+          ### On my `personal` [GitHub accounts](https://github.com/tmbuza/):
           
           """)
         
         st.info(
           """
-            - I am developing DIY practical user guides to support diverse data analytics communities.
-            - Most of these guides are under development in my private repositories and will be shared publicly once completed.
+            - I develop DIY practical user guides that provides integrated diverse analysis solutions for better results.
+            - Most of these guides are in progress and I will share publicly once completed.
             - The intended audience is:
                 - ... researchers who need reproducible tools to analyze data for their manuscripts, theses, dissertations, or presentations.
                 - ... academic members who need reproducible workflows for teaching and training purposes.
