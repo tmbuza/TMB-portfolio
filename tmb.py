@@ -13,6 +13,7 @@ import defined
 from defined import pub_search_code
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
+import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 import plotly.figure_factory as ff
