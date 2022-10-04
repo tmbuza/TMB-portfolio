@@ -18,7 +18,7 @@ from defined import pub_search_code
 st.set_page_config(
   page_title="TMB Portfolio", 
   # page_icon=":sunflower:",
-  page_icon=":earth_africa:",
+  page_icon=":outbox_tray:",
   layout = "wide")
 
 # Using local files
