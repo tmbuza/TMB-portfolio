@@ -15,7 +15,11 @@ from defined import pub_search_code
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
 # st.set_page_config(page_title="TMB Portfolio", page_icon=":sparkles:", layout = "wide")
-st.set_page_config(page_title="TMB Portfolio", page_icon=":sunflower:", layout = "wide")
+st.set_page_config(
+  page_title="TMB Portfolio", 
+  # page_icon=":sunflower:",
+  page_icon=":earth_africa:",
+  layout = "wide")
 
 # Using local files
 def local_css(file_name):
