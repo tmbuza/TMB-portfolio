@@ -14,7 +14,10 @@ from defined import pub_search_code
 
 
 # Find emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/. 
-st.set_page_config(page_title="TMB Show Case Gallery", page_icon=":sunflower:", layout = "wide")
+st.set_page_config(
+  page_title="TMB Gallery", 
+  page_icon=":bar_chart:", 
+  layout = "wide")
 
 # Using local files
 def local_css(file_name):
@@ -46,8 +49,7 @@ fig2 = Image.open("imgvideo/dna_composition.png")
 # Main Body
 #---------------------------------------------
 with st.container(): 
-  st.markdown("<h1 style='text-align: center; color: grey;'>Template: TMB Visualization Gallery</h1>", unsafe_allow_html=True)
-  st.markdown("<h3 style='text-align: center; color: black;'>Selected Images with Collapsible Code</h3>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: grey;'>TMB Data Visualization and Web Apps Gallery</h1> <h3 style='text-align: center; color: grey;'>Selected Images with Collapsible Code</h3>", unsafe_allow_html=True)
   
   st.write("##")
   st.markdown("<h1 style='text-align: left; color: skyblue;'>1. Microbiome Analysis</h1>", unsafe_allow_html=True)
