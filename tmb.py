@@ -225,14 +225,14 @@ st.write("##")
 with st.container():
   st.success(
     """
-    # Achievements & In-Progress
+    # ":books:Microbiome Bioinformatics"
     """)
 #######################################
 with st.container():
   st.write("##")
   column1, separator, column2 = st.columns((1, 0.5,  2.5)) 
   with column1:
-    st.header(":books:Microbiome Bioinformatics")
+    st.header("Microbiome Data Analysis")
     st.info("""
     Investigating the role of microbial communities in health and disease requires a thorough knowledge of the entire 
     analytical process. Using the wrong approaches can cost a significant amount of dollars and make a lengthy process 
