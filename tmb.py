@@ -128,7 +128,7 @@ with st.container():
     """)
     st.markdown(
       """
-      #### [View my Resume](https://complexdatainsights.com/cv-resumes/Teresia-Mrema-Buza_resume_20220926.pdf)
+      #### [View my Resume](https://complexdatainsights.com/cv-resumes/Teresia-Mrema-Buza_resume_20221004.pdf)
       """)
       
     st.write(
