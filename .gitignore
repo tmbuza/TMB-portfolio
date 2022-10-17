@@ -1,7 +1,5 @@
 coding_projects
-imgvideo
-!figures
-data
+
 .DS_Store
 _pycache_
 
@@ -9,17 +7,7 @@ _pycache_
 .Rhistory
 .RData
 .Ruserdata
-!imgvideo
-!data
-code
-img
-*.Rmd
-*.ipynb
-*.mp3
-*.mp4
-*.png
-*.Rmd
-*.Rproj
+
 .ipynb_checkpoints
 
 
