@@ -1,7 +1,5 @@
 library(tidyverse, suppressPackageStartupMessages())
 
-# Pubmed searches
-# Tidying, filtering, transformation, and plotting
 read_csv("data/search_counts.csv", show_col_types = TRUE) %>% 
   select(year, ends_with("_res")) %>%  
   filter(year >= 1991) %>% # Filter as you please!
@@ -22,10 +20,9 @@ read_csv("data/search_counts.csv", show_col_types = TRUE) %>%
   filter(value > 0) %>% 
   ggplot(aes(x = year, y = value, group = name, color = name)) +
   geom_line(size = 1.2) +
-  # Optional color scaleing
   scale_color_manual(name = "FIELD",
                      values = c("red", "green4", "gray", "orange", "blue4", "green2", "magenta", "purple", "maroon", "blue1")) +
   labs(x = "Year", y = "Percentage of articles in PubMed", color = "FIELD") +
   theme_classic()
 
-ggsave("figures/pubmed_search_bar_plot.png", width = 8, height = 5)
+ggsave("figures/pubmed_search_line_plot.png", width = 8, height = 5)

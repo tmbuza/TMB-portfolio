@@ -29,7 +29,7 @@ pub_search_code ="""
     labs(x = "Year", y = "Percentage of articles in PubMed", color = "FIELD") +
     theme_classic()
   
-  ggsave("figures/pubmed_search_bar_plot.png", width = 8, height = 5)
+  ggsave("figures/pubmed_search_line_plot.png", width = 8, height = 5)
 """
 
 def add_margin(ax,x=0.05,y=0.05):
