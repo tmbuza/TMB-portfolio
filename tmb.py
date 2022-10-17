@@ -61,7 +61,7 @@ def project_header():
     </h1>
     <logo><center>
       <a href='https://complexdatainsights.com'>
-      <img src='https://complexdatainsights.com/wp-content/uploads/2020/10/logo-1.png' 
+      <img src='https://complexdatainsights.com/wp-content/uploads/2022/10/logo_white.png' 
         alt=' page cover'
         width='15%' 
         style='padding: 20px; 
