@@ -186,10 +186,10 @@ with st.container():
     st.caption("""**The publication trend in PubMed**. This line chart was created using an `R script`, then imported into this web app generated 
     using `Python` and `streamlit` library. Integration of different tools demonstrates robust solutions 
     for gaining insights into complex data.""")
-    with st.expander("Partial R code"):
+    with st.expander("View Partial R code"):
       st.code(pub_search_code, language="R")
 
-    st.markdown("""Source: [TMB Github repo](https://github.com/tmbuza/pubmed-article-stats)""")
+    st.markdown("""Source: [TMB Github repo](https://github.com/tmbuza/pubmed-article-stats/blob/main/02_plot_article_count.Rmd)""")
         
 st.write("---")  
 
