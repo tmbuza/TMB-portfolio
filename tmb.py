@@ -122,7 +122,7 @@ with st.container():
   st.subheader("Hi, I am Teresia Mrema Buza (TMB):wave:")
   left, right = st.columns((2, 1))
   with left:
-    st.title("A Microbiome,  Data Science, Machine learning, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
+    st.title("A Data Science Enthusiast, Consultant, and Mentor.") 
 st.write("---")
   
 with st.container():
