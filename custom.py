@@ -91,5 +91,5 @@ def date_updated(pathtofile):
   modTimesinceEpoc = os.path.getmtime(pathtofile)
   modificationTime = datetime.datetime.fromtimestamp(modTimesinceEpoc).strftime('%Y-%m-%d %H:%M:%S')
   st.write("Last Modified: ", modificationTime )
+  
   return modificationTime
-

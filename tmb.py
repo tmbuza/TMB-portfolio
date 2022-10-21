@@ -6,6 +6,7 @@ import stat
 import time
 import datetime
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pandas as pd
 import altair as alt
 from PIL import Image
@@ -50,23 +51,23 @@ st.markdown(
 def project_header():
   st.markdown(
     """
-    <header style= 'background-color: #008000'; color: 'white';>
+    <header style= 'background-color: #008080'; color: 'white';>
     <h1 
     style='
       text-align: center;
       color: white; 
-      font-size: 4em; 
+      font-size: 3em; 
       '>
       TMB Professional Portfolio
     </h1>
-    <logo><center>
+    <!-- <logo><center>
       <a href='https://complexdatainsights.com'>
       <img src='https://complexdatainsights.com/wp-content/uploads/2022/10/logo_white.png' 
         alt=' page cover'
-        width='15%' 
-        style='padding: 20px; 
+        width='35%' 
+        style='padding: 10px; 
         float: center;'/></a>
-      </center></logo>
+      </center></logo> -->
     </header>
     
     """, unsafe_allow_html=True)
@@ -108,6 +109,7 @@ resume = """
 
 #######################################
 # ---- Header with salutation and introduction----
+
 date_updated('./tmb.py')
 
 if project_header():
@@ -122,7 +124,7 @@ with st.container():
   st.subheader("Hi, I am Teresia Mrema Buza (TMB):wave:")
   left, right = st.columns((2, 1))
   with left:
-    st.title("A Data Science Enthusiast, Consultant, and Mentor.") 
+    st.title("A Data Science, Microbiome, Machine learning, Bioinformatics, and Computational Biology Enthusiast, Consultant, and Mentor.") 
 st.write("---")
   
 with st.container():
@@ -254,7 +256,7 @@ with st.container():
         """) 
         
 st.write("##")
-st.markdown("<h1 style='text-align: left; color: black; font-size: 4em;'>Achievements and in Progress</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white; font-size: 3em; background-color: #008080'>Achievements and Projects in Progress</h1>", unsafe_allow_html=True)
 st.write("##")
 
 with st.container():
