@@ -256,7 +256,7 @@ with st.container():
         """) 
         
 st.write("##")
-st.markdown("<h1 style='text-align: center; color: white; font-size: 3em; background-color: #008080'>Achievements and Projects in Progress</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white; font-size: 2.5em; background-color: #008080'>Achievements and Projects in Progress</h1>", unsafe_allow_html=True)
 st.write("##")
 
 with st.container():
