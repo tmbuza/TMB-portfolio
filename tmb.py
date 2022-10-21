@@ -600,130 +600,154 @@ with st.container():
 # if aa_count():
 #   aa_count()
 #---------------------------------------------
-
-def eda_apps():
-  diamonds = diamonds.iloc[:, 0:]
-  diamonds.to_csv("data/preprocessed_diamonds.csv", index = False) 
-  
-  with st.container():
-    st.success(
-      """
-      # Exploratory Data Analysis App
-      """)
-    panel1, separator1, panel2, separator2, panel3 = st.columns((2, 0.2, 2, 0.2, 2))
-    with panel1:
-      st.markdown(
-        """
-        ### Simple EDA App:
-        - Reads the `data` uploaded by user and automatically starts exploration.
-        - Displays the `head` and `tail` of the uploaded data (input dataframe).
-        - Shows the dataframe `dimension`, `variable names` and `missing values`.
-        - Perform `descriptive` statistical analysis of the numerical variables.
-        - Plots a `correlation` heatmap.
-        """)
-        
-    with panel2:
-      st.write("""
-        ### Getting started""")
-      st.markdown(
-        """
-        - Upload input file using the provided user\'s widget. 
-        - Make sure that the uploaded data is tidy.
-        - You may start by testing the app using a demo data.
-        - To test the app click on the `Test EDA App` button.
-        """)
-      
-      if st.button('Test EDA App'):
-        # Using a demo data
-        @st.cache
-        def load_data():
-            a = pd.read_csv('data/preprocessed_diamonds.csv')
-            return a
-      
-        df = load_data()
-        st.write(""" > This demo uses a preprocessed `diamond dataset` for demonstration only.""")
-        st.header("""Demo Data Exploration""")
-        st.subheader("""Input DataFrame""")
-        st.write("Head", df.head())
-        st.write("Tail", df.tail())
-    
-        st.subheader("""Dataframe dimension""")
-        st.markdown("> Note that 0 = rows, and 1 = columns")
-        st.dataframe(df.shape)
-    
-        st.subheader("""Variable names""")
-        st.dataframe(pd.DataFrame({'Variable': df.columns}))
-        
-        st.subheader("""Missing values""")
-        missing_count = df.isnull().sum()
-        value_count = df.isnull().count() #denominator
-        missing_percentage = round(missing_count/value_count*100, 2)
-        missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
-        st.dataframe(missing_df)
-     
-        st.subheader("""Descriptive statistics""")
-        st.dataframe(df.describe())
-    
-        st.subheader("""Correlation heatmap""")    
-        fig, ax = plt.subplots()
-        sns.heatmap(df.corr(), ax = ax)
-        st.write(fig, use_container_width=False) 
-      
-      with panel3: 
-        st.write("""
-          ### User input widget""")
-        st.markdown(
-          """ """)
-        uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])  
-        if uploaded_file is not None:    
-          def load_data():
-              a = pd.read_csv(uploaded_file)
-              return a
-          df = load_data()
-          st.header("""Data Exploration""")
-          st.subheader("""Input DataFrame""")
-          st.write("Head", df.head())
-          st.write("Tail", df.tail())
-      
-          st.subheader("""Dataframe dimension""")
-          st.markdown("> Note that 0 = rows, and 1 = columns")
-          st.dataframe(df.shape)
-      
-          st.subheader("""Variable names""")
-          st.dataframe(pd.DataFrame({'Variable': df.columns}))
-          
-          st.subheader("""Missing values""")
-          missing_count = df.isnull().sum()
-          value_count = df.isnull().count() #denominator
-          missing_percentage = round(missing_count/value_count*100, 2)
-          missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
-          st.dataframe(missing_df)
-      
-          st.header("""Basic Statistics""")    
-          st.subheader("""Descriptive statistics""")
-          st.dataframe(df.describe())
-      
-          st.subheader("""Correlation heatmap""")    
-          fig, ax = plt.subplots()
-          sns.heatmap(df.corr(), ax = ax)
-          st.write(fig, use_container_width=False) 
-        else:
-          st.warning(':exclamation: Awaiting user\'s input file')
-
-# if eda():
-#   eda()
+# 
+# def eda_1_app():
+#   with st.container():
+#     st.success(
+#       """
+#       # Exploratory Data Analysis App
+#       """)
+#     panel1, separator1, panel2, separator2, panel3 = st.columns((2, 0.2, 2, 0.2, 2))
+#     with panel1:
+#       st.markdown(
+#         """
+#         ### Simple EDA App:
+#         - Reads the `data` uploaded by user and automatically starts exploration.
+#         - Displays the `head` and `tail` of the uploaded data (input dataframe).
+#         - Shows the dataframe `dimension`, `variable names` and `missing values`.
+#         - Perform `descriptive` statistical analysis of the numerical variables.
+#         - Plots a `correlation` heatmap.
+#         """)
+#         
+#     with panel2:
+#       st.write("""
+#         ### Getting started""")
+#       st.markdown(
+#         """
+#         - Upload input file using the provided user\'s widget. 
+#         - Make sure that the uploaded data is tidy.
+#         - You may start by testing the app using a demo data.
+#         - To test the app click on the `Test EDA App` button.
+#         """)
+#       
+#       # if st.button('Test EDA App'):
+#       #   # Using a demo data
+#       #   @st.cache
+#       #   def load_data():
+#       #       a = pd.read_csv('data/preprocessed_diamonds.csv')
+#       #       return a
+#       # 
+#       #   df = load_data()
+#       #   st.write(""" > This demo uses a preprocessed `diamond dataset` for demonstration only.""")
+#       #   st.header("""Demo Data Exploration""")
+#       #   st.subheader("""Input DataFrame""")
+#       #   st.write("Head", df.head())
+#       #   st.write("Tail", df.tail())
+#       # 
+#       #   st.subheader("""Dataframe dimension""")
+#       #   st.markdown("> Note that 0 = rows, and 1 = columns")
+#       #   st.dataframe(df.shape)
+#       # 
+#       #   st.subheader("""Variable names""")
+#       #   st.dataframe(pd.DataFrame({'Variable': df.columns}))
+#       #   
+#       #   st.subheader("""Missing values""")
+#       #   missing_count = df.isnull().sum()
+#       #   value_count = df.isnull().count() #denominator
+#       #   missing_percentage = round(missing_count/value_count*100, 2)
+#       #   missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
+#       #   st.dataframe(missing_df)
+#       # 
+#       #   st.subheader("""Descriptive statistics""")
+#       #   st.dataframe(df.describe())
+#       # 
+#       #   st.subheader("""Correlation heatmap""")    
+#       #   fig, ax = plt.subplots()
+#       #   sns.heatmap(df.corr(), ax = ax)
+#       #   st.write(fig, use_container_width=False) 
+#       # 
+#       with panel3: 
+#         st.write("""
+#           ### User input widget""")
+#         st.markdown(
+#           """ """)
+#         uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])
+#         if uploaded_file is not None:    
+#           def load_data():
+#               a = pd.read_csv(uploaded_file)
+#               return a
+#           df = load_data()
+#           st.header("""Data Exploration""")
+#           st.subheader("""Input DataFrame""")
+#           st.write("Head", df.head())
+#           st.write("Tail", df.tail())
+#       
+#           st.subheader("""Dataframe dimension""")
+#           st.markdown("> Note that 0 = rows, and 1 = columns")
+#           st.dataframe(df.shape)
+#       
+#           st.subheader("""Variable names""")
+#           st.dataframe(pd.DataFrame({'Variable': df.columns}))
+#           
+#           st.subheader("""Missing values""")
+#           missing_count = df.isnull().sum()
+#           value_count = df.isnull().count() #denominator
+#           missing_percentage = round(missing_count/value_count*100, 2)
+#           missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
+#           st.dataframe(missing_df)
+#       
+#           st.header("""Basic Statistics""")    
+#           st.subheader("""Descriptive statistics""")
+#           st.dataframe(df.describe())
+#       
+#           st.subheader("""Correlation heatmap""")    
+#           fig, ax = plt.subplots()
+#           sns.heatmap(df.corr(), ax = ax)
+#           st.write(fig, use_container_width=False) 
+#         else:
+#           st.warning(':exclamation: Awaiting user\'s input file')
+# 
+# # if eda_1_app():
+# #   eda_1_app()
 
 with st.container():
+  st.success(
+    """
+    # Data Visualizations
+    """)
+with st.container():
   st.write("##")
-  st.write("""### Interactive Plotly Plots""")
+  st.write("""### Interactive with Plotly """)
 
-  uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])  
+  uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])
   if uploaded_file is not None:    
     def load_data():
         a = pd.read_csv(uploaded_file)
         return a
     df = load_data()
+    st.header("""Data Exploration""")
+    st.subheader("""Input DataFrame""")
+    st.write("Head", df.head())
+    st.write("Tail", df.tail())
+
+    st.subheader("""Dataframe dimension""")
+    st.markdown("> Note that 0 = rows, and 1 = columns")
+    st.dataframe(df.shape)
+
+    st.subheader("""Variable names""")
+    st.dataframe(pd.DataFrame({'Variable': df.columns}))
     
+    st.subheader("""Missing values""")
+    missing_count = df.isnull().sum()
+    value_count = df.isnull().count() #denominator
+    missing_percentage = round(missing_count/value_count*100, 2)
+    missing_df = pd.DataFrame({'Count': missing_count, 'Missing (%)': missing_percentage})
+    st.dataframe(missing_df)
+
+    st.header("""Basic Statistics""")    
+    st.subheader("""Descriptive statistics""")
+    st.dataframe(df.describe())
+
     col1, col2, separator, col3 = st.columns((1, 1, 0.5, 4))
     x_axis_val = col1.selectbox('Select data for the X-axis', options=df.columns)
     y_axis_val = col2.selectbox('Select data for the Y-axis', options=df.columns)
@@ -732,7 +756,7 @@ with st.container():
       st.write("""Scatter charts""")      
       plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
       st.plotly_chart(plot, use_container_width=True)
-    col4, col5, col6 = st.columns(3)      
+    col4, col5, col6, col7 = st.columns(4)      
     with col4:
       st.write("""Line charts""")
       st.line_chart(df, x=x_axis_val, y=y_axis_val)
@@ -742,6 +766,14 @@ with st.container():
     with col6:
       st.write("""Area charts""")
       st.area_chart(df, x=x_axis_val, y=y_axis_val)
+    with col7:
+      st.write("""Correlation heatmap""")    
+      fig, ax = plt.subplots()
+      sns.heatmap(df.corr(), ax = ax)
+      st.write(fig, use_container_width=False) 
+    
+  else:
+    st.warning(':exclamation: Awaiting user\'s input file')
 
 st.write("##")
 
