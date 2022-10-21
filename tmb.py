@@ -142,8 +142,7 @@ with st.container():
     st.success("""
     ## My Passion
     - Briefly, I am passionate about **finding insights into complex data** using integrated approaches.
-    - My prime interest is to dedicate more energy in developing __open-source user guides__ to support 
-    diverse communities dealing ith simple to complex data.
+    - My prime interest is to dedicate more energy in developing __open-source user guides__ to support diverse communities dealing with simple to complex data.
     - I am also interested in providing Consultanting Services and Mentorship in selected areas, including: 
       - Microbiome Bioinformatics
       - Machine Learning
