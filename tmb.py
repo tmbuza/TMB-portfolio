@@ -142,7 +142,8 @@ with st.container():
     st.success("""
     ## My Passion
     - Briefly, I am passionate about **finding insights into complex data** using integrated approaches.
-    - My prime interest is to dedicate more energy in developing __open-source user guides__ to support diverse communities dealing simple to complex data.
+    - My prime interest is to dedicate more energy in developing __open-source user guides__ to support 
+    diverse communities dealing ith simple to complex data.
     - I am also interested in providing Consultanting Services and Mentorship in selected areas, including: 
       - Microbiome Bioinformatics
       - Machine Learning
@@ -748,15 +749,24 @@ with st.container():
     st.subheader("""Descriptive statistics""")
     st.dataframe(df.describe())
 
-    col1, col2, separator, col3 = st.columns((1, 1, 0.5, 4))
+    col1, col2, separator, col3, corr = st.columns((0.5, 0.5, 0.2, 2, 2))
+    
     x_axis_val = col1.selectbox('Select data for the X-axis', options=df.columns)
     y_axis_val = col2.selectbox('Select data for the Y-axis', options=df.columns)
+    
+    with corr:
+      st.write("""Correlation heatmap""")    
+      fig, ax = plt.subplots()
+      sns.heatmap(df.corr(), ax = ax)
+      st.write(fig, use_container_width=False) 
     
     with col3:
       st.write("""Scatter charts""")      
       plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
       st.plotly_chart(plot, use_container_width=True)
-    col4, col5, col6, col7 = st.columns(4)      
+    
+    col4, col5, col6, col7 = st.columns(4)
+    
     with col4:
       st.write("""Line charts""")
       st.line_chart(df, x=x_axis_val, y=y_axis_val)
@@ -766,12 +776,11 @@ with st.container():
     with col6:
       st.write("""Area charts""")
       st.area_chart(df, x=x_axis_val, y=y_axis_val)
-    with col7:
-      st.write("""Correlation heatmap""")    
-      fig, ax = plt.subplots()
-      sns.heatmap(df.corr(), ax = ax)
-      st.write(fig, use_container_width=False) 
-    
+    with col7:      
+      st.write("""Scatter charts""")      
+      plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
+      st.plotly_chart(plot, use_container_width=True)      
+
   else:
     st.warning(':exclamation: Awaiting user\'s input file')
 
