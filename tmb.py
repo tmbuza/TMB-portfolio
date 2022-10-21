@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 import plotly.figure_factory as ff
+import plotly.express as px
 import seaborn as sns
 import plotnine
 from plotnine.data import diamonds
@@ -712,9 +713,38 @@ def eda_apps():
 # if eda():
 #   eda()
 
+with st.container():
+  st.write("##")
+  st.write("""### Interactive Plotly Plots""")
+
+  uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])  
+  if uploaded_file is not None:    
+    def load_data():
+        a = pd.read_csv(uploaded_file)
+        return a
+    df = load_data()
+    
+    col1, col2, separator, col3 = st.columns((1, 1, 0.5, 4))
+    x_axis_val = col1.selectbox('Select data for the X-axis', options=df.columns)
+    y_axis_val = col2.selectbox('Select data for the Y-axis', options=df.columns)
+    
+    with col3:
+      st.write("""Scatter charts""")      
+      plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
+      st.plotly_chart(plot, use_container_width=True)
+    col4, col5, col6 = st.columns(3)      
+    with col4:
+      st.write("""Line charts""")
+      st.line_chart(df, x=x_axis_val, y=y_axis_val)
+    with col5:
+      st.write("""Bar charts""")
+      st.bar_chart(df, x=x_axis_val, y=y_axis_val)
+    with col6:
+      st.write("""Area charts""")
+      st.area_chart(df, x=x_axis_val, y=y_axis_val)
 
 st.write("##")
-st.write("##")
+
 with st.container():
   st.write("---")
   # st.header("Get In Touch")
