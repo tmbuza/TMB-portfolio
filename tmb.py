@@ -146,7 +146,6 @@ with st.container():
     - I am also interested in providing Consultanting Services and Mentorship in selected areas, including: 
       - Microbiome Bioinformatics
       - Machine Learning
-      - Quantitative and Qualitative Data Analysis
       - Data Visualization
       - Web Applications
       - AOB as Requested...
@@ -159,8 +158,6 @@ with st.container():
       - Quantitative Data Analysis
       - Qualitative Data Analysis
       - Statistical Data Analysis
-      - Static Data Visualization
-      - Interactive Data Visualization
       - AOB Related to Data Insights
     """)
     st.markdown(
