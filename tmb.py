@@ -196,7 +196,7 @@ st.write("---")
 
 # ---- WHAT I DO ----
 st.write("##")
-st.markdown("<h1 style='text-align: center; color: white; font-size: 2.5em; background-color: #008080'>AWhat I Do</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white; font-size: 2.5em; background-color: #008080'>What I Do</h1>", unsafe_allow_html=True)
 st.write("##")
 
 with st.container():
@@ -204,57 +204,57 @@ with st.container():
     """
     # Microbiome Bioinformatics
     """)      
-    left_column, separator, right_column = st.columns((2, 0.5, 2))
-    with left_column:
-        st.write("##")
-        st.write(
-          """
-          ### On my `personal` [GitHub accounts](https://github.com/tmbuza/):
-          
-          """)
-        
-        st.info(
-          """
-            - I develop DIY practical user guides that provides integrated diverse analysis solutions for better results.
-            - Most of these guides are in progress and I will share publicly once completed.
-            - The intended audience is:
-                - ... researchers who need reproducible tools to analyze data for their manuscripts, theses, dissertations, or presentations.
-                - ... academic members who need reproducible workflows for teaching and training purposes.
-                - ... users looking for friendly solutions to leverage their daily analytical tasks.
-                - ... users who struggle to understand how to efficiently process raw data and transform it into actionable insights.
-                - ... users eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
-                - ... users looking for better solutions for visualizing the data and creating shareable reports and dashboards.
-                - ... users interested in developing and deploying simple data-related web apps.
-                - ... users enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
-         """)
-           
-    with right_column:
+  left_column, separator, right_column = st.columns((2, 0.5, 2))
+  with left_column:
       st.write("##")
-      # st.image(wdcloud1, width=300)
-      # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png", width=300)
-      # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
-      # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
-      # st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
-      st.subheader("Let's Collaborate!")
-      st.info(
+      st.write(
         """
-        We can collaborate at many levels if what I do interests you. 
-        Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields.
-        """)
-      
-      st.subheader("Outsource or DIY ")
-      st.info(
-        """
-        Outsourcing can increase efficiency and save time. Feel free to contact me by filling out the contact form at the end of this page to discuss the logistics.
-
-        """)   
+        ### On my `personal` [GitHub accounts](https://github.com/tmbuza/):
         
-      st.subheader("Subscribe for Updates")
+        """)
+        
       st.info(
         """
-        Consider subscribing to my [website](https://complexdatainsights.com) (currently 
-        under construction) to benefit from the available DIY resources. 
-        """) 
+          - I develop DIY practical user guides that provides integrated diverse analysis solutions for better results.
+          - Most of these guides are in progress and I will share publicly once completed.
+          - The intended audience is:
+              - ... researchers who need reproducible tools to analyze data for their manuscripts, theses, dissertations, or presentations.
+              - ... academic members who need reproducible workflows for teaching and training purposes.
+              - ... users looking for friendly solutions to leverage their daily analytical tasks.
+              - ... users who struggle to understand how to efficiently process raw data and transform it into actionable insights.
+              - ... users eager to learn more about going beyond traditional data analysis by integrating multiple compatible tools to achieve a more significant impact.
+              - ... users looking for better solutions for visualizing the data and creating shareable reports and dashboards.
+              - ... users interested in developing and deploying simple data-related web apps.
+              - ... users enthusiastic about developing skills to advance their career in Data Science, Machine Learning, or Bioinformatics.
+       """)
+           
+  with right_column:
+    st.write("##")
+    # st.image(wdcloud1, width=300)
+    # st.image("https://complexdatainsights.com/wp-content/uploads/2022/08/cdifrontimg-1-e1660417963487.png", width=300)
+    # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
+    # st.image("https://complexdatainsights.com/books/microbiome-analysis/end-to-end-user-guide/figures/lefse_fig-1.png")
+    # st.caption("Simple example showing significant biomarkers identified using the Linear discriminant analysis Effect Size (LEfSe) based on the LDA scores")
+    st.subheader("Let's Collaborate!")
+    st.info(
+      """
+      We can collaborate at many levels if what I do interests you. 
+      Feel free to contact me by filling out the contact form at the end of this page to let me know if we need to collaborate or need a mentor in specific fields.
+      """)
+    
+    st.subheader("Outsource or DIY ")
+    st.info(
+      """
+      Outsourcing can increase efficiency and save time. Feel free to contact me by filling out the contact form at the end of this page to discuss the logistics.
+
+      """)   
+      
+    st.subheader("Subscribe for Updates")
+    st.info(
+      """
+      Consider subscribing to my [website](https://complexdatainsights.com) (currently 
+      under construction) to benefit from the available DIY resources. 
+      """) 
         
 st.write("##")
 st.markdown("<h1 style='text-align: center; color: white; font-size: 2.5em; background-color: #008080'>Achievements and Projects in Progress</h1>", unsafe_allow_html=True)
