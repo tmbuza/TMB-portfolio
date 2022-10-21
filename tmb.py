@@ -148,7 +148,7 @@ with st.container():
       - Machine Learning
       - Quantitative and Qualitative Data Analysis
       - Data Visualization
-      - Data Exploration Web Applications
+      - Web Applications
       - AOB as Requested...
 
     """)
