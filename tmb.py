@@ -193,14 +193,12 @@ with st.container():
         
 st.write("---")  
 
-
-# ---- WHAT I DO ----
+#--------------------------------
 with st.container():
-    st.write(
-      """
-      # What I Do
-      """)
-      
+  st.success(
+    """
+    # What I Do
+    """)      
     left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
         st.write("##")
