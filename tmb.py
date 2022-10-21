@@ -193,11 +193,16 @@ with st.container():
         
 st.write("---")  
 
-#--------------------------------
+
+# ---- WHAT I DO ----
+st.write("##")
+st.markdown("<h1 style='text-align: center; color: white; font-size: 2.5em; background-color: #008080'>AWhat I Do</h1>", unsafe_allow_html=True)
+st.write("##")
+
 with st.container():
   st.success(
     """
-    # What I Do
+    # Microbiome Bioinformatics
     """)      
     left_column, separator, right_column = st.columns((2, 0.5, 2))
     with left_column:
