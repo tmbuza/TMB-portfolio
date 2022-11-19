@@ -1,20 +1,14 @@
 # This is a basic workflow that is manually triggered
 
-name: TMB Portfolio Template Workflow
+name: TMB Portfolio Template
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'TMB CD-CD Portfolio Template'
-        # Default value if no value is explicitly provided
-        default: 'World, welcome to my Protfolio'
-        # Input has to be provided for the workflow to run
-        required: true
+  # [push]
+  schedule:
+      # Runs "at minute 55 past every hour" (see https://crontab.guru)
+      - cron: '0 6 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
