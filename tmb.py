@@ -5,6 +5,7 @@ import os
 import stat
 import time
 import datetime
+import numpy as np
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
@@ -75,6 +76,10 @@ def project_header():
 #------------------------------
 # ----Assets----
 #------------------------------
+# data
+climate = pd.read_csv('../../climate-analysis/data/GLB.Ts+dSST.csv', skiprows=1).iloc[:, 0:13]
+climate = climate.set_index('Year').replace('***', np.nan)
+climate.to_csv("data/climate.csv", index=True)
 
 # Passion section
 pubstats = Image.open("figures/pubmed_search_line_plot.png")
@@ -718,9 +723,10 @@ with st.container():
 with st.container():
   st.write("##")
   st.write("""### Interactive with Plotly """)
-
+  c1, c2 = st.columns(2)
   uploaded_file = st.file_uploader("Please choose a CSV file", type=["csv"])
-  if uploaded_file is not None:    
+  if uploaded_file is not None: 
+    @st.cache
     def load_data():
         a = pd.read_csv(uploaded_file)
         return a
@@ -757,14 +763,14 @@ with st.container():
       st.write("""Correlation heatmap""")    
       fig, ax = plt.subplots()
       sns.heatmap(df.corr(), ax = ax)
-      st.write(fig, use_container_width=False) 
-    
+      st.write(fig, use_container_width=False)
+ 
     with col3:
       st.write("""Scatter charts""")      
       plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
       st.plotly_chart(plot, use_container_width=True)
     
-    col4, col5, col6, col7 = st.columns(4)
+    col4, col5, col6 = st.columns(3)
     
     with col4:
       st.write("""Line charts""")
@@ -775,10 +781,10 @@ with st.container():
     with col6:
       st.write("""Area charts""")
       st.area_chart(df, x=x_axis_val, y=y_axis_val)
-    with col7:      
-      st.write("""Scatter charts""")      
-      plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
-      st.plotly_chart(plot, use_container_width=True)      
+    # with col7:      
+    #   st.write("""Scatter charts""")      
+    #   plot = px.scatter(df, x=x_axis_val, y=y_axis_val)
+    #   st.plotly_chart(plot, use_container_width=True)      
 
   else:
     st.warning(':exclamation: Awaiting user\'s input file')
